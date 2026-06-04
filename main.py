@@ -7,7 +7,7 @@ import pandas as pd
 import seaborn as sns
 
 from jury_televote import JURY_COL, TELEVOTE_COL
-from jury_televote import build_jury_televote_diff, plot_jury_televote_diff
+from jury_televote import build_jury_televote_diff, plot_jury_televote_diff, validate_coverage
 from relations_matrix import build_relations_matrix, plot_relations_matrix
 
 MIN_YEAR = 2000
@@ -50,7 +50,7 @@ def load_data(csv_path: Path) -> pd.DataFrame:
 def normalize_country(value: object) -> str:
     if pd.isna(value):
         return ""
-    cleaned = re.sub(r"\s+", " ", str(value)).strip().lower()
+    cleaned = re.sub(r"\s+", " ", str(value).replace("-", " ")).strip().lower()
     if not cleaned:
         return ""
     if cleaned in COUNTRY_ALIASES:
@@ -139,8 +139,8 @@ def main() -> None:
         years_label = f"years ≥ {MIN_YEAR}"
         df_split = df[df["Points type"].isin(SPLIT_POINTS_TYPES)].copy()
 
-    df_to_targets = df_split[df_split["To"].isin(target_countries)].copy()
-    diff = build_jury_televote_diff(df_to_targets, target_countries)
+    validate_coverage(df_split)
+    diff = build_jury_televote_diff(df_split)
     plot_jury_televote_diff(diff, output_dir / "jury_vs_televote.png", years_label)
 
     print("Saved:")
