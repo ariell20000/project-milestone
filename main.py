@@ -18,25 +18,27 @@ TARGET_COUNTRIES_RAW = [
     "Israel",
     "serbia",
     "France",
-    "Germany",
-    "england",
+    "greece",
+    "Poland",
     "malta",
     "switzerland",
     "sweeden",
     "ukraine",
-    "greece",
+    "Australia",
     "cyprus",
-    "slovenia",
+    "Italy",
 ]
 COUNTRY_ALIASES = {
     "aerbaijan": "Azerbaijan",
     "azerbaijan": "Azerbaijan",
-    "england": "United Kingdom",
     "united kingdom": "United Kingdom",
     "sweeden": "Sweden",
     "sweden": "Sweden",
     "bosnia": "Bosnia and Herzegovina",
     "bosnia and herzegovina": "Bosnia and Herzegovina",
+    "Italy": "italy",
+    "Poland": "poland",
+    "Australia": "australia"
 }
 
 
