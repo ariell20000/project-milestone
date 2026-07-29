@@ -3,3 +3,6 @@ pandas
 seaborn
 joblib
 scikit-learn
+torch
+transformers
+gradio

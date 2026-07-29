@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+# Large raw datasets (too big for GitHub / not needed to reproduce the repo)
+audio_features.csv
+tracks_features.csv
+universal_top_spotify_songs.csv

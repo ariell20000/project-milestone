@@ -233,9 +233,11 @@ def predict_score(model: Pipeline, lyrics: str, country: str) -> float:
 
 
 def build_sample_from_lyrics(lyrics: str, country: str) -> dict[str, str]:
-    # Build sample using theme columns inferred in the CSV (continuous values)
-    # Here we will simple set themes to 0 and not attempt to infer from lyrics text
-    sample = {col: 0.0 for col in THEME_COLS}
+    # Imported lazily to avoid a circular import (theme_classifier imports
+    # THEME_COLS from this module).
+    from theme_classifier import infer_theme_scores
+
+    sample = infer_theme_scores(lyrics)
     sample[COUNTRY_COL] = clean_text(country)
     return sample
 
