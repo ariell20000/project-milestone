@@ -1,0 +1,81 @@
+voter,basis,rank,predicted_country,predicted_value,actual_country,actual_value,actual_opportunities,predicted_in_actual_top5
+Cyprus,mean_points,1,Italy,5.432,Greece,11.636,11,True
+Cyprus,mean_points,2,Greece,4.932,Italy,7.0,12,True
+Cyprus,mean_points,3,Russia,4.719,Bulgaria,6.625,8,True
+Cyprus,mean_points,4,Bulgaria,4.49,Russia,6.091,11,True
+Cyprus,mean_points,5,Romania,3.876,Sweden,4.0,14,False
+Cyprus,bloc_lift,1,Greece,2.011,Greece,8.547,11,True
+Cyprus,bloc_lift,2,Italy,1.399,Italy,2.651,12,True
+Cyprus,bloc_lift,3,Armenia,1.258,Bulgaria,2.56,8,True
+Cyprus,bloc_lift,4,Moldova,1.028,Russia,1.902,11,False
+Cyprus,bloc_lift,5,Russia,0.963,Armenia,1.612,6,True
+Greece,mean_points,1,Italy,5.842,Cyprus,11.818,11,True
+Greece,mean_points,2,Bulgaria,4.941,Albania,7.091,11,True
+Greece,mean_points,3,Armenia,4.736,Italy,6.636,11,True
+Greece,mean_points,4,Russia,4.439,Bulgaria,6.4,5,False
+Greece,mean_points,5,Turkey,3.975,Armenia,5.3,10,False
+Greece,bloc_lift,1,Armenia,1.821,Cyprus,9.985,11,True
+Greece,bloc_lift,2,Italy,1.634,Albania,5.769,11,True
+Greece,bloc_lift,3,Cyprus,1.4,Armenia,2.484,10,True
+Greece,bloc_lift,4,Romania,1.2,Italy,2.136,11,False
+Greece,bloc_lift,5,Moldova,1.187,San Marino,2.02,5,False
+Romania,mean_points,1,Portugal,4.534,Moldova,11.4,10,False
+Romania,mean_points,2,Turkey,4.484,Greece,6.643,14,True
+Romania,mean_points,3,Italy,4.199,Turkey,6.375,8,False
+Romania,mean_points,4,Greece,4.138,Hungary,6.0,9,True
+Romania,mean_points,5,Armenia,3.824,Sweden,4.154,13,False
+Romania,bloc_lift,1,Greece,1.132,Moldova,8.267,10,True
+Romania,bloc_lift,2,Turkey,1.053,Hungary,3.828,9,True
+Romania,bloc_lift,3,Italy,0.932,Greece,3.293,14,False
+Romania,bloc_lift,4,Armenia,0.91,Turkey,2.676,8,False
+Romania,bloc_lift,5,Albania,0.713,Spain,0.955,12,False
+Moldova,mean_points,1,Russia,5.741,Romania,11.3,10,True
+Moldova,mean_points,2,Azerbaijan,5.088,Russia,8.4,10,True
+Moldova,mean_points,3,Ukraine,4.823,Azerbaijan,7.444,9,True
+Moldova,mean_points,4,Romania,4.762,Bulgaria,6.286,7,True
+Moldova,mean_points,5,Bulgaria,4.091,Ukraine,6.286,14,True
+Moldova,bloc_lift,1,Ukraine,2.19,Romania,8.026,10,True
+Moldova,bloc_lift,2,Azerbaijan,2.083,Russia,4.498,10,True
+Moldova,bloc_lift,3,Russia,2.081,Azerbaijan,4.275,9,True
+Moldova,bloc_lift,4,Belarus,1.931,Ukraine,3.483,14,True
+Moldova,bloc_lift,5,Romania,1.618,Belarus,2.506,5,True
+Russia,mean_points,1,Armenia,6.676,Armenia,9.1,10,True
+Russia,mean_points,2,Ukraine,6.137,Azerbaijan,8.857,14,True
+Russia,mean_points,3,Azerbaijan,6.123,Belarus,6.833,6,True
+Russia,mean_points,4,Georgia,5.558,Ukraine,6.133,15,True
+Russia,mean_points,5,Belarus,4.722,Georgia,5.625,8,True
+Russia,bloc_lift,1,Azerbaijan,3.299,Azerbaijan,5.905,14,True
+Russia,bloc_lift,2,Armenia,3.229,Armenia,5.704,10,True
+Russia,bloc_lift,3,Belarus,3.202,Belarus,5.449,6,True
+Russia,bloc_lift,4,Georgia,3.185,Georgia,3.279,8,True
+Russia,bloc_lift,5,Ukraine,2.218,Moldova,3.179,10,False
+Sweden,mean_points,1,Australia,4.794,Australia,7.222,9,True
+Sweden,mean_points,2,Iceland,4.714,Bosnia & Herzegovina,6.75,8,False
+Sweden,mean_points,3,Austria,4.553,Finland,6.273,11,False
+Sweden,mean_points,4,Denmark,4.506,Norway,6.118,17,True
+Sweden,mean_points,5,Turkey,4.422,Denmark,5.357,14,False
+Sweden,bloc_lift,1,Iceland,2.142,Bosnia & Herzegovina,4.141,8,False
+Sweden,bloc_lift,2,Denmark,2.086,Finland,3.993,11,True
+Sweden,bloc_lift,3,Bosnia & Herzegovina,1.733,Australia,3.774,9,True
+Sweden,bloc_lift,4,Finland,1.513,Norway,3.359,17,True
+Sweden,bloc_lift,5,Norway,1.488,Denmark,2.96,14,True
+United Kingdom,mean_points,1,Bulgaria,4.765,Ireland,7.25,8,True
+United Kingdom,mean_points,2,Sweden,4.717,Bulgaria,7.111,9,False
+United Kingdom,mean_points,3,Australia,4.227,Turkey,6.625,8,True
+United Kingdom,mean_points,4,Iceland,3.798,Australia,5.889,9,False
+United Kingdom,mean_points,5,Denmark,3.755,Lithuania,5.692,13,False
+United Kingdom,bloc_lift,1,Iceland,1.348,Ireland,5.712,8,False
+United Kingdom,bloc_lift,2,Denmark,1.314,Lithuania,3.761,13,False
+United Kingdom,bloc_lift,3,Ireland,1.299,Bulgaria,3.016,9,True
+United Kingdom,bloc_lift,4,Sweden,1.204,Turkey,2.926,8,False
+United Kingdom,bloc_lift,5,Bulgaria,0.995,Australia,2.44,9,True
+Israel,mean_points,1,Russia,5.106,Russia,7.333,12,True
+Israel,mean_points,2,Armenia,4.324,Romania,6.0,8,True
+Israel,mean_points,3,Romania,4.214,Switzerland,5.667,6,True
+Israel,mean_points,4,Italy,4.176,Ukraine,5.154,13,False
+Israel,mean_points,5,Bulgaria,4.007,Armenia,4.889,9,False
+Israel,bloc_lift,1,Armenia,1.409,Romania,2.834,8,True
+Israel,bloc_lift,2,Romania,1.108,Russia,2.746,12,True
+Israel,bloc_lift,3,Russia,0.991,Armenia,2.077,9,True
+Israel,bloc_lift,4,Azerbaijan,0.799,Ukraine,1.966,13,False
+Israel,bloc_lift,5,Ukraine,0.719,France,1.949,16,True
