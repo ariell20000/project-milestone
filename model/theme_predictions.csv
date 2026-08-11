@@ -1,0 +1,1797 @@
+SongId,Year,Country,Song,IsWinner,Dominant_Theme,IsJury12,IsPublic12
+0,1956,Netherlands,De vogels van Holland,0,nature,0,0
+1,1956,Switzerland,Das alte Karussell,0,nature,0,0
+2,1956,Belgium,Messieurs les noyés de la Seine,0,loneliness,0,0
+3,1956,Germany (West),Im Wartesaal zum großen Glück,0,hope,0,0
+4,1956,France,Le temps perdu,0,love,0,0
+5,1956,Luxembourg,Ne crois pas,0,nostalgia,0,0
+6,1956,Italy,Aprite le finestre,0,love,0,0
+7,1956,Netherlands,Voorgoed voorbij,0,nostalgia,0,0
+8,1956,Switzerland,Refrain,1,heartbreak,0,0
+9,1956,Belgium,Le plus beau jour de ma vie,0,love,0,0
+10,1956,Germany,So geht das jede Nacht,0,love,0,0
+11,1956,France,Il est là,0,love,0,0
+12,1956,Luxembourg,Les amants de minuit,0,nostalgia,0,0
+13,1956,Italy,Amami se vuoi,0,love,0,0
+14,1957,Belgium,Straatdeuntje,0,hope,0,0
+15,1957,Luxembourg,Amours mortes (Tant de peine),0,loneliness,0,0
+16,1957,United Kingdom,All,0,party / celebration,0,0
+17,1957,Italy,Corde della mia chitarra,0,loneliness,0,0
+18,1957,Austria,"Wohin, kleines Pony?",0,nature,0,0
+19,1957,Netherlands,Net als toen,1,love,0,0
+20,1957,Germany,"Telefon, Telefon",0,loneliness,0,0
+21,1957,France,La belle amour,0,nature,0,0
+22,1957,Denmark,Skibet skal sejle i nat,0,heartbreak,0,0
+23,1957,Switzerland,L'enfant que j'étais,0,love,0,0
+24,1958,Italy,Nel blu dipinto di blu (Volare),0,hope,0,0
+25,1958,Netherlands,Heel de wereld,0,hope,0,0
+26,1958,France,"Dors, mon amour",1,love,0,0
+27,1958,Luxembourg,Un grand amour,0,love,0,0
+28,1958,Sweden,Lilla stjärna,0,love,0,0
+29,1958,Denmark,Jeg rev et blad ud af min dagbog,0,heartbreak,0,0
+30,1958,Belgium,Ma petite chatte,0,love,0,0
+31,1958,Germany,Für zwei Groschen Musik,0,nature,0,0
+32,1958,Austria,Die ganze Welt braucht Liebe,0,loneliness,0,0
+33,1958,Switzerland,Giorgio,0,love,0,0
+34,1959,France,"Oui, oui, oui, oui",0,nature,0,0
+35,1959,Denmark,"Uh, jeg ville ønske jeg var dig",0,love,0,0
+36,1959,Italy,"Piove (Ciao, ciao bambina)",0,love,0,0
+37,1959,Monaco,Mon ami Pierrot,0,heartbreak,0,0
+38,1959,Netherlands,Een beetje,1,love,0,0
+39,1959,Germany,Heute Abend wollen wir tanzen geh'n,0,empowerment,0,0
+40,1959,Sweden,Augustin,0,loneliness,0,0
+41,1959,Switzerland,Irgendwoher,0,love,0,0
+42,1959,Austria,Der K und K Kalypso aus Wien,0,party / celebration,0,0
+43,1959,United Kingdom,"Sing, Little Birdie",0,party / celebration,0,0
+44,1959,Belgium,Hou toch van mij,0,love,0,0
+45,1960,United Kingdom,"Looking High, High, High",0,party / celebration,0,0
+46,1960,Sweden,Alla andra får varann,0,nostalgia,0,0
+47,1960,Luxembourg,So laang we's du do bast,0,hope,0,0
+48,1960,Denmark,Det var en yndig tid,0,love,0,0
+49,1960,Belgium,Mon amour pour toi,0,love,0,0
+50,1960,Norway,Voi voi,0,hope,0,0
+51,1960,Austria,Du hast mich so fasziniert,0,nostalgia,0,0
+52,1960,Monaco,Ce soir-là,0,love,0,0
+53,1960,Switzerland,Cielo e terra,0,love,0,0
+54,1960,Netherlands,Wat een geluk,0,love,0,0
+55,1960,Germany,Bonne nuit ma chérie,0,party / celebration,0,0
+56,1960,Italy,Romantica,0,love,0,0
+57,1960,France,Tom Pillibi,1,empowerment,0,0
+58,1961,Spain,Estando contigo,0,love,0,0
+59,1961,Monaco,"Allons, allons les enfants",0,love,0,0
+60,1961,Austria,Sehnsucht,0,loneliness,0,0
+61,1961,Finland,Valoa ikkunassa,0,hope,0,0
+62,1961,Yugoslavia,Neke davne zvezde (Неке давне звезде),0,loneliness,0,0
+63,1961,Netherlands,Wat een dag,0,love,0,0
+64,1961,Sweden,"April, april",0,love,0,0
+65,1961,Germany,Einmal sehen wir uns wieder,0,hope,0,0
+66,1961,France,Printemps (Avril carillonne),0,nature,0,0
+67,1961,Switzerland,Nous aurons demain,0,hope,0,0
+68,1961,Belgium,"September, gouden roos",0,nostalgia,0,0
+69,1961,Norway,Sommer i Palma,0,nature,0,0
+70,1961,Denmark,Angelique,0,love,0,0
+71,1961,Luxembourg,Nous les amoureux,1,love,0,0
+72,1961,United Kingdom,Are You Sure?,0,party / celebration,0,0
+73,1961,Italy,Al di là,0,hope,0,0
+74,1962,Finland,Tipi-tii,0,love,0,0
+75,1962,Belgium,Ton nom,0,love,0,0
+76,1962,Spain,Llámame,0,love,0,0
+77,1962,Austria,Nur in der Wiener Luft,0,hope,0,0
+78,1962,Denmark,Vuggevise,0,loneliness,0,0
+79,1962,Sweden,Sol och vår,0,loneliness,0,0
+80,1962,Germany,Zwei kleine Italiener,0,nature,0,0
+81,1962,Netherlands,Katinka,0,nature,0,0
+82,1962,France,Un premier amour,1,love,0,0
+83,1962,Norway,"Kom sol, kom regn",0,love,0,0
+84,1962,Switzerland,Le retour,0,love,0,0
+85,1962,Yugoslavia,Ne pali svetlo u sumrak (Не пали светло у сумрак),0,hope,0,0
+86,1962,United Kingdom,Ring-a-Ding Girl,0,party / celebration,0,0
+87,1962,Luxembourg,Petit bonhomme,0,nostalgia,0,0
+88,1962,Italy,"Addio, addio",0,loneliness,0,0
+89,1962,Monaco,Dis rien,0,love,0,0
+90,1963,United Kingdom,Say Wonderful Things,0,party / celebration,0,0
+91,1963,Netherlands,Een speeldoos,0,nostalgia,0,0
+92,1963,Germany,Marcel,0,love,0,0
+93,1963,Austria,Vielleicht geschieht ein Wunder,0,love,0,0
+94,1963,Norway,Solhverv,0,love,0,0
+95,1963,Italy,Uno per tutte,0,love,0,0
+96,1963,Finland,Muistojeni laulu,0,nostalgia,0,0
+97,1963,Denmark,Dansevise,1,love,0,0
+98,1963,Yugoslavia,Brodovi,0,love,0,0
+99,1963,Switzerland,T'en va pas,0,nostalgia,0,0
+100,1963,France,Elle était si jolie,0,heartbreak,0,0
+101,1963,Spain,Algo prodigioso,0,love,0,0
+102,1963,Sweden,En gång i Stockholm,0,love,0,0
+103,1963,Belgium,Waarom?,0,love,0,0
+104,1963,Monaco,L'amour s'en va,0,love,0,0
+105,1963,Luxembourg,À force de prier,0,hope,0,0
+106,1964,Luxembourg,Dès que le printemps revient,0,heartbreak,0,0
+107,1964,Netherlands,Jij bent mijn leven,0,hope,0,0
+108,1964,Norway,Spiral,0,nostalgia,0,0
+109,1964,Denmark,Sangen om dig,0,love,0,0
+110,1964,Finland,Laiskotellen,0,hope,0,0
+111,1964,Austria,"Warum nur, warum?",0,loneliness,0,0
+112,1964,France,Le chant de Mallory,0,love,0,0
+113,1964,United Kingdom,I Love the Little Things,0,party / celebration,0,0
+114,1964,Germany,Man gewöhnt sich so schnell an das Schöne,0,love,0,0
+115,1964,Monaco,Où sont-elles passées,0,nostalgia,0,0
+116,1964,Portugal,Oração,0,love,0,0
+117,1964,Italy,Non ho l'età,1,love,0,0
+118,1964,Yugoslavia,Život je sklopio krug,0,nature,0,0
+119,1964,Switzerland,I miei pensieri,0,love,0,0
+120,1964,Belgium,Près de ma rivière,0,loneliness,0,0
+121,1964,Spain,Caracola,0,love,0,0
+122,1965,Netherlands,'t Is genoeg,0,hope,0,0
+123,1965,United Kingdom,I Belong,0,party / celebration,0,0
+124,1965,Spain,"¡Qué bueno, qué bueno!",0,love,0,0
+125,1965,Ireland,Walking the Streets in the Rain,0,party / celebration,0,0
+126,1965,Germany,"Paradies, wo bist du?",0,loneliness,0,0
+127,1965,Austria,"Sag ihr, ich lass sie Grüßen",0,love,0,0
+128,1965,Norway,Karusell,0,love,0,0
+129,1965,Belgium,Als het weer lente is,0,love,0,0
+130,1965,Monaco,Va dire à l'amour,0,love,0,0
+131,1965,Sweden,Absent Friend,0,party / celebration,0,0
+132,1965,France,N'avoue jamais,0,love,0,0
+133,1965,Portugal,Sol de inverno,0,heartbreak,0,0
+134,1965,Italy,"Se piangi, se ridi",0,love,0,0
+135,1965,Denmark,For din skyld,0,love,0,0
+136,1965,Luxembourg,"Poupée de cire, poupée de son",1,loneliness,0,0
+137,1965,Finland,Aurinko laskee länteen,0,hope,0,0
+138,1965,Yugoslavia,Čežnja,0,nostalgia,0,0
+139,1965,Switzerland,Non – à jamais sans toi,0,loneliness,0,0
+140,1966,Germany,Die Zeiger der Uhr,0,loneliness,0,0
+141,1966,Denmark,Stop – mens legen er go',0,love,0,0
+142,1966,Belgium,"Un peu de poivre, un peu de sel",0,love,0,0
+143,1966,Luxembourg,Ce soir je t'attendais,0,hope,0,0
+144,1966,Yugoslavia,Brez besed,0,hope,0,0
+145,1966,Norway,Intet er nytt under solen,0,heartbreak,0,0
+146,1966,Finland,Playboy,0,heartbreak,0,0
+147,1966,Portugal,Ele e ela,0,hope,0,0
+148,1966,Austria,"Merci, Chérie",1,love,0,0
+149,1966,Sweden,Nygammal vals (Hip man svinaherde),0,love,0,0
+150,1966,Spain,Yo soy aquél,0,love,0,0
+151,1966,Switzerland,Ne vois-tu pas?,0,loneliness,0,0
+152,1966,Monaco,Bien plus fort,0,party / celebration,0,0
+153,1966,Italy,"Dio, come ti amo",0,love,0,0
+154,1966,France,Chez nous,0,party / celebration,0,0
+155,1966,Netherlands,Fernando en Filippo,0,loneliness,0,0
+156,1966,Ireland,Come Back to Stay,0,party / celebration,0,0
+157,1966,United Kingdom,A Man Without Love,0,party / celebration,0,0
+158,1967,Netherlands,Ring-dinge-ding,0,party / celebration,0,0
+159,1967,Luxembourg,L'amour est bleu,0,love,0,0
+160,1967,Austria,Warum es hunderttausend Sterne gibt,0,love,0,0
+161,1967,France,Il doit faire beau là-bas,0,nostalgia,0,0
+162,1967,Portugal,O vento mudou,0,loneliness,0,0
+163,1967,Switzerland,Quel cœur vas-tu briser?,0,hope,0,0
+164,1967,Sweden,Som en dröm,0,hope,0,0
+165,1967,Finland,Varjoon – suojaan,0,loneliness,0,0
+166,1967,Germany,Anouschka,0,love,0,0
+167,1967,Belgium,Ik heb zorgen,0,nature,0,0
+168,1967,United Kingdom,Puppet on a String,1,party / celebration,0,0
+169,1967,Spain,Hablemos del amor,0,love,0,0
+170,1967,Norway,Dukkemann,0,heartbreak,0,0
+171,1967,Monaco,Boum-badaboum,0,love,0,0
+172,1967,Yugoslavia,Vse rože sveta,0,nostalgia,0,0
+173,1967,Italy,Non andare più lontano,0,love,0,0
+174,1967,Ireland,If I Could Choose,0,party / celebration,0,0
+175,1968,Portugal,Verão,0,heartbreak,0,0
+176,1968,Netherlands,Morgen,0,heartbreak,0,0
+177,1968,Belgium,Quand tu reviendras,0,hope,0,0
+178,1968,Austria,Tausend Fenster,0,loneliness,0,0
+179,1968,Luxembourg,Nous vivrons d'amour,0,love,0,0
+180,1968,Switzerland,Guardando il sole,0,love,0,0
+181,1968,Monaco,À chacun sa chanson,0,love,0,0
+182,1968,Sweden,"Det börjar verka kärlek, banne mej",0,love,0,0
+183,1968,Finland,Kun kello käy,0,love,0,0
+184,1968,France,La source,0,nature,0,0
+185,1968,Italy,Marianne,0,love,0,0
+186,1968,United Kingdom,Congratulations,0,party / celebration,0,0
+187,1968,Norway,Stress,0,spirituality,0,0
+188,1968,Ireland,Chance of a Lifetime,0,party / celebration,0,0
+189,1968,Spain,"La, la, la",1,love,0,0
+190,1968,Germany,Ein Hoch der Liebe,0,love,0,0
+191,1968,Yugoslavia,Jedan dan,0,love,0,0
+192,1969,Yugoslavia,Pozdrav svijetu,0,party / celebration,0,0
+193,1969,Luxembourg,Catherine,0,heartbreak,0,0
+194,1969,Spain,Vivo cantando,1,hope,0,0
+195,1969,Monaco,"Maman, Maman",0,hope,0,0
+196,1969,Ireland,The Wages of Love,0,party / celebration,0,0
+197,1969,Italy,Due grosse lacrime bianche,0,love,0,0
+198,1969,United Kingdom,Boom Bang-a-Bang,1,party / celebration,0,0
+199,1969,Netherlands,De troubadour,1,heartbreak,0,0
+200,1969,Sweden,"Judy, min vän",0,empowerment,0,0
+201,1969,Belgium,Jennifer Jennings,0,nature,0,0
+202,1969,Switzerland,"Bonjour, bonjour",0,love,0,0
+203,1969,Norway,"Oj, oj, oj, så glad jeg skal bli",0,loneliness,0,0
+204,1969,Germany,Primaballerina,0,loneliness,0,0
+205,1969,France,"Un jour, un enfant",1,nature,0,0
+206,1969,Portugal,Desfolhada portuguesa,0,heartbreak,0,0
+207,1969,Finland,Kuin silloin ennen,0,hope,0,0
+208,1970,Netherlands,Waterman,0,love,0,0
+209,1970,Switzerland,Retour,0,love,0,0
+210,1970,Italy,Occhi di ragazza,0,love,0,0
+211,1970,Yugoslavia,"Pridi, dala ti bom cvet",0,hope,0,0
+212,1970,Belgium,Viens l'oublier,0,heartbreak,0,0
+213,1970,France,Marie-Blanche,0,loneliness,0,0
+214,1970,United Kingdom,"Knock, Knock Who's There?",0,party / celebration,0,0
+215,1970,Luxembourg,Je suis tombé du ciel,0,loneliness,0,0
+216,1970,Spain,Gwendolyne,0,loneliness,0,0
+217,1970,Monaco,Marlène,0,nostalgia,0,0
+218,1970,Germany,Wunder gibt es immer wieder,0,love,0,0
+219,1970,Ireland,All Kinds of Everything,1,party / celebration,0,0
+220,1971,Austria,Musik,0,hope,0,0
+221,1971,Malta,Marija l-Maltija,0,hope,0,0
+222,1971,Monaco,"Un banc, un arbre, une rue",1,hope,0,0
+223,1971,Switzerland,Les illusions de nos vingt ans,0,party / celebration,0,0
+224,1971,Germany,Diese Welt,0,nature,0,0
+225,1971,Spain,En un mundo nuevo,0,love,0,0
+226,1971,France,Un jardin sur la terre,0,war or conflict,0,0
+227,1971,Luxembourg,"Pomme, pomme, pomme",0,love,0,0
+228,1971,United Kingdom,Jack in the Box,0,party / celebration,0,0
+229,1971,Belgium,"Goeiemorgen, morgen",0,party / celebration,0,0
+230,1971,Italy,L'amore è un attimo,0,nostalgia,0,0
+231,1971,Sweden,Vita vidder,0,loneliness,0,0
+232,1971,Ireland,One Day Love,0,party / celebration,0,0
+233,1971,Netherlands,Tijd,0,love,0,0
+234,1971,Portugal,Menina do alto da serra,0,nature,0,0
+235,1971,Yugoslavia,Tvoj dječak je tužan,0,loneliness,0,0
+236,1971,Finland,Tie uuteen päivään,0,hope,0,0
+237,1971,Norway,Lykken er...,0,nature,0,0
+238,1972,Germany,Nur die Liebe läßt uns leben,0,love,0,0
+239,1972,France,Comé-comédie,0,love,0,0
+240,1972,Ireland,Ceol an ghrá,0,love,0,0
+241,1972,Spain,Amanece,0,loneliness,0,0
+242,1972,United Kingdom,"Beg, Steal or Borrow",0,party / celebration,0,0
+243,1972,Norway,Småting,0,hope,0,0
+244,1972,Portugal,A festa da vida,0,love,0,0
+245,1972,Switzerland,C'est la chanson de mon amour,0,love,0,0
+246,1972,Malta,L-imħabba,0,love,0,0
+247,1972,Finland,Muistathan,0,love,0,0
+248,1972,Austria,Falter im Wind,0,nature,0,0
+249,1972,Italy,I giorni dell'arcobaleno,0,love,0,0
+250,1972,Yugoslavia,Muzika i ti,0,love,0,0
+251,1972,Sweden,Härliga sommardag,0,love,0,0
+252,1972,Monaco,Comme on s'aime,0,love,0,0
+253,1972,Belgium,À la folie ou pas du tout,0,heartbreak,0,0
+254,1972,Luxembourg,Après toi,1,loneliness,0,0
+255,1972,Netherlands,Als het om de liefde gaat,0,war or conflict,0,0
+256,1973,Finland,Tom Tom Tom,0,party / celebration,0,0
+257,1973,Belgium,"Baby, Baby",0,love,0,0
+258,1973,Portugal,Tourada,0,war or conflict,0,0
+259,1973,Germany,Junger Tag,0,nature,0,0
+260,1973,Norway,It's Just a Game,0,party / celebration,0,0
+261,1973,Monaco,Un train qui part,0,hope,0,0
+262,1973,Spain,Eres tú,0,hope,0,0
+263,1973,Switzerland,"Je vais me marier, Marie",0,nostalgia,0,0
+264,1973,Yugoslavia,Gori vatra (Гори ватра),0,love,0,0
+265,1973,Italy,Chi sarà con te,0,nostalgia,0,0
+266,1973,Luxembourg,Tu te reconnaîtras,1,love,0,0
+267,1973,Sweden,You're Summer (You Never Tell Me No),0,party / celebration,0,0
+268,1973,Netherlands,De oude muzikant,0,loneliness,0,0
+269,1973,Ireland,Do I Dream,0,party / celebration,0,0
+270,1973,United Kingdom,Power to All Our Friends,0,party / celebration,0,0
+271,1973,France,Sans toi,0,love,0,0
+272,1973,Israel,Ey sham (אי שם),0,nature,0,0
+273,1974,Finland,Keep Me Warm,0,party / celebration,0,0
+274,1974,United Kingdom,Long Live Love,0,party / celebration,0,0
+275,1974,Spain,Canta y sé feliz,0,love,0,0
+276,1974,Norway,The First Day of Love,0,party / celebration,0,0
+277,1974,Greece,"Krasi, thalassa ke t' agori mou
+(Κρασί, θάλασσα και τ' αγόρι μου)",0,love,0,0
+278,1974,Israel,Natati la khayay (נתתי לה חיי),0,war or conflict,0,0
+279,1974,Yugoslavia,Moja generacija (Generacija '42) (Моја генерација (Генерација '42)),0,war or conflict,0,0
+280,1974,Sweden,Waterloo,1,party / celebration,0,0
+281,1974,Luxembourg,Bye Bye I Love You,0,heartbreak,0,0
+282,1974,Monaco,Celui qui reste et celui qui s'en va,0,loneliness,0,0
+283,1974,Belgium,Fleur de liberté,0,loneliness,0,0
+284,1974,Netherlands,I See a Star,0,party / celebration,0,0
+285,1974,Ireland,Cross Your Heart,0,party / celebration,0,0
+286,1974,Germany,Die Sommermelodie,0,love,0,0
+287,1974,Switzerland,Mein Ruf nach dir,0,nostalgia,0,0
+288,1974,Portugal,E depois do adeus,0,loneliness,0,0
+289,1974,Italy,Sì,0,love,0,0
+290,1975,Netherlands,Ding-a-Dong,1,party / celebration,0,0
+291,1975,Ireland,That's What Friends Are For,0,party / celebration,0,0
+292,1975,France,Et bonjour à toi l'artiste,0,empowerment,0,0
+293,1975,Germany,Ein Lied kann eine Brücke sein,0,love,0,0
+294,1975,Luxembourg,Toi,0,love,0,0
+295,1975,Norway,Touch My Life (With Summer),0,party / celebration,0,0
+296,1975,Switzerland,Mikado,0,hope,0,0
+297,1975,Yugoslavia,Dan ljubezni,0,love,0,0
+298,1975,United Kingdom,Let Me Be the One,0,party / celebration,0,0
+299,1975,Malta,Singing This Song,0,party / celebration,0,0
+300,1975,Belgium,Gelukkig zijn,0,hope,0,0
+301,1975,Israel,At ve'ani (את ואני),0,nature,0,0
+302,1975,Turkey,Seninle bir dakika,0,nostalgia,0,0
+303,1975,Monaco,Une chanson c'est une lettre,0,love,0,0
+304,1975,Finland,Old Man Fiddle,0,party / celebration,0,0
+305,1975,Portugal,Madrugada,0,party / celebration,0,0
+306,1975,Spain,Tú volverás,0,loneliness,0,0
+307,1975,Sweden,"Jennie, Jennie",0,party / celebration,0,0
+308,1975,Italy,Era,0,love,0,0
+309,1976,United Kingdom,Save Your Kisses for Me,1,party / celebration,0,0
+310,1976,Switzerland,"Djambo, Djambo",0,party / celebration,0,0
+311,1976,Germany,Sing Sang Song,0,love,0,0
+312,1976,Israel,Emor shalom (אמור שלום),0,loneliness,0,0
+313,1976,Luxembourg,Chansons pour ceux qui s'aiment,0,empowerment,0,0
+314,1976,Belgium,Judy et Cie,0,heartbreak,0,0
+315,1976,Ireland,When,0,party / celebration,0,0
+316,1976,Netherlands,The Party's Over,0,party / celebration,0,0
+317,1976,Norway,Mata Hari,0,party / celebration,0,0
+318,1976,Greece,"Panagia mou, Panagia mou (Παναγιά μου, Παναγιά μου)",0,nature,0,0
+319,1976,Finland,Pump-Pump,0,party / celebration,0,0
+320,1976,Spain,Sobran las palabras,0,love,0,0
+321,1976,Italy,We'll Live It All Again (Io rivivrei),0,party / celebration,0,0
+322,1976,Austria,My Little World,0,party / celebration,0,0
+323,1976,Portugal,Uma flor de verde pinho,0,love,0,0
+324,1976,Monaco,"Toi, la musique et moi",0,love,0,0
+325,1976,France,"Un, deux, trois",0,love,0,0
+326,1976,Yugoslavia,Ne mogu skriti svoju bol,0,loneliness,0,0
+327,1977,Ireland,It's Nice to Be in Love Again,0,party / celebration,0,0
+328,1977,Monaco,Une petite française,0,nostalgia,0,0
+329,1977,Netherlands,De mallemolen,0,party / celebration,0,0
+330,1977,Austria,Boom Boom Boomerang,0,love,0,0
+331,1977,Norway,Casanova,0,party / celebration,0,0
+332,1977,Germany,Telegram,0,party / celebration,0,0
+333,1977,Luxembourg,Frère Jacques,0,heartbreak,0,0
+334,1977,Portugal,Portugal no coração,0,love,0,0
+335,1977,United Kingdom,Rock Bottom,0,party / celebration,0,0
+336,1977,Greece,Mathima solfege (Μάθημα σολφέζ),0,love,0,0
+337,1977,Israel,Ahava hi shir lishnayim (אהבה היא שיר לשניים),0,heartbreak,0,0
+338,1977,Switzerland,Swiss Lady,0,party / celebration,0,0
+339,1977,Sweden,Beatles,0,love,0,0
+340,1977,Spain,Enséñame a cantar,0,heartbreak,0,0
+341,1977,Italy,Libera,0,empowerment,0,0
+342,1977,Finland,Lapponia,0,spirituality,0,0
+343,1977,Belgium,"A Million in One, Two, Three",0,party / celebration,0,0
+344,1977,France,L'oiseau et l'enfant,1,love,0,0
+345,1978,Ireland,Born to Sing,0,party / celebration,0,0
+346,1978,Norway,Mil etter mil,0,loneliness,0,0
+347,1978,Italy,Questo amore,0,love,0,0
+348,1978,Finland,Anna rakkaudelle tilaisuus,0,love,0,0
+349,1978,Portugal,Dai li dou,0,hope,0,0
+350,1978,France,Il y aura toujours des violons,0,love,0,0
+351,1978,Spain,Bailemos un vals,0,hope,0,0
+352,1978,United Kingdom,The Bad Old Days,0,party / celebration,0,0
+353,1978,Switzerland,Vivre,0,love,0,0
+354,1978,Belgium,L'amour ça fait chanter la vie,0,love,0,0
+355,1978,Netherlands,'t Is OK,0,nostalgia,0,0
+356,1978,Turkey,Sevince,0,heartbreak,0,0
+357,1978,Germany,Feuer,0,love,0,0
+358,1978,Monaco,Les jardins de Monaco,0,loneliness,0,0
+359,1978,Greece,Charlie Chaplin (Τσάρλυ Τσάπλιν),0,spirituality,0,0
+360,1978,Denmark,Boom boom,0,nature,0,0
+361,1978,Luxembourg,Parlez-vous français?,0,love,0,0
+362,1978,Israel,A-ba-ni-bi (א-ב-ני-בי),1,love,0,0
+363,1978,Austria,Mrs. Caroline Robinson,0,hope,0,0
+364,1978,Sweden,Det blir alltid värre framåt natten,0,loneliness,0,0
+365,1979,Portugal,"Sobe, sobe, balão sobe",0,love,0,0
+366,1979,Italy,Raggio di luna,0,love,0,0
+367,1979,Denmark,Disco tango,0,party / celebration,0,0
+368,1979,Ireland,Happy Man,0,party / celebration,0,0
+369,1979,Finland,Katson sineen taivaan,0,nostalgia,0,0
+370,1979,Monaco,Notre vie c'est la musique,0,nostalgia,0,0
+371,1979,Greece,Sokrati (Σωκράτη),0,spirituality,0,0
+372,1979,Switzerland,Trödler und Co.,0,nature,0,0
+373,1979,Germany,Dschinghis Khan,0,empowerment,0,0
+374,1979,Israel,Hallelujah (הללויה),1,hope,0,0
+375,1979,France,Je suis l'enfant soleil,0,love,0,0
+376,1979,Belgium,Hey nana,0,war or conflict,0,0
+377,1979,Luxembourg,J'ai déjà vu ça dans tes yeux,0,nostalgia,0,0
+378,1979,Netherlands,Colorado,0,nostalgia,0,0
+379,1979,Sweden,Satellit,0,empowerment,0,0
+380,1979,Norway,Oliver,0,party / celebration,0,0
+381,1979,United Kingdom,Mary Ann,0,party / celebration,0,0
+382,1979,Austria,Heute in Jerusalem,0,heartbreak,0,0
+383,1979,Spain,Su canción,0,hope,0,0
+384,1980,Austria,Du bist Musik,0,party / celebration,0,0
+385,1980,Turkey,Pet'r Oil,0,love,0,0
+386,1980,Greece,Autostop (Ωτοστόπ),0,war or conflict,0,0
+387,1980,Luxembourg,Papa pingouin,0,spirituality,0,0
+388,1980,Morocco,Bitaqat hub (بطاقة حب),0,love,0,0
+389,1980,Italy,Non so che darei,0,love,0,0
+390,1980,Denmark,Tænker altid på dig,0,hope,0,0
+391,1980,Sweden,Just nu!,0,loneliness,0,0
+392,1980,Switzerland,Cinéma,0,empowerment,0,0
+393,1980,Finland,Huilumies,0,nature,0,0
+394,1980,Norway,Sámiid ædnan,0,nature,0,0
+395,1980,Germany,Theater,0,empowerment,0,0
+396,1980,United Kingdom,Love Enough for Two,0,party / celebration,0,0
+397,1980,Portugal,"Um grande, grande amor",0,love,0,0
+398,1980,Netherlands,Amsterdam,0,nostalgia,0,0
+399,1980,France,"Hé, hé, m'sieurs dames",0,party / celebration,0,0
+400,1980,Ireland,What's Another Year,1,party / celebration,0,0
+401,1980,Spain,Quédate esta noche,0,love,0,0
+402,1980,Belgium,Euro-Vision,0,party / celebration,0,0
+403,1981,Austria,Wenn du da bist,0,loneliness,0,0
+404,1981,Turkey,Dönme dolap,0,love,0,0
+405,1981,Germany,Johnny Blue,0,empowerment,0,0
+406,1981,Luxembourg,C'est peut-être pas l'Amérique,0,party / celebration,0,0
+407,1981,Israel,Halayla (הלילה),0,love,0,0
+408,1981,Denmark,Krøller eller ej,0,hope,0,0
+409,1981,Yugoslavia,Lejla,0,love,0,0
+410,1981,Finland,Reggae OK,0,hope,0,0
+411,1981,France,Humanahum,0,war or conflict,0,0
+412,1981,Spain,Y sólo tú,0,loneliness,0,0
+413,1981,Netherlands,Het is een wonder,0,love,0,0
+414,1981,Ireland,Horoscopes,0,party / celebration,0,0
+415,1981,Norway,Aldri i livet,0,nostalgia,0,0
+416,1981,United Kingdom,Making Your Mind Up,1,party / celebration,0,0
+417,1981,Portugal,Playback,0,party / celebration,0,0
+418,1981,Belgium,Samson,0,love,0,0
+419,1981,Greece,Feggari kalokerino (Φεγγάρι καλοκαιρινό),0,love,0,0
+420,1981,Cyprus,Monika (Μόνικα),0,love,0,0
+421,1981,Switzerland,Io senza te,0,love,0,0
+422,1981,Sweden,Fångad i en dröm,0,party / celebration,0,0
+423,1982,Portugal,Bem bom,0,heartbreak,0,0
+424,1982,Luxembourg,Cours après le temps,0,heartbreak,0,0
+425,1982,Norway,Adieu,0,love,0,0
+426,1982,United Kingdom,One Step Further,0,party / celebration,0,0
+427,1982,Turkey,Hani?,0,love,0,0
+428,1982,Finland,Nuku pommiin,0,hope,0,0
+429,1982,Switzerland,Amour on t'aime,0,love,0,0
+430,1982,Cyprus,Mono i agapi (Μόνο η αγάπη),0,heartbreak,0,0
+431,1982,Sweden,Dag efter dag,0,hope,0,0
+432,1982,Austria,Sonntag,0,loneliness,0,0
+433,1982,Belgium,Si tu aimes ma musique,0,love,0,0
+434,1982,Spain,Él,0,party / celebration,0,0
+435,1982,Denmark,"Video, video",0,loneliness,0,0
+436,1982,Yugoslavia,"Halo, halo (Хало, хало)",0,love,0,0
+437,1982,Israel,Hora (הורה),0,love,0,0
+438,1982,Netherlands,Jij en ik,0,hope,0,0
+439,1982,Ireland,"Here Today, Gone Tomorrow",0,party / celebration,0,0
+440,1982,Germany,Ein bißchen Frieden,1,hope,0,0
+441,1983,France,Vivre,0,love,0,0
+442,1983,Norway,Do re mi,0,loneliness,0,0
+443,1983,United Kingdom,I'm Never Giving Up,0,party / celebration,0,0
+444,1983,Sweden,Främling,0,love,0,0
+445,1983,Italy,Per Lucia,0,party / celebration,0,0
+446,1983,Turkey,Opera,0,love,0,0
+447,1983,Spain,¿Quién maneja mi barca?,0,nature,0,0
+448,1983,Switzerland,Io così non ci sto,0,love,0,0
+449,1983,Finland,Fantasiaa,0,loneliness,0,0
+450,1983,Greece,Mou les (Μου λες),0,nostalgia,0,0
+451,1983,Netherlands,Sing Me a Song,0,empowerment,0,0
+452,1983,Yugoslavia,Džuli (Џули),0,loneliness,0,0
+453,1983,Cyprus,I agapi akoma zi (Η αγάπη ακόμα ζει),0,heartbreak,0,0
+454,1983,Germany,Rücksicht,0,loneliness,0,0
+455,1983,Denmark,Kloden drejer,0,war or conflict,0,0
+456,1983,Israel,Khay (חי),0,love,0,0
+457,1983,Portugal,Esta balada que te dou,0,nostalgia,0,0
+458,1983,Austria,Hurricane,0,loneliness,0,0
+459,1983,Belgium,Rendez-vous,0,party / celebration,0,0
+460,1983,Luxembourg,Si la vie est cadeau,1,love,0,0
+461,1984,Sweden,Diggi-loo diggi-ley,1,love,0,0
+462,1984,Luxembourg,100% d'amour,0,love,0,0
+463,1984,France,Autant d'amoureux que d'étoiles,0,love,0,0
+464,1984,Spain,"Lady, Lady",0,love,0,0
+465,1984,Norway,Lenge leve livet,0,war or conflict,0,0
+466,1984,United Kingdom,Love Games,0,party / celebration,0,0
+467,1984,Cyprus,Anna Maria Lena (Άννα Μαρία Λένα),0,love,0,0
+468,1984,Belgium,Avanti la vie,0,empowerment,0,0
+469,1984,Ireland,Terminal 3,0,party / celebration,0,0
+470,1984,Denmark,Det' lige det,0,spirituality,0,0
+471,1984,Netherlands,Ik hou van jou,0,loneliness,0,0
+472,1984,Yugoslavia,"Ciao, amore",0,love,0,0
+473,1984,Austria,Einfach weg,0,loneliness,0,0
+474,1984,Germany,Aufrecht geh'n,0,heartbreak,0,0
+475,1984,Turkey,Halay,0,love,0,0
+476,1984,Finland,Hengaillaan,0,loneliness,0,0
+477,1984,Switzerland,Welche Farbe hat der Sonnenschein?,0,nature,0,0
+478,1984,Italy,I treni di Tozeur,0,nostalgia,0,0
+479,1984,Portugal,Silêncio e tanta gente,0,love,0,0
+480,1985,Ireland,Wait Until the Weekend Comes,0,party / celebration,0,0
+481,1985,Finland,Eläköön elämä,0,hope,0,0
+482,1985,Cyprus,To katalava arga (Το κατάλαβα αργά),0,love,0,0
+483,1985,Denmark,Sku' du spørg' fra no'en?,0,party / celebration,0,0
+484,1985,Spain,La fiesta terminó,0,love,0,0
+485,1985,France,Femme dans ses rêves aussi,0,love,0,0
+486,1985,Turkey,Didai didai dai (Aşık oldum),0,love,0,0
+487,1985,Belgium,Laat me nu gaan,0,loneliness,0,0
+488,1985,Portugal,"Penso em ti, eu sei",0,heartbreak,0,0
+489,1985,Germany,Für alle,0,hope,0,0
+490,1985,Israel,"Olé, olé (עולה, עולה)",0,love,0,0
+491,1985,Italy,Magic Oh Magic,0,hope,0,0
+492,1985,Norway,La det swinge,1,nostalgia,0,0
+493,1985,United Kingdom,Love Is…,0,party / celebration,0,0
+494,1985,Switzerland,"Piano, piano",0,love,0,0
+495,1985,Sweden,Bra vibrationer,0,love,0,0
+496,1985,Austria,Kinder dieser Welt,0,hope,0,0
+497,1985,Luxembourg,"Children, Kinder, enfants",0,heartbreak,0,0
+498,1985,Greece,Miazoume (Μοιάζουμε),0,heartbreak,0,0
+499,1986,Luxembourg,L'amour de ma vie,0,love,0,0
+500,1986,Yugoslavia,Željo moja,0,loneliness,0,0
+501,1986,France,Européennes,0,empowerment,0,0
+502,1986,Norway,Romeo,0,love,0,0
+503,1986,United Kingdom,Runner in the Night,0,party / celebration,0,0
+504,1986,Iceland,Gleðibankinn,0,hope,0,0
+505,1986,Netherlands,Alles heeft ritme,0,hope,0,0
+506,1986,Turkey,Halley,0,hope,0,0
+507,1986,Spain,Valentino,0,love,0,0
+508,1986,Switzerland,Pas pour moi,0,party / celebration,0,0
+509,1986,Israel,Yavo yom (יבוא יום),0,love,0,0
+510,1986,Ireland,You Can Count on Me,0,party / celebration,0,0
+511,1986,Belgium,J'aime la vie,1,love,0,0
+512,1986,Germany,Über die Brücke geh'n,0,love,0,0
+513,1986,Cyprus,Tora zo (Τώρα ζω),0,spirituality,0,0
+514,1986,Austria,Die Zeit ist einsam,0,loneliness,0,0
+515,1986,Sweden,E' de' det här du kallar kärlek?,0,love,0,0
+516,1986,Denmark,Du er fuld af løgn,0,hope,0,0
+517,1986,Finland,Never the End (Päivä kahden ihmisen),0,nostalgia,0,0
+518,1986,Portugal,Não sejas mau para mim,0,love,0,0
+519,1987,Norway,Mitt liv,0,hope,0,0
+520,1987,Israel,Shir habatlanim (שיר הבטלנים),0,nostalgia,0,0
+521,1987,Austria,Nur noch Gefühl,0,loneliness,0,0
+522,1987,Iceland,Hægt og hljótt,0,hope,0,0
+523,1987,Belgium,Soldiers of Love,0,war or conflict,0,0
+524,1987,Sweden,Boogaloo,0,nostalgia,0,0
+525,1987,Italy,Gente di mare,0,war or conflict,0,0
+526,1987,Portugal,Neste barco à vela,0,loneliness,0,0
+527,1987,Spain,No estás solo,0,love,0,0
+528,1987,Turkey,Şarkım sevgi üstüne,0,love,0,0
+529,1987,Greece,Stop (Στοπ),0,loneliness,0,0
+530,1987,Netherlands,Rechtop in de wind,0,heartbreak,0,0
+531,1987,Luxembourg,"Amour, amour",0,love,0,0
+532,1987,United Kingdom,Only the Light,0,party / celebration,0,0
+533,1987,France,Les mots d'amour n'ont pas de dimanche,0,love,0,0
+534,1987,Germany,Lass die Sonne in dein Herz,0,empowerment,0,0
+535,1987,Cyprus,Aspro-mavro (Άσπρο-μαύρο),0,hope,0,0
+536,1987,Finland,Sata salamaa,0,love,0,0
+537,1987,Denmark,En lille melodi,0,nature,0,0
+538,1987,Ireland,Hold Me Now,1,party / celebration,0,0
+539,1987,Yugoslavia,Ja sam za ples,0,hope,0,0
+540,1987,Switzerland,"Moitié, moitié",0,love,0,0
+541,1988,Iceland,Þú og þeir (Sókrates),0,nostalgia,0,0
+542,1988,Sweden,Stad i ljus,0,empowerment,0,0
+543,1988,Finland,Nauravat silmät muistetaan,0,loneliness,0,0
+544,1988,United Kingdom,Go,0,party / celebration,0,0
+545,1988,Turkey,Sufi,0,love,0,0
+546,1988,Spain,La chica que yo quiero (Made in Spain),0,nature,0,0
+547,1988,Netherlands,Shangri-La,0,love,0,0
+548,1988,Israel,Ben adam (בן אדם),0,heartbreak,0,0
+549,1988,Switzerland,Ne partez pas sans moi,1,love,0,0
+550,1988,Ireland,Take Him Home,0,party / celebration,0,0
+551,1988,Germany,Lied für einen Freund,0,nostalgia,0,0
+552,1988,Austria,Lisa Mona Lisa,0,hope,0,0
+553,1988,Denmark,Ka' du se hva' jeg sa'?,0,hope,0,0
+554,1988,Greece,Kloun (Κλόουν),0,party / celebration,0,0
+555,1988,Norway,For vår jord,0,nature,0,0
+556,1988,Belgium,Laissez briller le soleil,0,nature,0,0
+557,1988,Luxembourg,Croire,0,love,0,0
+558,1988,Italy,Vivo (Ti scrivo),0,love,0,0
+559,1988,France,Chanteur de charme,0,hope,0,0
+560,1988,Portugal,Voltarei,0,love,0,0
+561,1988,Yugoslavia,Mangup,0,loneliness,0,0
+562,1989,Italy,Avrei voluto,0,heartbreak,0,0
+563,1989,Israel,Derekh hamelekh (דרך המלך),0,love,0,0
+564,1989,Ireland,The Real Me,0,party / celebration,0,0
+565,1989,Netherlands,Blijf zoals je bent,0,love,0,0
+566,1989,Turkey,Bana bana,0,loneliness,0,0
+567,1989,Belgium,Door de wind,0,loneliness,0,0
+568,1989,United Kingdom,Why Do I Always Get It Wrong?,0,party / celebration,0,0
+569,1989,Norway,Venners nærhet,0,empowerment,0,0
+570,1989,Portugal,Conquistador,0,war or conflict,0,0
+571,1989,Sweden,En dag,0,hope,0,0
+572,1989,Luxembourg,Monsieur,0,love,0,0
+573,1989,Denmark,Vi maler byen rød,0,hope,0,0
+574,1989,Austria,Nur ein Lied,0,love,0,0
+575,1989,Finland,La dolce vita,0,hope,0,0
+576,1989,France,J'ai volé la vie,0,loneliness,0,0
+577,1989,Spain,Nacida para amar,0,love,0,0
+578,1989,Cyprus,Apopse as vrethume (Απόψε ας βρεθούμε),0,party / celebration,0,0
+579,1989,Switzerland,Viver senza tei,0,loneliness,0,0
+580,1989,Greece,To diko sou asteri (Το δικό σου αστέρι),0,empowerment,0,0
+581,1989,Iceland,Það sem enginn sér,0,hope,0,0
+582,1989,Germany,Flieger,0,hope,0,0
+583,1989,Yugoslavia,Rock Me,1,party / celebration,0,0
+584,1990,Spain,Bandido,0,love,0,0
+585,1990,Greece,Horis skopo (Χωρίς σκοπό),0,party / celebration,0,0
+586,1990,Belgium,Macédomienne,0,love,0,0
+587,1990,Turkey,Gözlerinin hapsindeyim,0,heartbreak,0,0
+588,1990,Netherlands,Ik wil alles met je delen,0,nostalgia,0,0
+589,1990,Luxembourg,Quand je te rêve,0,love,0,0
+590,1990,United Kingdom,Give a Little Love Back to the World,0,party / celebration,0,0
+591,1990,Iceland,Eitt lag enn,0,empowerment,0,0
+592,1990,Norway,Brandenburger Tor,0,hope,0,0
+593,1990,Israel,Shara barkhovot (שרה ברחובות),0,loneliness,0,0
+594,1990,Denmark,Hallo hallo,0,hope,0,0
+595,1990,Switzerland,Musik klingt in die Welt hinaus,0,loneliness,0,0
+596,1990,Germany,Frei zu leben,0,love,0,0
+597,1990,France,White and Black Blues,0,love,0,0
+598,1990,Yugoslavia,Hajde da ludujemo,0,love,0,0
+599,1990,Portugal,Há sempre alguém,0,love,0,0
+600,1990,Ireland,Somewhere in Europe,0,party / celebration,0,0
+601,1990,Sweden,Som en vind,0,empowerment,0,0
+602,1990,Italy,Insieme: 1992,1,love,0,0
+603,1990,Austria,Keine Mauern mehr,0,nature,0,0
+604,1990,Cyprus,Milas poli (Μιλάς πολύ),0,love,0,0
+605,1990,Finland,Fri?,0,empowerment,0,0
+606,1991,Yugoslavia,Brazil (Бразил),0,hope,0,0
+607,1991,Iceland,Draumur um Nínu (Nína),0,loneliness,0,0
+608,1991,Malta,Could It Be,0,party / celebration,0,0
+609,1991,Greece,I anixi (Η άνοιξη),0,love,0,0
+610,1991,Switzerland,Canzone per te,0,love,0,0
+611,1991,Austria,Venedig im Regen,0,loneliness,0,0
+612,1991,Luxembourg,Un baiser volé,0,hope,0,0
+613,1991,Sweden,Fångad av en stormvind,1,love,0,0
+614,1991,France,C'est le dernier qui a parlé qui a raison,0,heartbreak,0,0
+615,1991,Turkey,İki dakika,0,love,0,0
+616,1991,Ireland,Could It Be That I'm in Love,0,party / celebration,0,0
+617,1991,Portugal,Lusitana paixão,0,spirituality,0,0
+618,1991,Denmark,Lige der hvor hjertet slår,0,love,0,0
+619,1991,Norway,Mrs. Thompson,0,empowerment,0,0
+620,1991,Israel,Kan (כאן),0,nature,0,0
+621,1991,Finland,Hullu yö,0,hope,0,0
+622,1991,Germany (United),Dieser Traum darf niemals sterben,0,love,0,0
+623,1991,Belgium,Geef het op,0,nostalgia,0,0
+624,1991,Spain,Bailar pegados,0,nature,0,0
+625,1991,United Kingdom,A Message to Your Heart,0,party / celebration,0,0
+626,1991,Cyprus,S.O.S.,0,war or conflict,0,0
+627,1991,Italy,Comme è ddoce 'o mare,0,love,0,0
+628,1992,Spain,Todo esto es la música,0,love,0,0
+629,1992,Belgium,"Nous, on veut des violons",0,party / celebration,0,0
+630,1992,Israel,Ze rak sport (זה רק ספורט),0,hope,0,0
+631,1992,Turkey,Yaz bitti,0,love,0,0
+632,1992,Greece,Olou tou kosmou i Elpida (Όλου του κόσμου η Ελπίδα),0,hope,0,0
+633,1992,France,Monté la riviè,0,love,0,0
+634,1992,Sweden,I morgon är en annan dag,0,hope,0,0
+635,1992,Portugal,Amor d'água fresca,0,love,0,0
+636,1992,Cyprus,Teriazoume (Ταιριάζουμε),0,empowerment,0,0
+637,1992,Malta,Little Child,0,party / celebration,0,0
+638,1992,Iceland,Nei eða já,0,love,0,0
+639,1992,Finland,"Yamma, yamma",0,nature,0,0
+640,1992,Switzerland,Mister Music Man,0,love,0,0
+641,1992,Luxembourg,Sou fräi,0,empowerment,0,0
+642,1992,Austria,Zusammen geh'n,0,love,0,0
+643,1992,United Kingdom,One Step Out of Time,0,party / celebration,0,0
+644,1992,Ireland,Why Me?,1,party / celebration,0,0
+645,1992,Denmark,Alt det som ingen ser,0,loneliness,0,0
+646,1992,Italy,Rapsodia,0,nostalgia,0,0
+647,1992,Fr Yugoslavia (Serbia And Montenegro),Ljubim te pesmama (Љубим те песмама),0,nostalgia,0,0
+648,1992,Norway,Visjoner,0,hope,0,0
+649,1992,Germany,Träume sind für alle da,0,hope,0,0
+650,1992,Netherlands,Wijs me de weg,0,love,0,0
+651,1993,Italy,Sole d'Europa,0,hope,0,0
+652,1993,Turkey,Esmer yarim,0,love,0,0
+653,1993,Germany,Viel zu weit,0,hope,0,0
+654,1993,Switzerland,"Moi, tout simplement",0,party / celebration,0,0
+655,1993,Denmark,Under stjernerne på himlen,0,nature,0,0
+656,1993,Greece,"Ellada, hora tou fotos (Ελλάδα, χώρα του φωτός)",0,war or conflict,0,0
+657,1993,Belgium,Iemand als jij,0,love,0,0
+658,1993,Malta,This Time,0,party / celebration,0,0
+659,1993,Iceland,Þá veistu svarið,0,empowerment,0,0
+660,1993,Austria,Maria Magdalena,0,empowerment,0,0
+661,1993,Portugal,A cidade (Até ser dia),0,party / celebration,0,0
+662,1993,France,Mama Corsica,0,love,0,0
+663,1993,Sweden,Eloise,0,hope,0,0
+664,1993,Ireland,In Your Eyes,1,party / celebration,0,0
+665,1993,Luxembourg,Donne-moi une chance,0,loneliness,0,0
+666,1993,Slovenia,Tih deževen dan,0,nature,0,0
+667,1993,Finland,Tule luo,0,hope,0,0
+668,1993,Bosnia And Herzegovina,Sva bol svijeta,0,love,0,0
+669,1993,United Kingdom,Better the Devil You Know,0,party / celebration,0,0
+670,1993,Netherlands,Vrede,0,nature,0,0
+671,1993,Croatia,Don't Ever Cry,0,love,0,0
+672,1993,Spain,Hombres,0,nature,0,0
+673,1993,Cyprus,Mi stamatas (Μη σταματάς),0,loneliness,0,0
+674,1993,Israel,Shiru (שירו),0,spirituality,0,0
+675,1993,Norway,Alle mine tankar,0,spirituality,0,0
+676,1994,Sweden,Stjärnorna,0,loneliness,0,0
+677,1994,Finland,Bye Bye Baby,0,nostalgia,0,0
+678,1994,Ireland,Rock 'n' Roll Kids,1,party / celebration,0,0
+679,1994,Cyprus,Ime anthropos ki ego (Είμαι άνθρωπος κι εγώ),0,heartbreak,0,0
+680,1994,Iceland,Nætur,0,hope,0,0
+681,1994,United Kingdom,We Will Be Free (Lonely Symphony),0,party / celebration,0,0
+682,1994,Croatia,Nek' ti bude ljubav sva,0,love,0,0
+683,1994,Portugal,Chamar a música,0,love,0,0
+684,1994,Switzerland,Sto pregando,0,hope,0,0
+685,1994,Estonia,Nagu merelaine,0,nature,0,0
+686,1994,Romania,Dincolo de nori,0,empowerment,0,0
+687,1994,Malta,More Than Love,0,party / celebration,0,0
+688,1994,Netherlands,Waar is de zon,0,war or conflict,0,0
+689,1994,Germany,Wir geben 'ne Party,0,party / celebration,0,0
+690,1994,Slovakia,Nekonečná pieseň,0,hope,0,0
+691,1994,Lithuania,Lopšinė mylimai,0,loneliness,0,0
+692,1994,Norway,Duett,0,love,0,0
+693,1994,Bosnia And Herzegovina,Ostani kraj mene,0,loneliness,0,0
+694,1994,Greece,To trehandiri (Diri diri) (Το τρεχαντήρι (Ντίρι ντίρι)),0,empowerment,0,0
+695,1994,Austria,Für den Frieden der Welt,0,love,0,0
+696,1994,Spain,Ella no es ella,0,nature,0,0
+697,1994,Hungary,Kinek mondjam el vétkeimet?,0,loneliness,0,0
+698,1994,Russia,Vechnyy strannik (Вечный странник),0,loneliness,0,0
+699,1994,Poland,To nie ja!,0,empowerment,0,0
+700,1994,France,Je suis un vrai garçon,0,nature,0,0
+701,1995,Poland,Sama,0,loneliness,0,0
+702,1995,Ireland,Dreamin',0,party / celebration,0,0
+703,1995,Germany,Verliebt in Dich,0,loneliness,0,0
+704,1995,Bosnia And Herzegovina,Dvadeset prvi vijek,0,loneliness,0,0
+705,1995,Norway,Nocturne,1,empowerment,0,0
+706,1995,Russia,Kolybel'naya dlya vulkana (Колыбельная для вулкана),0,nature,0,0
+707,1995,Iceland,Núna,0,love,0,0
+708,1995,Austria,Die Welt dreht sich verkehrt,0,hope,0,0
+709,1995,Spain,Vuelve conmigo,0,loneliness,0,0
+710,1995,Turkey,Sev,0,love,0,0
+711,1995,Croatia,Nostalgija,0,nostalgia,0,0
+712,1995,France,Il me donne rendez-vous,0,spirituality,0,0
+713,1995,Hungary,Új név a régi ház falán,0,hope,0,0
+714,1995,Belgium,La voix est libre,0,spirituality,0,0
+715,1995,United Kingdom,Love City Groove,0,party / celebration,0,0
+716,1995,Portugal,Baunilha e chocolate,0,love,0,0
+717,1995,Cyprus,Sti fotia (Στη φωτιά),0,loneliness,0,0
+718,1995,Sweden,Se på mig,0,love,0,0
+719,1995,Denmark,Fra Mols til Skagen,0,heartbreak,0,0
+720,1995,Slovenia,Prisluhni mi,0,love,0,0
+721,1995,Israel,Amen (אמן),0,spirituality,0,0
+722,1995,Malta,Keep Me in Mind,0,party / celebration,0,0
+723,1995,Greece,Pia prosefhi (Ποια προσευχή),0,loneliness,0,0
+724,1996,Turkey,Beşinci mevsim,0,nostalgia,0,0
+725,1996,United Kingdom,Ooh Aah... Just a Little Bit,0,party / celebration,0,0
+726,1996,Spain,"¡Ay, qué deseo!",0,love,0,0
+727,1996,Portugal,O meu coração não tem cor,0,nostalgia,0,0
+728,1996,Cyprus,Mono yia mas (Μόνο για μας),0,love,0,0
+729,1996,Malta,In a Woman's Heart,0,party / celebration,0,0
+730,1996,Croatia,Sveta ljubav,0,love,0,0
+731,1996,Austria,Weil's dr guat got,0,hope,0,0
+732,1996,Switzerland,Mon cœur l'aime,0,loneliness,0,0
+733,1996,Greece,Emis forame to himona anixiatika (Εμείς φοράμε το χειμώνα ανοιξιάτικα),0,love,0,0
+734,1996,Estonia,Kaelakee hääl,0,nature,0,0
+735,1996,Norway,I evighet,0,love,0,0
+736,1996,France,Diwanit bugale,0,nostalgia,0,0
+737,1996,Slovenia,Dan najlepših sanj,0,love,0,0
+738,1996,Netherlands,De eerste keer,0,love,0,0
+739,1996,Belgium,Liefde is een kaartspel,0,love,0,0
+740,1996,Ireland,The Voice,1,party / celebration,0,0
+741,1996,Finland,Niin kaunis on taivas,0,love,0,0
+742,1996,Iceland,Sjúbídú,0,love,0,0
+743,1996,Poland,Chcę znać swój grzech...,0,love,0,0
+744,1996,Bosnia And Herzegovina,Za našu ljubav,0,love,0,0
+745,1996,Slovakia,Kým nás máš,0,love,0,0
+746,1996,Sweden,Den vilda,0,nature,0,0
+747,1997,Cyprus,Mana mou (Μάνα μου),0,spirituality,0,0
+748,1997,Turkey,Dinle,0,loneliness,0,0
+749,1997,Norway,San Francisco,0,love,0,0
+750,1997,Austria,One Step,0,love,0,0
+751,1997,Ireland,Mysterious Woman,0,party / celebration,0,0
+752,1997,Slovenia,Zbudi se,0,heartbreak,0,0
+753,1997,Switzerland,Dentro di me,0,loneliness,0,0
+754,1997,Netherlands,Niemand heeft nog tijd,0,loneliness,0,0
+755,1997,Italy,Fiumi di parole,0,heartbreak,0,0
+756,1997,Spain,Sin rencor,0,love,0,0
+757,1997,Germany,Zeit,0,loneliness,0,0
+758,1997,Poland,Ale jestem,0,nature,0,0
+759,1997,Estonia,Keelatud maa,0,hope,0,0
+760,1997,Bosnia And Herzegovina,Goodbye,0,nostalgia,0,0
+761,1997,Portugal,Antes do adeus,0,nostalgia,0,0
+762,1997,Sweden,Bara hon älskar mig,0,heartbreak,0,0
+763,1997,Greece,Horepse (Χόρεψε),0,spirituality,0,0
+764,1997,Malta,Let Me Fly,0,party / celebration,0,0
+765,1997,Hungary,"Miért kell, hogy elmenj?",0,nostalgia,0,0
+766,1997,Russia,Primadonna (Примадонна),0,heartbreak,0,0
+767,1997,Denmark,Stemmen i mit liv,0,loneliness,0,0
+768,1997,France,Sentiments songes,0,love,0,0
+769,1997,Croatia,Probudi me,0,love,0,0
+770,1997,United Kingdom,Love Shine a Light,1,party / celebration,0,0
+771,1997,Iceland,Minn hinsti dans,0,loneliness,0,0
+772,1998,Croatia,Neka mi ne svane,0,hope,0,0
+773,1998,Greece,Mia krifi evesthisia (Μια κρυφή ευαισθησία),0,empowerment,0,0
+774,1998,France,Où aller,0,hope,0,0
+775,1998,Spain,¿Qué voy a hacer sin ti?,0,love,0,0
+776,1998,Switzerland,Lass ihn,0,party / celebration,0,0
+777,1998,Slovakia,Modlitba,0,love,0,0
+778,1998,Poland,To takie proste,0,nature,0,0
+779,1998,Israel,Diva (דיווה),1,love,0,0
+780,1998,Germany,Guildo hat euch lieb!,0,love,0,0
+781,1998,Malta,The One That I Love,0,party / celebration,0,0
+782,1998,Hungary,A holnap már nem lesz szomorú,0,empowerment,0,0
+783,1998,Slovenia,Naj bogovi slišijo,0,heartbreak,0,0
+784,1998,Ireland,Is Always Over Now?,0,party / celebration,0,0
+785,1998,Portugal,Se eu te pudesse abraçar,0,hope,0,0
+786,1998,Romania,Eu cred,0,nostalgia,0,0
+787,1998,United Kingdom,Where Are You?,0,party / celebration,0,0
+788,1998,Cyprus,Genesis (Γένεσις),0,hope,0,0
+789,1998,Netherlands,Hemel en aarde,0,nature,0,0
+790,1998,Sweden,Kärleken är,0,love,0,0
+791,1998,Belgium,Dis oui,0,loneliness,0,0
+792,1998,Finland,Aava,0,nature,0,0
+793,1998,Norway,Alltid sommer,0,love,0,0
+794,1998,Estonia,Mere lapsed,0,hope,0,0
+795,1998,Turkey,Unutamazsın,0,loneliness,0,0
+796,1998,Macedonia,"Ne zori, zoro (Не зори, зоро)",0,heartbreak,0,0
+797,1999,Lithuania,Strazdas,0,nature,0,0
+798,1999,Belgium,Like the Wind,0,party / celebration,0,0
+799,1999,Spain,No quiero escuchar,0,heartbreak,0,0
+800,1999,Croatia,Marija Magdalena,0,love,0,0
+801,1999,United Kingdom,Say It Again,0,party / celebration,0,0
+802,1999,Slovenia,For a Thousand Years,0,party / celebration,0,0
+803,1999,Turkey,Dön artık,0,loneliness,0,0
+804,1999,Norway,Living My Life Without You,0,party / celebration,0,0
+805,1999,Denmark,This Time I Mean It,0,party / celebration,0,0
+806,1999,France,Je veux donner ma voix,0,war or conflict,0,0
+807,1999,Netherlands,One Good Reason,0,party / celebration,0,0
+808,1999,Poland,Przytul mnie mocno,0,hope,0,0
+809,1999,Iceland,All Out of Luck,0,party / celebration,0,0
+810,1999,Cyprus,Tha'ne erotas (Θα'ναι έρωτας),0,love,0,0
+811,1999,Sweden,Take Me to Your Heaven,1,party / celebration,0,0
+812,1999,Portugal,Como tudo começou,0,love,0,0
+813,1999,Ireland,When You Need Me,0,party / celebration,0,0
+814,1999,Austria,Reflection,0,party / celebration,0,0
+815,1999,Israel,Happy Birthday (Yom huledet) (יום הולדת),0,party / celebration,0,0
+816,1999,Malta,Believe 'n Peace,0,party / celebration,0,0
+817,1999,Germany,Reise nach Jerusalem – Kudüs'e seyahat,0,empowerment,0,0
+818,1999,Bosnia And Herzegovina,Putnici,0,love,0,0
+819,1999,Estonia,Diamond of Night,0,party / celebration,0,0
+820,2000,Israel,Sameakh (שמח),0,war or conflict,0,0
+821,2000,Netherlands,No Goodbyes,0,party / celebration,0,0
+822,2000,United Kingdom,Don't Play That Song Again,0,party / celebration,0,0
+823,2000,Estonia,Once in a Lifetime,0,party / celebration,0,0
+824,2000,France,On aura le ciel,0,nature,0,0
+825,2000,Romania,The Moon,0,party / celebration,0,0
+826,2000,Malta,Desire,0,party / celebration,0,0
+827,2000,Norway,My Heart Goes Boom,0,party / celebration,0,0
+828,2000,Russia,Solo,0,party / celebration,0,0
+829,2000,Belgium,Envie de vivre,0,love,0,0
+830,2000,Cyprus,Nomiza (Νόμιζα),0,love,0,0
+831,2000,Iceland,Tell Me!,0,party / celebration,0,0
+832,2000,Spain,Colgado de un sueño,0,hope,0,0
+833,2000,Denmark,Fly on the Wings of Love,1,party / celebration,0,0
+834,2000,Germany,Wadde hadde dudde da?,0,hope,0,0
+835,2000,Switzerland,La vita cos'è?,0,love,0,0
+836,2000,Croatia,Kad zaspu anđeli,0,love,0,0
+837,2000,Sweden,When Spirits Are Calling My Name,0,party / celebration,0,0
+838,2000,Macedonia,100% te ljubam (100% те љубам),0,love,0,0
+839,2000,Finland,A Little Bit,0,party / celebration,0,0
+840,2000,Latvia,My Star,0,party / celebration,0,0
+841,2000,Turkey,Yorgunum anla,0,heartbreak,0,0
+842,2000,Ireland,Millennium of Love,0,party / celebration,0,0
+843,2000,Austria,All to You,0,party / celebration,0,0
+844,2001,Netherlands,Out On My Own,0,party / celebration,0,0
+845,2001,Iceland,Angel,0,party / celebration,0,0
+846,2001,Bosnia And Herzegovina,Hano,0,love,0,0
+847,2001,Norway,On My Own,0,party / celebration,0,0
+848,2001,Israel,En davar (אין דבר),0,love,0,0
+849,2001,Russia,Lady Alpine Blue,0,party / celebration,0,0
+850,2001,Sweden,Listen to Your Heartbeat,0,party / celebration,0,0
+851,2001,Lithuania,You Got Style,0,party / celebration,0,0
+852,2001,Latvia,Too Much,0,party / celebration,0,0
+853,2001,Croatia,Strings of My Heart,0,party / celebration,0,0
+854,2001,Portugal,Só sei ser feliz assim,0,love,0,0
+855,2001,Ireland,Without Your Love,0,party / celebration,0,0
+856,2001,Spain,Dile que la quiero,0,love,0,0
+857,2001,France,Je n'ai que mon âme,0,love,0,0
+858,2001,Turkey,Sevgiliye son,0,loneliness,0,0
+859,2001,United Kingdom,No Dream Impossible,0,party / celebration,0,0
+860,2001,Slovenia,Energy,0,party / celebration,0,0
+861,2001,Poland,2 Long,0,party / celebration,0,0
+862,2001,Germany,Wer Liebe lebt,0,love,0,0
+863,2001,Estonia,Everybody,1,party / celebration,0,0
+864,2001,Malta,Another Summer Night,0,party / celebration,0,0
+865,2001,Greece,(I Would) Die for You,0,love,0,0
+866,2001,Denmark,Never Ever Let You Go,0,party / celebration,0,0
+867,2002,Cyprus,Gimme,0,party / celebration,0,0
+868,2002,United Kingdom,Come Back,0,party / celebration,0,0
+869,2002,Austria,Say a Word,0,party / celebration,0,0
+870,2002,Greece,S.A.G.A.P.O.,0,party / celebration,0,0
+871,2002,Spain,Europe's Living a Celebration,0,party / celebration,0,0
+872,2002,Croatia,Everything I Want,0,party / celebration,0,0
+873,2002,Russia,Northern Girl,0,party / celebration,0,0
+874,2002,Estonia,Runaway,0,party / celebration,0,0
+875,2002,Macedonia,Od nas zavisi (Од нас зависи),0,love,0,0
+876,2002,Israel,Light a Candle (Nadlik beyakhad ner) (נדליק ביחד נר),0,love,0,0
+877,2002,Switzerland,Dans le jardin de mon âme,0,love,0,0
+878,2002,Sweden,Never Let It Go,0,party / celebration,0,0
+879,2002,Finland,Addicted to You,0,party / celebration,0,0
+880,2002,Denmark,Tell Me Who You Are,0,party / celebration,0,0
+881,2002,Bosnia And Herzegovina,Na jastuku za dvoje (На јастуку за двоје),0,loneliness,0,0
+882,2002,Belgium,Sister,0,party / celebration,0,0
+883,2002,France,Il faut du temps (Je me battrai pour ça),0,war or conflict,0,0
+884,2002,Germany,I Can't Live Without Music,0,party / celebration,0,0
+885,2002,Turkey,Leylaklar soldu kalbinde,0,loneliness,0,0
+886,2002,Malta,7th Wonder,0,party / celebration,0,0
+887,2002,Romania,Tell Me Why,0,party / celebration,0,0
+888,2002,Slovenia,Samo ljubezen,0,love,0,0
+889,2002,Latvia,I Wanna,1,party / celebration,0,0
+890,2002,Lithuania,Happy You,0,party / celebration,0,0
+891,2003,Iceland,Open Your Heart,0,party / celebration,0,0
+892,2003,Austria,Weil der Mensch zählt,0,nature,0,0
+893,2003,Ireland,We've Got the World,0,party / celebration,0,0
+894,2003,Turkey,Everyway That I Can,1,party / celebration,0,0
+895,2003,Malta,To Dream Again,0,party / celebration,0,0
+896,2003,Bosnia And Herzegovina,Ne brini,0,loneliness,0,0
+897,2003,Portugal,Deixa-me sonhar (Só mais uma vez),0,empowerment,0,0
+898,2003,Croatia,Više nisam tvoja,0,love,0,0
+899,2003,Cyprus,Feeling Alive,0,party / celebration,0,0
+900,2003,Germany,Let's Get Happy,0,party / celebration,0,0
+901,2003,Russia,"Ne ver', ne boysya (Не верь, не бойся)",0,nature,0,0
+902,2003,Spain,Dime,0,nostalgia,0,0
+903,2003,Israel,Words for Love (Milim la'ahava) (מילים לאהבה),0,love,0,0
+904,2003,Netherlands,One More Night,0,party / celebration,0,0
+905,2003,United Kingdom,Cry Baby,0,party / celebration,0,0
+906,2003,Ukraine,Hasta la vista,0,party / celebration,0,0
+907,2003,Greece,Never Let You Go,0,party / celebration,0,0
+908,2003,Norway,I'm Not Afraid to Move On,0,party / celebration,0,0
+909,2003,France,Monts et merveilles,0,love,0,0
+910,2003,Poland,Keine Grenzen – Żadnych granic,0,love,0,0
+911,2003,Latvia,Hello from Mars,0,party / celebration,0,0
+912,2003,Belgium,Sanomi,0,nature,0,0
+913,2003,Estonia,Eighties Coming Back,0,party / celebration,0,0
+914,2003,Romania,Don't Break My Heart,0,party / celebration,0,0
+915,2003,Sweden,Give Me Your Love,0,party / celebration,0,0
+916,2003,Slovenia,Nanana,0,party / celebration,0,0
+917,2004,Finland,Takes 2 to Tango,0,party / celebration,0,0
+918,2004,Belarus,My Galileo,0,party / celebration,0,0
+919,2004,Switzerland,Celebrate!,0,party / celebration,0,0
+920,2004,Latvia,Dziesma par laimi,0,nature,0,0
+921,2004,Israel,To Believe (Leha'amin) (להאמין),0,hope,0,0
+922,2004,Andorra,Jugarem a estimar-nos,0,loneliness,0,0
+923,2004,Portugal,Foi magia,0,spirituality,0,0
+924,2004,Malta,On Again... Off Again,0,party / celebration,0,0
+925,2004,Monaco,Notre planète,0,nature,0,0
+926,2004,Greece,Shake It,0,party / celebration,0,0
+927,2004,Ukraine,Wild Dances (Dyki tantsi) (Дикі танці),1,party / celebration,0,0
+928,2004,Lithuania,What's Happened to Your Love?,0,party / celebration,0,0
+929,2004,Albania,The Image of You,0,party / celebration,0,0
+930,2004,Cyprus,Stronger Every Minute,0,party / celebration,0,0
+931,2004,Macedonia,Life,0,party / celebration,0,0
+932,2004,Slovenia,Stay Forever,0,party / celebration,0,0
+933,2004,Estonia,Tii,0,nature,0,0
+934,2004,Croatia,You Are the Only One,0,party / celebration,0,0
+935,2004,Denmark,Shame on You,0,party / celebration,0,0
+936,2004,Serbia And Montenegro,Lane moje (Лане моје),0,loneliness,0,0
+937,2004,Bosnia And Herzegovina,In the Disco,0,party / celebration,0,0
+938,2004,Netherlands,Without You,0,party / celebration,0,0
+939,2004,Spain,Para llenarme de ti,0,love,0,0
+940,2004,Austria,Du bist,0,nature,0,0
+941,2004,Norway,High,0,party / celebration,0,0
+942,2004,France,À chaque pas,0,war or conflict,0,0
+943,2004,Germany,Can't Wait Until Tonight,0,party / celebration,0,0
+944,2004,Belgium,1 Life,0,party / celebration,0,0
+945,2004,Russia,Believe Me,0,party / celebration,0,0
+946,2004,Iceland,Heaven,0,party / celebration,0,0
+947,2004,Ireland,If My World Stopped Turning,0,party / celebration,0,0
+948,2004,Poland,Love Song,0,party / celebration,0,0
+949,2004,United Kingdom,Hold on to Our Love,0,party / celebration,0,0
+950,2004,Turkey,For Real,0,party / celebration,0,0
+951,2004,Romania,I Admit,0,party / celebration,0,0
+952,2004,Sweden,It Hurts,0,party / celebration,0,0
+953,2005,Austria,Y así,0,party / celebration,0,0
+954,2005,Lithuania,Little by Little,0,party / celebration,0,0
+955,2005,Portugal,Amar,0,love,0,0
+956,2005,Moldova,Boonika bate doba,0,party / celebration,0,0
+957,2005,Latvia,The War Is Not Over,0,party / celebration,0,0
+958,2005,Monaco,Tout de moi,0,hope,0,0
+959,2005,Israel,Hasheket shenish'ar (השקט שנשאר),0,heartbreak,0,0
+960,2005,Belarus,Love Me Tonight,0,party / celebration,0,0
+961,2005,Netherlands,My Impossible Dream,0,party / celebration,0,0
+962,2005,Iceland,If I Had Your Love,0,party / celebration,0,0
+963,2005,Belgium,Le grand soir,0,empowerment,0,0
+964,2005,Estonia,Let's Get Loud,0,party / celebration,0,0
+965,2005,Norway,In My Dreams,0,party / celebration,0,0
+966,2005,Romania,Let Me Try,0,party / celebration,0,0
+967,2005,Hungary,"Forogj, világ!",0,heartbreak,0,0
+968,2005,Finland,Why,0,party / celebration,0,0
+969,2005,Macedonia,Make My Day,0,party / celebration,0,0
+970,2005,Andorra,La mirada interior,0,empowerment,0,0
+971,2005,Switzerland,Cool Vibes,0,party / celebration,0,0
+972,2005,Croatia,Vukovi umiru sami,0,loneliness,0,0
+973,2005,Bulgaria,Lorraine,0,party / celebration,0,0
+974,2005,Ireland,Love?,0,party / celebration,0,0
+975,2005,Slovenia,Stop,0,heartbreak,0,0
+976,2005,Denmark,Talking to You,0,party / celebration,0,0
+977,2005,Poland,Czarna dziewczyna,0,love,0,0
+978,2005,United Kingdom,Touch My Fire,0,party / celebration,0,0
+979,2005,Malta,Angel,0,party / celebration,0,0
+980,2005,Turkey,Rimi rimi ley,0,love,0,0
+981,2005,Albania,Tomorrow I Go,0,party / celebration,0,0
+982,2005,Cyprus,Ela ela (Come Baby) (Έλα έλα),0,party / celebration,0,0
+983,2005,Spain,Brujería,0,love,0,0
+984,2005,Serbia And Montenegro,Zauvijek moja (Заувијек моја),0,heartbreak,0,0
+985,2005,Sweden,Las Vegas,0,party / celebration,0,0
+986,2005,Ukraine,Razom nas bahato (Nas ne podolaty) (Разом нас багато (Нас не подолати)),0,war or conflict,0,0
+987,2005,Germany,Run & Hide,0,party / celebration,0,0
+988,2005,Greece,My Number One,1,party / celebration,0,0
+989,2005,Russia,Nobody Hurt No One,0,party / celebration,0,0
+990,2005,Bosnia And Herzegovina,Call Me,0,party / celebration,0,0
+991,2005,France,Chacun pense à soi,0,hope,0,0
+992,2006,Armenia,Without Your Love,0,party / celebration,0,0
+993,2006,Bulgaria,Let Me Cry,0,party / celebration,0,0
+994,2006,Slovenia,Mr Nobody,0,party / celebration,0,0
+995,2006,Andorra,Sense tu,0,love,0,0
+996,2006,Belarus,Mum,0,party / celebration,0,0
+997,2006,Albania,Zjarr e ftohtë,0,love,0,0
+998,2006,Belgium,Je t'adore,0,party / celebration,0,0
+999,2006,Ireland,Every Song Is a Cry for Love,0,party / celebration,0,0
+1000,2006,Cyprus,Why Angels Cry,0,party / celebration,0,0
+1001,2006,Monaco,La coco-dance,0,love,0,0
+1002,2006,Macedonia,Ninanajna (Нинанајна),0,party / celebration,0,0
+1003,2006,Poland,Follow My Heart,0,party / celebration,0,0
+1004,2006,Russia,Never Let You Go,0,party / celebration,0,0
+1005,2006,Turkey,Süper star,0,love,0,0
+1006,2006,Ukraine,Show Me Your Love,0,party / celebration,0,0
+1007,2006,Finland,Hard Rock Hallelujah,1,party / celebration,0,0
+1008,2006,Netherlands,Amambanda,0,party / celebration,0,0
+1009,2006,Lithuania,We Are the Winners,0,party / celebration,0,0
+1010,2006,Portugal,Coisas de nada (Gonna Make You Dance),0,hope,0,0
+1011,2006,Sweden,Invincible,0,party / celebration,0,0
+1012,2006,Estonia,Through My Window,0,party / celebration,0,0
+1013,2006,Bosnia And Herzegovina,Lejla,0,heartbreak,0,0
+1014,2006,Iceland,Congratulations,0,party / celebration,0,0
+1015,2006,Switzerland,If We All Give a Little,0,party / celebration,0,0
+1016,2006,Moldova,Loca,0,party / celebration,0,0
+1017,2006,Israel,Together We Are One (Ze hazman) (זה הזמן),0,love,0,0
+1018,2006,Latvia,I Hear Your Heart,0,party / celebration,0,0
+1019,2006,Norway,Alvedansen,0,love,0,0
+1020,2006,Spain,Un Blodymary,0,party / celebration,0,0
+1021,2006,Malta,I Do,0,party / celebration,0,0
+1022,2006,Germany,No No Never,0,party / celebration,0,0
+1023,2006,Denmark,Twist of Love,0,party / celebration,0,0
+1024,2006,Romania,Tornerò,0,party / celebration,0,0
+1025,2006,United Kingdom,Teenage Life,0,party / celebration,0,0
+1026,2006,Greece,Everything,0,party / celebration,0,0
+1027,2006,France,Il était temps,0,nostalgia,0,0
+1028,2006,Croatia,Moja štikla,0,nature,0,0
+1029,2007,Bulgaria,Water (Voda) (Вода),0,party / celebration,0,0
+1030,2007,Israel,Push the Button,0,party / celebration,0,0
+1031,2007,Cyprus,"Comme ci, comme ça",0,heartbreak,0,0
+1032,2007,Belarus,Work Your Magic,0,party / celebration,0,0
+1033,2007,Iceland,Valentine Lost,0,party / celebration,0,0
+1034,2007,Georgia,Visionary Dream,0,party / celebration,0,0
+1035,2007,Montenegro,"'Ajde, kroči ('Ајде, крочи)",0,love,0,0
+1036,2007,Switzerland,Vampires Are Alive,0,party / celebration,0,0
+1037,2007,Moldova,Fight,0,party / celebration,0,0
+1038,2007,Netherlands,On Top of the World,0,party / celebration,0,0
+1039,2007,Albania,Hear My Plea (Balada e gurit),0,party / celebration,0,0
+1040,2007,Denmark,Drama Queen,0,party / celebration,0,0
+1041,2007,Croatia,Vjerujem u ljubav,0,love,0,0
+1042,2007,Poland,Time to Party,0,party / celebration,0,0
+1043,2007,Serbia,Molitva (Молитва),1,love,0,0
+1044,2007,Czech Republic,Malá dáma,0,heartbreak,0,0
+1045,2007,Portugal,Dança comigo (Vem ser feliz),0,love,0,0
+1046,2007,Macedonia,Mojot svet (Мојот свет),0,party / celebration,0,0
+1047,2007,Norway,Ven a bailar conmigo,0,party / celebration,0,0
+1048,2007,Malta,Vertigo,0,party / celebration,0,0
+1049,2007,Andorra,Salvem el món (Let's Save the World),0,hope,0,0
+1050,2007,Hungary,Unsubstantial Blues,0,party / celebration,0,0
+1051,2007,Estonia,Partners in Crime,0,party / celebration,0,0
+1052,2007,Belgium,LovePower,0,party / celebration,0,0
+1053,2007,Slovenia,Cvet z juga,0,love,0,0
+1054,2007,Turkey,Shake It Up Şekerim,0,party / celebration,0,0
+1055,2007,Austria,Get a Life – Get Alive,0,party / celebration,0,0
+1056,2007,Latvia,Questa notte,0,love,0,0
+1057,2007,Bosnia And Herzegovina,Rijeka bez imena (Ријека без имена),0,loneliness,0,0
+1058,2007,Spain,I Love You Mi Vida,0,love,0,0
+1059,2007,Ireland,They Can't Stop the Spring,0,party / celebration,0,0
+1060,2007,Finland,Leave Me Alone,0,party / celebration,0,0
+1061,2007,Lithuania,Love or Leave,0,party / celebration,0,0
+1062,2007,Greece,Yassou Maria (Γειά σου Μαρία),0,party / celebration,0,0
+1063,2007,Sweden,The Worrying Kind,0,party / celebration,0,0
+1064,2007,France,L'amour à la française,0,love,0,0
+1065,2007,Russia,Song #1,0,party / celebration,0,0
+1066,2007,Germany,Frauen regier'n die Welt,0,party / celebration,0,0
+1067,2007,Ukraine,Dancing Lasha Tumbai (Данцінґ Лаша Тумбай),0,love,0,0
+1068,2007,United Kingdom,Flying the Flag (For You),0,party / celebration,0,0
+1069,2007,Romania,"Liubi, Liubi, I Love You (Люби, Люби, I love you)",0,party / celebration,0,0
+1070,2007,Armenia,Anytime You Need,0,party / celebration,0,0
+1071,2008,Montenegro,Zauvijek volim te (Заувијек волим те),0,heartbreak,0,0
+1072,2008,Israel,The Fire in Your Eyes (Ke'ilu kan) (כאילו כאן),0,hope,0,0
+1073,2008,Estonia,Leto svet,0,nature,0,0
+1074,2008,Moldova,A Century of Love,0,party / celebration,0,0
+1075,2008,San Marino,Complice,0,love,0,0
+1076,2008,Belgium,O Julissi,0,loneliness,0,0
+1077,2008,Azerbaijan,Day After Day,0,party / celebration,0,0
+1078,2008,Slovenia,Vrag naj vzame,0,love,0,0
+1079,2008,Norway,Hold on Be Strong,0,party / celebration,0,0
+1080,2008,Poland,For Life,0,party / celebration,0,0
+1081,2008,Ireland,Irelande douze pointe,0,party / celebration,0,0
+1082,2008,Andorra,Casanova,0,party / celebration,0,0
+1083,2008,Bosnia And Herzegovina,Pokušaj,0,love,0,0
+1084,2008,Armenia,"Qele, qele (Քելե, քելե)",0,war or conflict,0,0
+1085,2008,Netherlands,Your Heart Belongs to Me,0,party / celebration,0,0
+1086,2008,Finland,Missä miehet ratsastaa,0,empowerment,0,0
+1087,2008,Romania,Pe-o margine de lume,0,heartbreak,0,0
+1088,2008,Russia,Believe,1,party / celebration,0,0
+1089,2008,Greece,Secret Combination,0,party / celebration,0,0
+1090,2008,Iceland,This Is My Life,0,party / celebration,0,0
+1091,2008,Sweden,Hero,0,party / celebration,0,0
+1092,2008,Turkey,Deli,0,love,0,0
+1093,2008,Ukraine,Shady Lady,0,party / celebration,0,0
+1094,2008,Lithuania,Nomads in the Night,0,party / celebration,0,0
+1095,2008,Albania,Zemrën e lamë peng,0,heartbreak,0,0
+1096,2008,Switzerland,Era stupendo,0,loneliness,0,0
+1097,2008,Czech Republic,Have Some Fun,0,party / celebration,0,0
+1098,2008,Belarus,Hasta la vista,0,party / celebration,0,0
+1099,2008,Latvia,Wolves of the Sea,0,party / celebration,0,0
+1100,2008,Croatia,Romanca,0,nostalgia,0,0
+1101,2008,Bulgaria,"DJ, Take Me Away",0,party / celebration,0,0
+1102,2008,Denmark,All Night Long,0,party / celebration,0,0
+1103,2008,Georgia,Peace Will Come,0,party / celebration,0,0
+1104,2008,Hungary,Candlelight (Szívverés),0,party / celebration,0,0
+1105,2008,Malta,Vodka,0,party / celebration,0,0
+1106,2008,Cyprus,Femme fatale,0,heartbreak,0,0
+1107,2008,Macedonia,Let Me Love You,0,party / celebration,0,0
+1108,2008,Portugal,Senhora do mar (Negras águas),0,loneliness,0,0
+1109,2008,United Kingdom,Even If,0,party / celebration,0,0
+1110,2008,Germany,Disappear,0,party / celebration,0,0
+1111,2008,France,Divine,0,party / celebration,0,0
+1112,2008,Spain,Baila el chiki chiki,0,love,0,0
+1113,2008,Serbia,Oro (Оро),0,spirituality,0,0
+1114,2009,Montenegro,Just Get Out of My Life,0,party / celebration,0,0
+1115,2009,Czech Republic,Aven Romale,0,party / celebration,0,0
+1116,2009,Belgium,Copycat,0,party / celebration,0,0
+1117,2009,Belarus,Eyes That Never Lie,0,party / celebration,0,0
+1118,2009,Sweden,La voix,0,party / celebration,0,0
+1119,2009,Armenia,Jan jan (Nor par) (Ջան ջան (Նոր պար)),0,party / celebration,0,0
+1120,2009,Andorra,La teva decisió (Get a Life),0,love,0,0
+1121,2009,Switzerland,The Highest Heights,0,party / celebration,0,0
+1122,2009,Turkey,Düm tek tek,0,party / celebration,0,0
+1123,2009,Israel,There Must Be Another Way (Einaikh) (עינייך),0,party / celebration,0,0
+1124,2009,Bulgaria,Illusion,0,party / celebration,0,0
+1125,2009,Iceland,Is It True?,0,party / celebration,0,0
+1126,2009,Macedonia,Nešto što kje ostane (Нешто што ќе остане),0,love,0,0
+1127,2009,Romania,The Balkan Girls,0,party / celebration,0,0
+1128,2009,Finland,Lose Control,0,party / celebration,0,0
+1129,2009,Portugal,Todas as ruas do amor,0,loneliness,0,0
+1130,2009,Malta,What If We,0,party / celebration,0,0
+1131,2009,Bosnia And Herzegovina,Bistra voda,0,love,0,0
+1132,2009,Croatia,Lijepa Tena,0,love,0,0
+1133,2009,Ireland,Et Cetera,0,party / celebration,0,0
+1134,2009,Latvia,Probka (Пробка),0,hope,0,0
+1135,2009,Serbia,Cipela (Ципела),0,heartbreak,0,0
+1136,2009,Poland,I Don't Wanna Leave,0,party / celebration,0,0
+1137,2009,Norway,Fairytale,1,party / celebration,0,0
+1138,2009,Cyprus,Firefly,0,party / celebration,0,0
+1139,2009,Slovakia,Leť tmou,0,love,0,0
+1140,2009,Denmark,Believe Again,0,party / celebration,0,0
+1141,2009,Slovenia,Love Symphony (Simfonija),0,party / celebration,0,0
+1142,2009,Hungary,Dance with Me,0,party / celebration,0,0
+1143,2009,Azerbaijan,Always,0,party / celebration,0,0
+1144,2009,Greece,This Is Our Night,0,party / celebration,0,0
+1145,2009,Lithuania,Love,0,party / celebration,0,0
+1146,2009,Moldova,Hora din Moldova,0,love,0,0
+1147,2009,Albania,Carry Me in Your Dreams,0,party / celebration,0,0
+1148,2009,Ukraine,Be My Valentine! (Anti-Crisis Girl),0,party / celebration,0,0
+1149,2009,Estonia,Rändajad,0,nature,0,0
+1150,2009,Netherlands,Shine,0,party / celebration,0,0
+1151,2009,France,Et s'il fallait le faire,0,heartbreak,0,0
+1152,2009,Russia,Mamo (Мамо),0,heartbreak,0,0
+1153,2009,Germany,Miss Kiss Kiss Bang,0,party / celebration,0,0
+1154,2009,United Kingdom,It's My Time,0,party / celebration,0,0
+1155,2009,Spain,La noche es para mí,0,empowerment,0,0
+1156,2010,Moldova,Run Away,0,party / celebration,0,0
+1157,2010,Russia,Lost and Forgotten,0,party / celebration,0,0
+1158,2010,Estonia,Siren,0,party / celebration,0,0
+1159,2010,Slovakia,Horehronie,0,heartbreak,0,0
+1160,2010,Finland,Työlki ellää,0,love,0,0
+1161,2010,Latvia,What For?,0,party / celebration,0,0
+1162,2010,Serbia,Ovo je Balkan (Oво je Балкан),0,love,0,0
+1163,2010,Bosnia And Herzegovina,Thunder and Lightning,0,party / celebration,0,0
+1164,2010,Poland,Legenda,0,love,0,0
+1165,2010,Belgium,Me and My Guitar,0,party / celebration,0,0
+1166,2010,Malta,My Dream,0,party / celebration,0,0
+1167,2010,Albania,It's All About You,0,party / celebration,0,0
+1168,2010,Greece,OPA (ΩΠΑ),0,heartbreak,0,0
+1169,2010,Portugal,Há dias assim,0,loneliness,0,0
+1170,2010,Macedonia,Jas ja imam silata (Јас ја имам силата),0,loneliness,0,0
+1171,2010,Belarus,Butterflies,0,party / celebration,0,0
+1172,2010,Iceland,Je ne sais quoi,0,party / celebration,0,0
+1173,2010,Lithuania,Eastern European Funk,0,party / celebration,0,0
+1174,2010,Armenia,Apricot Stone,0,party / celebration,0,0
+1175,2010,Israel,Milim (מילים),0,heartbreak,0,0
+1176,2010,Denmark,In a Moment Like This,0,party / celebration,0,0
+1177,2010,Switzerland,Il pleut de l'or,0,party / celebration,0,0
+1178,2010,Sweden,This Is My Life,0,party / celebration,0,0
+1179,2010,Azerbaijan,Drip Drop,0,party / celebration,0,0
+1180,2010,Ukraine,Sweet People,0,party / celebration,0,0
+1181,2010,Netherlands,Ik ben verliefd (Sha-la-lie),0,love,0,0
+1182,2010,Romania,Playing with Fire,0,party / celebration,0,0
+1183,2010,Slovenia,Narodnozabavni rock,0,love,0,0
+1184,2010,Ireland,It's for You,0,party / celebration,0,0
+1185,2010,Bulgaria,Angel si ti (You Are an Angel) (Ангел си ти),0,love,0,0
+1186,2010,Cyprus,Life Looks Better in Spring,0,party / celebration,0,0
+1187,2010,Croatia,Lako je sve,0,love,0,0
+1188,2010,Georgia,Shine,0,party / celebration,0,0
+1189,2010,Turkey,We Could Be the Same,0,party / celebration,0,0
+1190,2010,Spain,Algo pequeñito,0,love,0,0
+1191,2010,Norway,My Heart Is Yours,0,party / celebration,0,0
+1192,2010,United Kingdom,That Sounds Good to Me,0,party / celebration,0,0
+1193,2010,France,Allez ola olé,0,party / celebration,0,0
+1194,2010,Germany,Satellite,1,party / celebration,0,0
+1195,2011,Poland,Jestem,0,nature,0,0
+1196,2011,Norway,Haba Haba,0,party / celebration,0,0
+1197,2011,Albania,Feel the Passion (Kënga ime),0,party / celebration,0,0
+1198,2011,Armenia,Boom Boom,0,party / celebration,0,0
+1199,2011,Turkey,Live It Up,0,party / celebration,0,0
+1200,2011,Serbia,Čaroban (Чаробан),0,love,0,0
+1201,2011,Russia,Get You,0,party / celebration,0,0
+1202,2011,Switzerland,In Love for a While,0,party / celebration,0,0
+1203,2011,Georgia,One More Day,0,party / celebration,0,0
+1204,2011,Finland,Da Da Dam,0,party / celebration,0,0
+1205,2011,Malta,One Life,0,party / celebration,0,0
+1206,2011,San Marino,Stand By,0,party / celebration,0,0
+1207,2011,Croatia,Celebrate,0,party / celebration,0,0
+1208,2011,Iceland,Coming Home,0,party / celebration,0,0
+1209,2011,Hungary,"What About My Dreams? (Szerelem, miért múlsz?)",0,party / celebration,0,0
+1210,2011,Portugal,A luta é alegria,0,party / celebration,0,0
+1211,2011,Lithuania,C'est ma vie,0,party / celebration,0,0
+1212,2011,Azerbaijan,Running Scared,1,party / celebration,0,0
+1213,2011,Greece,Watch My Dance,0,party / celebration,0,0
+1214,2011,Bosnia And Herzegovina,Love in Rewind,0,party / celebration,0,0
+1215,2011,Austria,The Secret Is Love,0,party / celebration,0,0
+1216,2011,Netherlands,Never Alone,0,party / celebration,0,0
+1217,2011,Belgium,With Love Baby,0,party / celebration,0,0
+1218,2011,Slovakia,I'm Still Alive,0,party / celebration,0,0
+1219,2011,Ukraine,Angel,0,party / celebration,0,0
+1220,2011,Moldova,So Lucky,0,party / celebration,0,0
+1221,2011,Sweden,Popular,0,party / celebration,0,0
+1222,2011,Cyprus,San aggelos s'agapisa (Σαν άγγελος σ'αγάπησα),0,loneliness,0,0
+1223,2011,Bulgaria,Na inat (На инат),0,love,0,0
+1224,2011,Macedonia,Rusinka (Русинкa),0,party / celebration,0,0
+1225,2011,Israel,Ding Dong (דינג דונג),0,hope,0,0
+1226,2011,Slovenia,No One,0,party / celebration,0,0
+1227,2011,Romania,Change,0,party / celebration,0,0
+1228,2011,Estonia,Rockefeller Street,0,party / celebration,0,0
+1229,2011,Belarus,I Love Belarus,0,party / celebration,0,0
+1230,2011,Latvia,Angel in Disguise,0,party / celebration,0,0
+1231,2011,Denmark,New Tomorrow,0,party / celebration,0,0
+1232,2011,Ireland,Lipstick,0,party / celebration,0,0
+1233,2011,France,Sognu,0,heartbreak,0,0
+1234,2011,Italy,Madness of Love (Follia d'amore),0,nostalgia,0,0
+1235,2011,United Kingdom,I Can,0,party / celebration,0,0
+1236,2011,Germany,Taken by a Stranger,0,party / celebration,0,0
+1237,2011,Spain,Que me quiten lo bailao,0,hope,0,0
+1238,2012,Montenegro,Euro Neuro,0,party / celebration,0,0
+1239,2012,Iceland,Never Forget,0,party / celebration,0,0
+1240,2012,Greece,Aphrodisiac,0,party / celebration,0,0
+1241,2012,Latvia,Beautiful Song,0,party / celebration,0,0
+1242,2012,Albania,Suus,0,hope,0,0
+1243,2012,Romania,Zaleilah,0,love,0,0
+1244,2012,Switzerland,Unbreakable,0,party / celebration,0,0
+1245,2012,Belgium,Would You?,0,party / celebration,0,0
+1246,2012,Finland,När jag blundar,0,nostalgia,0,0
+1247,2012,Israel,Time,0,party / celebration,0,0
+1248,2012,San Marino,The Social Network Song (Oh Oh – Uh – Oh Oh),0,party / celebration,0,0
+1249,2012,Cyprus,La La Love,0,party / celebration,0,0
+1250,2012,Denmark,Should've Known Better,0,party / celebration,0,0
+1251,2012,Russia,Party for Everybody,0,party / celebration,0,0
+1252,2012,Hungary,Sound of Our Hearts,0,party / celebration,0,0
+1253,2012,Austria,Woki mit deim Popo,0,party / celebration,0,0
+1254,2012,Moldova,Lăutar,0,party / celebration,0,0
+1255,2012,Ireland,Waterline,0,party / celebration,0,0
+1256,2012,Serbia,Nije ljubav stvar (Није љубав ствар),0,loneliness,0,0
+1257,2012,Macedonia,Crno i belo (Црно и бело),0,heartbreak,0,0
+1258,2012,Netherlands,You and Me,0,party / celebration,0,0
+1259,2012,Malta,This Is the Night,0,party / celebration,0,0
+1260,2012,Belarus,We Are the Heroes,0,party / celebration,0,0
+1261,2012,Portugal,Vida minha,0,love,0,0
+1262,2012,Ukraine,Be My Guest,0,party / celebration,0,0
+1263,2012,Bulgaria,Love Unlimited,0,love,0,0
+1264,2012,Slovenia,Verjamem,0,nostalgia,0,0
+1265,2012,Croatia,Nebo,0,hope,0,0
+1266,2012,Sweden,Euphoria,1,party / celebration,0,0
+1267,2012,Georgia,I'm a Joker,0,party / celebration,0,0
+1268,2012,Turkey,Love Me Back,0,party / celebration,0,0
+1269,2012,Estonia,Kuula,0,empowerment,0,0
+1270,2012,Slovakia,Don't Close Your Eyes,0,party / celebration,0,0
+1271,2012,Norway,Stay,0,party / celebration,0,0
+1272,2012,Bosnia And Herzegovina,Korake ti znam,0,loneliness,0,0
+1273,2012,Lithuania,Love Is Blind,0,party / celebration,0,0
+1274,2012,United Kingdom,Love Will Set You Free,0,party / celebration,0,0
+1275,2012,France,Echo (You and I),0,love,0,0
+1276,2012,Italy,L'amore è femmina (Out of Love),0,party / celebration,0,0
+1277,2012,Azerbaijan,When the Music Dies,0,party / celebration,0,0
+1278,2012,Spain,Quédate conmigo,0,love,0,0
+1279,2012,Germany,Standing Still,0,party / celebration,0,0
+1280,2013,Austria,Shine,0,party / celebration,0,0
+1281,2013,Estonia,Et uus saaks alguse,0,hope,0,0
+1282,2013,Slovenia,Straight into Love,0,party / celebration,0,0
+1283,2013,Croatia,Mižerja,0,love,0,0
+1284,2013,Denmark,Only Teardrops,1,party / celebration,0,0
+1285,2013,Russia,What If,0,party / celebration,0,0
+1286,2013,Ukraine,Gravity,0,party / celebration,0,0
+1287,2013,Netherlands,Birds,0,party / celebration,0,0
+1288,2013,Montenegro,Igranka (Игранка),0,party / celebration,0,0
+1289,2013,Lithuania,Something,0,party / celebration,0,0
+1290,2013,Belarus,Solayoh,0,party / celebration,0,0
+1291,2013,Moldova,O mie,0,love,0,0
+1292,2013,Ireland,Only Love Survives,0,party / celebration,0,0
+1293,2013,Cyprus,An me thimase (Aν με θυμάσαι),0,love,0,0
+1294,2013,Belgium,Love Kills,0,party / celebration,0,0
+1295,2013,Serbia,Ljubav je svuda (Љубав је свуда),0,love,0,0
+1296,2013,Latvia,Here We Go,0,party / celebration,0,0
+1297,2013,San Marino,Crisalide (Vola),0,love,0,0
+1298,2013,Macedonia,Pred da se razdeni (Пред да се раздени),0,loneliness,0,0
+1299,2013,Azerbaijan,Hold Me,0,party / celebration,0,0
+1300,2013,Finland,Marry Me,0,party / celebration,0,0
+1301,2013,Malta,Tomorrow,0,party / celebration,0,0
+1302,2013,Bulgaria,Samo shampioni (Само шампиони),0,party / celebration,0,0
+1303,2013,Iceland,Ég á líf,0,loneliness,0,0
+1304,2013,Greece,Alcohol Is Free,0,heartbreak,0,0
+1305,2013,Israel,Rak bishvilo (רק בשבילו),0,hope,0,0
+1306,2013,Armenia,Lonely Planet,0,party / celebration,0,0
+1307,2013,Hungary,Kedvesem (Zoohacker Remix),0,nature,0,0
+1308,2013,Norway,I Feed You My Love,0,party / celebration,0,0
+1309,2013,Albania,Identitet,0,nostalgia,0,0
+1310,2013,Georgia,Waterfall,0,party / celebration,0,0
+1311,2013,Switzerland,You and Me,0,party / celebration,0,0
+1312,2013,Romania,It's My Life,0,party / celebration,0,0
+1313,2013,France,L'enfer et moi,0,war or conflict,0,0
+1314,2013,Spain,Contigo hasta el final,0,love,0,0
+1315,2013,Germany,Glorious,0,party / celebration,0,0
+1316,2013,United Kingdom,Believe in Me,0,party / celebration,0,0
+1317,2013,Sweden,You,0,party / celebration,0,0
+1318,2013,Italy,L'essenziale,0,love,0,0
+1319,2014,Armenia,Not Alone,0,party / celebration,0,0
+1320,2014,Latvia,Cake to Bake,0,party / celebration,0,0
+1321,2014,Estonia,Amazing,0,party / celebration,0,0
+1322,2014,Sweden,Undo,0,party / celebration,0,0
+1323,2014,Iceland,No Prejudice,0,party / celebration,0,0
+1324,2014,Albania,One Night's Anger,0,party / celebration,0,0
+1325,2014,Russia,Shine,0,party / celebration,0,0
+1326,2014,Azerbaijan,Start a Fire,0,party / celebration,0,0
+1327,2014,Ukraine,Tick-Tock,0,party / celebration,0,0
+1328,2014,Belgium,Mother,0,party / celebration,0,0
+1329,2014,Moldova,Wild Soul,0,party / celebration,0,0
+1330,2014,San Marino,Maybe,0,party / celebration,0,0
+1331,2014,Portugal,Quero ser tua,0,love,0,0
+1332,2014,Netherlands,Calm After the Storm,0,party / celebration,0,0
+1333,2014,Montenegro,Moj svijet (Мој свијет),0,loneliness,0,0
+1334,2014,Hungary,Running,0,party / celebration,0,0
+1335,2014,Malta,Coming Home,0,party / celebration,0,0
+1336,2014,Israel,Same Heart,0,party / celebration,0,0
+1337,2014,Norway,Silent Storm,0,party / celebration,0,0
+1338,2014,Georgia,Three Minutes to Earth,0,party / celebration,0,0
+1339,2014,Poland,My Słowianie – We Are Slavic,0,party / celebration,0,0
+1340,2014,Austria,Rise Like a Phoenix,1,party / celebration,0,0
+1341,2014,Lithuania,Attention,0,party / celebration,0,0
+1342,2014,Finland,Something Better,0,party / celebration,0,0
+1343,2014,Ireland,Heartbeat,0,party / celebration,0,0
+1344,2014,Belarus,Cheesecake,0,party / celebration,0,0
+1345,2014,Macedonia,To the Sky,0,party / celebration,0,0
+1346,2014,Switzerland,Hunter of Stars,0,party / celebration,0,0
+1347,2014,Greece,Rise Up,0,party / celebration,0,0
+1348,2014,Slovenia,Round and Round (Spet),0,party / celebration,0,0
+1349,2014,Romania,Miracle,0,party / celebration,0,0
+1350,2014,Germany,Is It Right,0,party / celebration,0,0
+1351,2014,France,Moustache,0,war or conflict,0,0
+1352,2014,Italy,La mia città,0,love,0,0
+1353,2014,Spain,Dancing in the Rain,0,party / celebration,0,0
+1354,2014,Denmark,Cliché Love Song,0,party / celebration,0,0
+1355,2014,United Kingdom,Children of the Universe,0,party / celebration,0,0
+1356,2015,Moldova,I Want Your Love,0,party / celebration,0,0
+1357,2015,Armenia,Face the Shadow,0,party / celebration,0,0
+1358,2015,Belgium,Rhythm Inside,0,party / celebration,0,0
+1359,2015,Netherlands,Walk Along,0,party / celebration,0,0
+1360,2015,Finland,Aina mun pitää,0,nature,0,0
+1361,2015,Greece,One Last Breath,0,party / celebration,0,0
+1362,2015,Estonia,Goodbye to Yesterday,0,party / celebration,0,0
+1363,2015,Macedonia,Autumn Leaves,0,party / celebration,0,0
+1364,2015,Serbia,Beauty Never Lies,0,party / celebration,0,0
+1365,2015,Hungary,Wars for Nothing,0,party / celebration,0,0
+1366,2015,Belarus,Time,0,party / celebration,0,0
+1367,2015,Russia,A Million Voices,0,party / celebration,0,0
+1368,2015,Denmark,The Way You Are,0,party / celebration,0,0
+1369,2015,Albania,I'm Alive,0,party / celebration,0,0
+1370,2015,Romania,De la capăt (All Over Again),0,nature,0,0
+1371,2015,Georgia,Warrior,0,party / celebration,0,0
+1372,2015,Lithuania,This Time,0,party / celebration,0,0
+1373,2015,Ireland,Playing with Numbers,0,party / celebration,0,0
+1374,2015,San Marino,Chain of Lights,0,party / celebration,0,0
+1375,2015,Montenegro,Adio (Адио),0,heartbreak,0,0
+1376,2015,Malta,Warrior,0,party / celebration,0,0
+1377,2015,Norway,A Monster Like Me,0,party / celebration,0,0
+1378,2015,Portugal,Há um mar que nos separa,0,loneliness,0,0
+1379,2015,Czech Republic,Hope Never Dies,0,party / celebration,0,0
+1380,2015,Israel,Golden Boy,0,party / celebration,0,0
+1381,2015,Latvia,Love Injected,0,party / celebration,0,0
+1382,2015,Azerbaijan,Hour of the Wolf,0,party / celebration,0,0
+1383,2015,Iceland,Unbroken,0,party / celebration,0,0
+1384,2015,Sweden,Heroes,1,party / celebration,0,0
+1385,2015,Switzerland,Time to Shine,0,party / celebration,0,0
+1386,2015,Cyprus,One Thing I Should Have Done,0,party / celebration,0,0
+1387,2015,Slovenia,Here for You,0,party / celebration,0,0
+1388,2015,Poland,In the Name of Love,0,party / celebration,0,0
+1389,2015,France,N'oubliez pas,0,war or conflict,0,0
+1390,2015,United Kingdom,Still in Love with You,0,party / celebration,0,0
+1391,2015,Australia,Tonight Again,0,party / celebration,0,0
+1392,2015,Austria,I Am Yours,0,party / celebration,0,0
+1393,2015,Germany,Black Smoke,0,party / celebration,0,0
+1394,2015,Spain,Amanecer,0,love,0,0
+1395,2015,Italy,Grande amore,0,love,0,0
+1396,2016,Finland,Sing It Away,0,party / celebration,0,0
+1397,2016,Greece,Utopian Land,0,party / celebration,0,0
+1398,2016,Moldova,Falling Stars,0,party / celebration,0,0
+1399,2016,Hungary,Pioneer,0,party / celebration,0,0
+1400,2016,Croatia,Lighthouse,0,party / celebration,0,0
+1401,2016,Netherlands,Slow Down,0,party / celebration,0,0
+1402,2016,Armenia,LoveWave,0,party / celebration,1,1
+1403,2016,San Marino,I Didn't Know,0,party / celebration,0,0
+1404,2016,Russia,You Are the Only One,0,party / celebration,1,1
+1405,2016,Czech Republic,I Stand,0,party / celebration,0,0
+1406,2016,Cyprus,Alter Ego,0,party / celebration,0,0
+1407,2016,Austria,Loin d'ici,0,party / celebration,0,0
+1408,2016,Estonia,Play,0,party / celebration,0,0
+1409,2016,Azerbaijan,Miracle,0,party / celebration,0,0
+1410,2016,Montenegro,The Real Thing,0,party / celebration,0,0
+1411,2016,Iceland,Hear Them Calling,0,party / celebration,0,0
+1412,2016,Bosnia And Herzegovina,Ljubav je,0,love,0,0
+1413,2016,Malta,Walk on Water,0,party / celebration,0,0
+1414,2016,Latvia,Heartbeat,0,party / celebration,0,1
+1415,2016,Poland,Color of Your Life,0,party / celebration,0,1
+1416,2016,Switzerland,The Last of Our Kind,0,party / celebration,0,0
+1417,2016,Israel,Made of Stars,0,party / celebration,1,0
+1418,2016,Belarus,Help You Fly,0,party / celebration,0,0
+1419,2016,Serbia,Goodbye (Shelter),0,party / celebration,0,1
+1420,2016,Ireland,Sunlight,0,party / celebration,0,0
+1421,2016,Macedonia,Dona (Дона),0,heartbreak,0,0
+1422,2016,Lithuania,I've Been Waiting for This Night,0,party / celebration,1,1
+1423,2016,Australia,Sound of Silence,0,party / celebration,1,1
+1424,2016,Slovenia,Blue and Red,0,party / celebration,0,0
+1425,2016,Bulgaria,If Love Was a Crime,0,party / celebration,0,1
+1426,2016,Denmark,Soldiers of Love,0,party / celebration,0,0
+1427,2016,Ukraine,1944,1,party / celebration,1,1
+1428,2016,Norway,Icebreaker,0,party / celebration,0,0
+1429,2016,Georgia,Midnight Gold,0,party / celebration,1,0
+1430,2016,Albania,Fairytale,0,party / celebration,0,0
+1431,2016,Belgium,What's the Pressure,0,party / celebration,1,1
+1432,2016,Italy,No Degree of Separation (Nessun grado di separazione),0,love,1,0
+1433,2016,Sweden,If I Were Sorry,0,party / celebration,1,0
+1434,2016,Germany,Ghost,0,party / celebration,0,0
+1435,2016,France,J'ai cherché,0,loneliness,1,1
+1436,2016,Spain,Say Yay!,0,party / celebration,1,0
+1437,2016,United Kingdom,You're Not Alone,0,party / celebration,1,0
+1438,2017,Sweden,I Can't Go On,0,party / celebration,1,1
+1439,2017,Georgia,Keep the Faith,0,party / celebration,0,0
+1440,2017,Australia,Don't Come Easy,0,party / celebration,0,0
+1441,2017,Albania,World,0,party / celebration,0,0
+1442,2017,Belgium,City Lights,0,party / celebration,0,1
+1443,2017,Montenegro,Space,0,party / celebration,0,0
+1444,2017,Finland,Blackbird,0,party / celebration,0,0
+1445,2017,Azerbaijan,Skeletons,0,party / celebration,1,0
+1446,2017,Portugal,Amar pelos dois,1,love,1,1
+1447,2017,Greece,This Is Love,0,party / celebration,1,1
+1448,2017,Poland,Flashlight,0,party / celebration,0,0
+1449,2017,Moldova,Hey Mamma,0,party / celebration,0,1
+1450,2017,Iceland,Paper,0,party / celebration,0,0
+1451,2017,Czech Republic,My Turn,0,party / celebration,0,0
+1452,2017,Cyprus,Gravity,0,party / celebration,1,1
+1453,2017,Armenia,Fly with Me,0,party / celebration,0,0
+1454,2017,Slovenia,On My Way,0,party / celebration,0,0
+1455,2017,Latvia,Line,0,party / celebration,0,0
+1456,2017,Serbia,In Too Deep,0,party / celebration,0,0
+1457,2017,Austria,Running on Air,0,party / celebration,1,0
+1458,2017,Macedonia,Dance Alone,0,party / celebration,0,0
+1459,2017,Malta,Breathlessly,0,party / celebration,0,0
+1460,2017,Romania,Yodel It!,0,party / celebration,1,1
+1461,2017,Netherlands,Lights and Shadows,0,party / celebration,0,0
+1462,2017,Hungary,Origo,0,war or conflict,1,1
+1463,2017,Denmark,Where I Am,0,party / celebration,0,0
+1464,2017,Ireland,Dying to Try,0,party / celebration,0,0
+1465,2017,San Marino,Spirit of the Night,0,party / celebration,0,0
+1466,2017,Croatia,My Friend,0,party / celebration,0,0
+1467,2017,Norway,Grab the Moment,0,party / celebration,1,0
+1468,2017,Switzerland,Apollo,0,party / celebration,0,0
+1469,2017,Belarus,Story of My Life (Historyja majho žyccia) (Гісторыя майго жыцця),0,love,1,0
+1470,2017,Bulgaria,Beautiful Mess,0,party / celebration,1,1
+1471,2017,Lithuania,Rain of Revolution,0,party / celebration,0,0
+1472,2017,Estonia,Verona,0,party / celebration,0,0
+1473,2017,Israel,I Feel Alive,0,party / celebration,0,0
+1474,2017,Italy,Occidentali's Karma,0,hope,0,0
+1475,2017,Spain,Do It for Your Lover,0,love,0,0
+1476,2017,United Kingdom,Never Give Up on You,0,party / celebration,1,0
+1477,2017,Germany,Perfect Life,0,party / celebration,0,0
+1478,2017,Ukraine,Time,0,party / celebration,0,0
+1479,2017,France,Requiem,0,love,0,1
+1480,2018,Azerbaijan,X My Heart,0,party / celebration,0,0
+1481,2018,Iceland,Our Choice,0,party / celebration,0,0
+1482,2018,Albania,Mall,0,war or conflict,0,1
+1483,2018,Belgium,A Matter of Time,0,party / celebration,0,0
+1484,2018,Czech Republic,Lie to Me,0,party / celebration,0,1
+1485,2018,Lithuania,When We're Old (Kol myliu),0,party / celebration,0,1
+1486,2018,Israel,Toy,1,party / celebration,1,1
+1487,2018,Belarus,Forever,0,party / celebration,0,0
+1488,2018,Estonia,La forza,0,love,1,1
+1489,2018,Bulgaria,Bones,0,party / celebration,0,1
+1490,2018,Macedonia,Lost and Found,0,party / celebration,0,0
+1491,2018,Croatia,Crazy,0,party / celebration,0,0
+1492,2018,Austria,Nobody But You,0,party / celebration,1,0
+1493,2018,Greece,Oniro mou (Όνειρό μου),0,loneliness,0,0
+1494,2018,Finland,Monsters,0,party / celebration,0,0
+1495,2018,Armenia,Qami (Քամի),0,loneliness,0,0
+1496,2018,Switzerland,Stones,0,party / celebration,0,0
+1497,2018,Ireland,Together,0,party / celebration,0,0
+1498,2018,Cyprus,Fuego,0,party / celebration,1,1
+1499,2018,Norway,That's How You Write a Song,0,party / celebration,1,0
+1500,2018,Romania,Goodbye,0,party / celebration,0,0
+1501,2018,Serbia,Nova deca (Нова деца),0,hope,0,1
+1502,2018,San Marino,Who We Are,0,party / celebration,0,0
+1503,2018,Denmark,Higher Ground,0,party / celebration,1,1
+1504,2018,Russia,I Won't Break,0,party / celebration,0,0
+1505,2018,Moldova,My Lucky Day,0,party / celebration,0,0
+1506,2018,Netherlands,Outlaw in 'Em,0,party / celebration,0,0
+1507,2018,Australia,We Got Love,0,party / celebration,0,0
+1508,2018,Georgia,For You (Sheni gulistvis) (შენი გულისთვის),0,love,0,0
+1509,2018,Poland,Light Me Up,0,party / celebration,0,0
+1510,2018,Malta,Taboo,0,party / celebration,0,0
+1511,2018,Hungary,Viszlát nyár,0,hope,0,1
+1512,2018,Latvia,Funny Girl,0,party / celebration,0,0
+1513,2018,Sweden,Dance You Off,0,party / celebration,1,0
+1514,2018,Montenegro,Inje (Иње),0,love,0,0
+1515,2018,Slovenia,"Hvala, ne!",0,hope,0,0
+1516,2018,Ukraine,Under the Ladder,0,party / celebration,0,1
+1517,2018,Spain,Tu canción,0,nature,0,1
+1518,2018,Portugal,O jardim,0,love,0,0
+1519,2018,United Kingdom,Storm,0,party / celebration,0,0
+1520,2018,Germany,You Let Me Walk Alone,0,party / celebration,1,1
+1521,2018,France,Mercy,0,war or conflict,1,0
+1522,2018,Italy,Non mi avete fatto niente,0,war or conflict,1,1
+1523,2019,Cyprus,Replay,0,party / celebration,1,1
+1524,2019,Montenegro,Heaven,0,party / celebration,0,0
+1525,2019,Finland,Look Away,0,party / celebration,0,0
+1526,2019,Poland,Fire of Love (Pali się),0,loneliness,0,0
+1527,2019,Slovenia,Sebi,0,heartbreak,0,0
+1528,2019,Czech Republic,Friend of a Friend,0,party / celebration,1,0
+1529,2019,Hungary,Az én apám,0,hope,0,0
+1530,2019,Belarus,Like It,0,party / celebration,0,0
+1531,2019,Serbia,Kruna (Круна),0,love,0,0
+1532,2019,Belgium,Wake Up,0,party / celebration,0,0
+1533,2019,Georgia,Keep on Going (Sul tsin iare) (სულ წინ იარე),0,hope,0,0
+1534,2019,Australia,Zero Gravity,0,party / celebration,0,0
+1535,2019,Iceland,Hatrið mun sigra,0,party / celebration,0,0
+1536,2019,Estonia,Storm,0,party / celebration,0,0
+1537,2019,Portugal,Telemóveis,0,nostalgia,0,0
+1538,2019,Greece,Better Love,0,party / celebration,1,1
+1539,2019,San Marino,Say Na Na Na,0,party / celebration,0,0
+1540,2019,Armenia,Walking Out,0,party / celebration,0,0
+1541,2019,Ireland,22,0,party / celebration,0,0
+1542,2019,Moldova,Stay,0,party / celebration,0,0
+1543,2019,Switzerland,She Got Me,0,party / celebration,0,0
+1544,2019,Latvia,That Night,0,party / celebration,0,0
+1545,2019,Romania,On a Sunday,0,party / celebration,0,0
+1546,2019,Denmark,Love Is Forever,0,party / celebration,1,0
+1547,2019,Sweden,Too Late for Love,0,party / celebration,1,1
+1548,2019,Austria,Limits,0,party / celebration,0,0
+1549,2019,Croatia,The Dream (Heroj),0,love,0,0
+1550,2019,Malta,Chameleon,0,party / celebration,1,0
+1551,2019,Lithuania,Run with the Lions,0,party / celebration,0,0
+1552,2019,Russia,Scream,0,party / celebration,1,1
+1553,2019,Albania,Ktheju tokës,0,nostalgia,0,1
+1554,2019,Norway,Spirit in the Sky,0,party / celebration,0,1
+1555,2019,Netherlands,Arcade,1,party / celebration,0,0
+1556,2019,North Macedonia,Proud,0,party / celebration,1,1
+1557,2019,Azerbaijan,Truth,0,party / celebration,1,1
+1558,2019,Germany,Sister,0,party / celebration,0,0
+1559,2019,Israel,Home,0,party / celebration,0,1
+1560,2019,United Kingdom,Bigger than Us,0,party / celebration,0,0
+1561,2019,France,Roi,0,war or conflict,0,0
+1562,2019,Italy,Soldi,0,nostalgia,1,1
+1563,2019,Spain,La venda,0,love,0,0
+1564,2020,Albania,Fall From The Sky,0,party / celebration,0,0
+1565,2020,Armenia,Chains On You,0,party / celebration,0,0
+1566,2020,Australia,Don't Break Me,0,party / celebration,0,0
+1567,2020,Austria,Alive,0,party / celebration,0,0
+1568,2020,Azerbaijan,Cleopatra,0,party / celebration,0,0
+1569,2020,Belarus,Da Vidna,0,loneliness,0,0
+1570,2020,Belgium,Release Me,0,party / celebration,0,0
+1571,2020,Bulgaria,Tears Getting Sober,0,party / celebration,0,0
+1572,2020,Croatia,Divlji Vjetre,0,love,0,0
+1573,2020,Cyprus,Running,0,party / celebration,0,0
+1574,2020,Czech Republic,Kemama,0,party / celebration,0,0
+1575,2020,Denmark,YES,0,party / celebration,0,0
+1576,2020,Estonia,What Love Is,0,party / celebration,0,0
+1577,2020,Finland,Looking Back,0,party / celebration,0,0
+1578,2020,France,Mon Alliée (The Best In Me),0,party / celebration,0,0
+1579,2020,Georgia,Take Me As I Am,0,party / celebration,0,0
+1580,2020,Germany,Violent Thing,0,party / celebration,0,0
+1581,2020,Greece,SUPERG!RL,0,party / celebration,0,0
+1582,2020,Iceland,Think About Things,0,empowerment,0,0
+1583,2020,Ireland,Story Of My Life,0,party / celebration,0,0
+1584,2020,Israel,Feker Libi,0,party / celebration,0,0
+1585,2020,Italy,Fai Rumore,0,nature,0,0
+1586,2020,Latvia,Still Breathing,0,party / celebration,0,0
+1587,2020,Lithuania,On Fire,0,party / celebration,0,0
+1588,2020,Malta,All Of My Love,0,party / celebration,0,0
+1589,2020,Moldova,Prison,0,party / celebration,0,0
+1590,2020,North Macedonia,YOU,0,party / celebration,0,0
+1591,2020,Norway,Attention,0,party / celebration,0,0
+1592,2020,Poland,Empires,0,party / celebration,0,0
+1593,2020,Portugal,Medo De Sentir,0,loneliness,0,0
+1594,2020,Romania,Alcohol You,0,party / celebration,0,0
+1595,2020,Russia,Uno,0,party / celebration,0,0
+1596,2020,San Marino,Freaky!,0,party / celebration,0,0
+1597,2020,Serbia,Hasta La Vista,0,heartbreak,0,0
+1598,2020,Slovenia,Voda,0,heartbreak,0,0
+1599,2020,Spain,Universo,0,war or conflict,0,0
+1600,2020,Sweden,Move,0,party / celebration,0,0
+1601,2020,Switzerland,Répondez-moi,0,loneliness,0,0
+1602,2020,The Netherlands,Grow,0,party / celebration,0,0
+1603,2020,Ukraine,Solovey,0,love,0,0
+1604,2020,United Kingdom,My Last Breath,0,party / celebration,0,0
+1605,2021,Albania,Karma,0,loneliness,1,0
+1606,2021,Australia,Technicolour,0,party / celebration,0,0
+1607,2021,Austria,Amen,0,party / celebration,0,0
+1608,2021,Azerbaijan,Mata Hari,0,party / celebration,0,0
+1609,2021,Belgium,The Wrong Place,0,party / celebration,0,0
+1610,2021,Bulgaria,Growing Up Is Getting Old,0,party / celebration,1,0
+1611,2021,Croatia,Tick-Tock,0,party / celebration,0,0
+1612,2021,Cyprus,El Diablo,0,party / celebration,1,1
+1613,2021,Czech Republic,omaga,0,party / celebration,0,0
+1614,2021,Denmark,Øve Os På Hinanden,0,war or conflict,0,0
+1615,2021,Estonia,The Lucky One,0,party / celebration,0,0
+1616,2021,Finland,Dark Side,0,party / celebration,0,1
+1617,2021,France,Voilà,0,heartbreak,1,1
+1618,2021,Georgia,You,0,party / celebration,0,0
+1619,2021,Germany,I Don't Feel Hate,0,party / celebration,0,0
+1620,2021,Greece,Last Dance,0,party / celebration,1,1
+1621,2021,Iceland,10 Years,0,party / celebration,0,1
+1622,2021,Ireland,MAPS,0,party / celebration,0,0
+1623,2021,Israel,Set Me Free,0,party / celebration,0,1
+1624,2021,Italy,Zitti E Buoni,1,nature,1,1
+1625,2021,Latvia,The Moon Is Rising,0,party / celebration,0,0
+1626,2021,Lithuania,Discoteque,0,party / celebration,1,1
+1627,2021,Malta,Je Me Casse,0,party / celebration,1,0
+1628,2021,Moldova,SUGAR,0,party / celebration,1,0
+1629,2021,North Macedonia,Here I Stand,0,party / celebration,0,0
+1630,2021,Norway,Fallen Angel,0,party / celebration,0,0
+1631,2021,Poland,The Ride,0,party / celebration,0,0
+1632,2021,Portugal,Love Is On My Side,0,party / celebration,0,0
+1633,2021,Romania,Amnesia,0,party / celebration,0,0
+1634,2021,Russia,Russian Woman,0,war or conflict,1,1
+1635,2021,San Marino,Adrenalina,0,party / celebration,0,0
+1636,2021,Serbia,Loco Loco,0,loneliness,0,1
+1637,2021,Slovenia,Amen,0,party / celebration,0,0
+1638,2021,Spain,Voy A Quedarme,0,love,0,0
+1639,2021,Sweden,Voices,0,party / celebration,0,0
+1640,2021,Switzerland,Tout l'Univers,0,love,1,1
+1641,2021,Netherlands,Birth Of A New Age,0,party / celebration,0,0
+1642,2021,Ukraine,Shum,0,love,1,1
+1643,2021,United Kingdom,Embers,0,party / celebration,0,0
+1644,2022,Albania,Sekret,0,empowerment,0,0
+1645,2022,Armenia,Snap,0,party / celebration,0,0
+1646,2022,Australia,Not The Same,0,party / celebration,0,0
+1647,2022,Austria,Halo,0,party / celebration,0,0
+1648,2022,Azerbaijan,Fade To Black,0,party / celebration,0,0
+1649,2022,Belgium,Miss You,0,party / celebration,0,0
+1650,2022,Bulgaria,Intention,0,party / celebration,0,0
+1651,2022,Croatia,Guilty Pleasure,0,party / celebration,0,0
+1652,2022,Cyprus,Ela,0,loneliness,0,0
+1653,2022,Czech Republic,Lights Off,0,party / celebration,0,0
+1654,2022,Denmark,The Show,0,party / celebration,0,0
+1655,2022,Estonia,Hope,0,party / celebration,0,0
+1656,2022,Finland,Jezebel,0,party / celebration,0,0
+1657,2022,France,Fulenn,0,party / celebration,0,0
+1658,2022,Georgia,Lock Me In,0,party / celebration,0,0
+1659,2022,Germany,Rockstars,0,party / celebration,0,0
+1660,2022,Greece,Die Together,0,party / celebration,0,0
+1661,2022,Iceland,Með Hækkandi Sól,0,empowerment,0,0
+1662,2022,Ireland,That's Rich,0,party / celebration,0,0
+1663,2022,Israel,I.M,0,party / celebration,0,0
+1664,2022,Italy,Brividi,0,heartbreak,0,0
+1665,2022,Latvia,Eat Your Salad,0,party / celebration,0,0
+1666,2022,Lithuania,Sentimentai,0,spirituality,0,0
+1667,2022,Malta,I Am What I Am,0,party / celebration,0,0
+1668,2022,Moldova,Trenulețul,0,party / celebration,0,0
+1669,2022,Montenegro,Breathe,0,party / celebration,0,0
+1670,2022,North Macedonia,Circles,0,party / celebration,0,0
+1671,2022,Norway,Give That Wolf A Banana,0,party / celebration,0,0
+1672,2022,Poland,River,0,party / celebration,0,0
+1673,2022,Portugal,"Saudade, Saudade",0,heartbreak,0,0
+1674,2022,Romania,Llámame,0,love,0,0
+1675,2022,San Marino,Stripper,0,love,0,0
+1676,2022,Serbia,In Corpore Sano,0,loneliness,0,0
+1677,2022,Slovenia,Disko,0,heartbreak,0,0
+1678,2022,Spain,SloMo,0,party / celebration,0,0
+1679,2022,Sweden,Hold Me Closer,0,party / celebration,0,0
+1680,2022,Switzerland,Boys Do Cry,0,party / celebration,0,0
+1681,2022,The Netherlands,De Diepte,0,hope,0,0
+1682,2022,Ukraine,Stefania,1,love,0,0
+1683,2022,United Kingdom,SPACE MAN,0,party / celebration,0,0
+1684,2023,Albania,Duje,0,love,0,0
+1685,2023,Armenia,Future Lover,0,loneliness,0,0
+1686,2023,Australia,Promise,0,party / celebration,0,0
+1687,2023,Austria,Who The Hell is Edgar?,0,party / celebration,0,0
+1688,2023,Azerbaijan,Tell Me More,0,party / celebration,0,0
+1689,2023,Belgium,Because Of You,0,party / celebration,0,0
+1690,2023,Croatia,Mama ŠČ!,0,war or conflict,0,0
+1691,2023,Cyprus,Break A Broken Heart,0,party / celebration,0,0
+1692,2023,Czechia,My Sister's Crown,0,love,0,0
+1693,2023,Denmark,Breaking My Heart,0,party / celebration,0,0
+1694,2023,Estonia,Bridges,0,party / celebration,0,0
+1695,2023,Finland,Cha Cha Cha,0,hope,0,0
+1696,2023,France,Évidemment,0,love,0,0
+1697,2023,Georgia,Echo,0,party / celebration,0,0
+1698,2023,Germany,Blood & Glitter,0,party / celebration,0,0
+1699,2023,Greece,What They Say,0,party / celebration,0,0
+1700,2023,Iceland,Power,0,party / celebration,0,0
+1701,2023,Ireland,We Are One,0,party / celebration,0,0
+1702,2023,Israel,Unicorn,0,party / celebration,0,0
+1703,2023,Italy,Due Vite,0,heartbreak,0,0
+1704,2023,Latvia,Aijā,0,nostalgia,0,0
+1705,2023,Lithuania,Stay,0,party / celebration,0,0
+1706,2023,Malta,Dance (Our Own Party),0,party / celebration,0,0
+1707,2023,Moldova,Soarele şi Luna,0,nature,0,0
+1708,2023,Netherlands,Burning Daylight,0,party / celebration,0,0
+1709,2023,Norway,Queen of Kings,0,party / celebration,0,0
+1710,2023,Poland,Solo,0,party / celebration,0,0
+1711,2023,Portugal,Ai Coração,0,heartbreak,0,0
+1712,2023,Romania,D.G.T. (Off and On),0,loneliness,0,0
+1713,2023,San Marino,Like An Animal,0,party / celebration,0,0
+1714,2023,Serbia,Samo Mi Se Spava,0,war or conflict,0,0
+1715,2023,Slovenia,Carpe Diem,0,hope,0,0
+1716,2023,Spain,Eaea,0,heartbreak,0,0
+1717,2023,Sweden,Tattoo,1,party / celebration,0,0
+1718,2023,Switzerland,Watergun,0,party / celebration,0,0
+1719,2023,Ukraine,Heart Of Steel,0,war or conflict,0,0
+1720,2023,United Kingdom,I Wrote A Song,0,party / celebration,0,0
+1721,2024,Albania,TITAN,0,party / celebration,0,0
+1722,2024,Armenia,Jako,0,empowerment,0,0
+1723,2024,Australia,One Milkali (One Blood),0,love,0,0
+1724,2024,Austria,We Will Rave,0,party / celebration,0,0
+1725,2024,Azerbaijan,Özünlə Apar,0,love,0,0
+1726,2024,Belgium,Before the Party's Over,0,party / celebration,0,0
+1727,2024,Croatia,Rim Tim Tagi Dim,0,party / celebration,0,0
+1728,2024,Cyprus,Liar,0,party / celebration,0,0
+1729,2024,Czechia,Pedestal,0,party / celebration,0,0
+1730,2024,Denmark,SAND,0,party / celebration,0,0
+1731,2024,Estonia,(nendest) narkootikumidest ei tea me (küll) midagi,0,nature,0,0
+1732,2024,Finland,No Rules!,0,party / celebration,0,0
+1733,2024,France,Mon amour,0,hope,0,0
+1734,2024,Georgia,Firefighter,0,party / celebration,0,0
+1735,2024,Germany,Always On The Run,0,party / celebration,0,0
+1736,2024,Greece,ZARI,0,loneliness,0,0
+1737,2024,Iceland,Scared of Heights,0,party / celebration,0,0
+1738,2024,Ireland,Doomsday Blue,0,party / celebration,0,0
+1739,2024,Israel,Hurricane,0,party / celebration,0,0
+1740,2024,Italy,La noia,0,party / celebration,0,0
+1741,2024,Latvia,Hollow,0,party / celebration,0,0
+1742,2024,Lithuania,Luktelk,0,love,0,0
+1743,2024,Luxembourg,Fighter,0,love,0,0
+1744,2024,Malta,Loop,0,party / celebration,0,0
+1745,2024,Moldova,In The Middle,0,party / celebration,0,0
+1746,2024,Netherlands,Europapa,0,loneliness,0,0
+1747,2024,Norway,Ulveham,0,loneliness,0,0
+1748,2024,Poland,The Tower,0,party / celebration,0,0
+1749,2024,Portugal,Grito,0,empowerment,0,0
+1750,2024,San Marino,11:11,0,party / celebration,0,0
+1751,2024,Serbia,RAMONDA,0,war or conflict,0,0
+1752,2024,Slovenia,Veronika,0,love,0,0
+1753,2024,Spain,ZORRA,0,empowerment,0,0
+1754,2024,Sweden,Unforgettable,0,party / celebration,0,0
+1755,2024,Switzerland,The Code,1,party / celebration,0,0
+1756,2024,Ukraine,Teresa & Maria,0,spirituality,0,0
+1757,2024,United Kingdom,Dizzy,0,party / celebration,0,0
+1758,2025,Albania,Zjerm,0,empowerment,0,0
+1759,2025,Armenia,SURVIVOR,0,party / celebration,0,0
+1760,2025,Australia,Milkshake Man,0,party / celebration,0,0
+1761,2025,Austria,Wasted Love,0,party / celebration,0,0
+1762,2025,Azerbaijan,Run With U,0,party / celebration,0,0
+1763,2025,Belgium,Strobe Lights,0,party / celebration,0,0
+1764,2025,Croatia,Poison Cake,0,party / celebration,0,0
+1765,2025,Cyprus,Shh,0,party / celebration,0,0
+1766,2025,Czechia,Kiss Kiss Goodbye,0,party / celebration,0,0
+1767,2025,Denmark,Hallucination,0,party / celebration,0,0
+1768,2025,Estonia,Espresso Macchiato,0,love,0,0
+1769,2025,Finland,ICH KOMME,0,love,0,0
+1770,2025,France,maman,0,love,0,0
+1771,2025,Georgia,Freedom,0,empowerment,0,0
+1772,2025,Germany,Baller,0,war or conflict,0,0
+1773,2025,Greece,Asteromáta,0,love,0,0
+1774,2025,Iceland,RÓA,0,loneliness,0,0
+1775,2025,Ireland,Laika Party,0,party / celebration,0,0
+1776,2025,Israel,New Day Will Rise,0,love,0,0
+1777,2025,Italy,Volevo Essere Un Duro,0,war or conflict,0,0
+1778,2025,Latvia,Bur Man Laimi,0,heartbreak,0,0
+1779,2025,Lithuania,Tavo Akys,0,heartbreak,0,0
+1780,2025,Luxembourg,La Poupée Monte Le Son,0,loneliness,0,0
+1781,2025,Malta,SERVING,0,party / celebration,0,0
+1782,2025,Montenegro,Dobrodošli,0,love,0,0
+1783,2025,Netherlands,C'est La Vie,0,nostalgia,0,0
+1784,2025,Norway,Lighter,0,party / celebration,0,0
+1785,2025,Poland,GAJA,0,loneliness,0,0
+1786,2025,Portugal,Deslocado,0,loneliness,0,0
+1787,2025,San Marino,Tutta L'Italia,0,war or conflict,0,0
+1788,2025,Serbia,Mila,0,nostalgia,0,0
+1789,2025,Slovenia,How Much Time Do We Have Left,0,party / celebration,0,0
+1790,2025,Spain,ESA DIVA,0,hope,0,0
+1791,2025,Sweden,Bara Bada Bastu,0,hope,0,0
+1792,2025,Switzerland,Voyage,0,love,0,0
+1793,2025,Ukraine,Bird of Pray,0,nature,0,0
+1794,2025,United Kingdom,What The Hell Just Happened?,0,party / celebration,0,0
