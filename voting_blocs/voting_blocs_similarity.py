@@ -15,6 +15,7 @@ from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
 VOTES_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
+VOTES_PATH_EXTENSION = BASE_DIR.parent / "eurovision_2022-2026.csv"  # 2022+ extension, same schema
 OUTPUT_DIR = BASE_DIR / "outputs"
 
 SIMILARITY_PATH = OUTPUT_DIR / "voting_blocs_similarity_matrix.csv"
@@ -24,7 +25,7 @@ TELEVOTE_MATRIX_PATH = OUTPUT_DIR / "voting_blocs_televote_matrix.csv"
 HEATMAP_PATH = OUTPUT_DIR / "voting_blocs_similarity_heatmap.png"
 
 MIN_YEAR = 2004
-MAX_YEAR = 2021
+MAX_YEAR = 2026
 SPLIT_MIN_YEAR = 2016
 
 # Countries whose outgoing row rests on only a handful of editions produce
@@ -59,11 +60,16 @@ def harmonize_country(name: str) -> str:
 
 
 def load_votes(
-    votes_path: Path = VOTES_PATH,
     min_year: int = MIN_YEAR,
     max_year: int = MAX_YEAR,
 ) -> pd.DataFrame:
-    votes = clean_data(load_data(votes_path))
+    """Merges the 1957-2021 votes file with the 2022+ extension (same schema,
+    fetched separately since Eurovision started publishing per-year) before
+    cleaning - mirrors build_jury_televote_split.py's old+new concat, so
+    every consumer of this module sees the full 2004-2026 history rather
+    than stopping at the original file's 2021 cutoff."""
+    raw = pd.concat([load_data(VOTES_PATH), load_data(VOTES_PATH_EXTENSION)], ignore_index=True)
+    votes = clean_data(raw)
     votes = votes[votes["Year"].between(min_year, max_year)].copy()
     votes[FROM_COL] = votes[FROM_COL].map(harmonize_country)
     votes[TO_COL] = votes[TO_COL].map(harmonize_country)
@@ -167,27 +173,44 @@ def jaccard_similarity_matrix(
 
 
 def build_profiles(
-    votes_path: Path = VOTES_PATH,
+    min_year: int = MIN_YEAR,
+    max_year: int = MAX_YEAR,
+    points_types: set[str] | None = None,
+    min_editions: int = MIN_VOTING_EDITIONS,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Opportunity-normalized outgoing vote rates and their recipient-centered
-    residuals, restricted to countries with enough voting editions."""
-    votes = load_votes(votes_path)
+    residuals, restricted to countries with enough voting editions.
+
+    `points_types` restricts to a subset of the "Points type" column (e.g.
+    just JURY_COL or TELEVOTE_COL) so the same pipeline can build jury-only
+    and televote-only profiles, not just the combined one."""
+    votes = load_votes(min_year=min_year, max_year=max_year)
+    if points_types is not None:
+        votes = votes[votes["Points type"].isin(points_types)]
     countries = all_countries(votes)
-    voters = eligible_voters(votes)
+    voters = eligible_voters(votes, min_editions=min_editions)
     opportunity = build_opportunity_matrix(votes, countries)
     rates = build_rate_matrix(votes, countries).loc[voters]
     return rates, center_by_recipient(rates, opportunity.loc[voters])
 
 
-def build_similarity(votes_path: Path = VOTES_PATH) -> pd.DataFrame:
-    _rates, centered = build_profiles(votes_path)
+def build_similarity(
+    min_year: int = MIN_YEAR,
+    max_year: int = MAX_YEAR,
+    points_types: set[str] | None = None,
+    min_editions: int = MIN_VOTING_EDITIONS,
+) -> pd.DataFrame:
+    _rates, centered = build_profiles(
+        min_year=min_year,
+        max_year=max_year,
+        points_types=points_types,
+        min_editions=min_editions,
+    )
     return cosine_similarity_matrix(centered)
 
 
-def build_split_matrices(
-    votes_path: Path = VOTES_PATH, min_year: int = SPLIT_MIN_YEAR
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    votes = load_votes(votes_path, min_year=min_year)
+def build_split_matrices(min_year: int = SPLIT_MIN_YEAR) -> tuple[pd.DataFrame, pd.DataFrame]:
+    votes = load_votes(min_year=min_year)
     countries = all_countries(votes)
     return (
         build_points_matrix(votes[votes["Points type"] == JURY_COL], countries),

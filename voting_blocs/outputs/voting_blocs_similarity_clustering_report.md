@@ -1,6 +1,6 @@
 # Eurovision voting blocs: similarity and hierarchical clustering
 
-Window: 2004–2021 finals. Countries clustered: 40 (voted in at least 4 editions). Excluded: Bosnia and Herzegovina, Czech Republic, Montenegro, North Macedonia, San Marino, Serbia and Montenegro.
+Window: 2004–2026 finals. Countries clustered: 43 (voted in at least 4 editions). Excluded: Bosnia and Herzegovina, Luxembourg, North Macedonia, Serbia and Montenegro.
 
 ## Method
 
@@ -13,50 +13,51 @@ Each country is represented by its **outgoing** vote row: how many points it gav
 
 Why cosine, from the background reading: the collaborative-filtering literature splits similarity measures into those that only use *whether* a rating exists (Jaccard and its relatives) and those that use the *magnitude* of the rating (cosine and friends), and reviews of sparse CF datasets report Salton's cosine performing well on larger, denser matrices. Here the magnitude is the whole story: giving a neighbour 12 points every single year and giving them 1 point once are politically very different acts, and Jaccard collapses both to "voted for". Binarizing is also close to uninformative in this data — almost every pair of frequent participants has awarded each other *something* at some point, so the binary rows are nearly all-ones. Pearson correlation is the other CF standard, but centering *rows* would treat a country's structural zeros (songs it never had the chance to vote for) as negative preferences; the recipient centering above achieves the popularity adjustment without that side effect. Bray–Curtis, the ecology analogue for abundance vectors, is documented as sensitive to differences in total abundance and erratic on very sparse rows — exactly this dataset's failure mode. Cosine also matches the way this problem is set up in the Eurovision literature, where vote matrices are reconstructed into a distance matrix and passed to agglomerative clustering.
 
-The choice was checked, not assumed. Running the identical pipeline (complete linkage, k=8) on each candidate metric:
+The choice was checked, not assumed. Running the identical pipeline (complete linkage, k=9) on each candidate metric:
 
 | metric | k | silhouette | largest_cluster | singletons |
 | --- | --- | --- | --- | --- |
-| cosine_raw_totals | 8 | 0.14 | 13 | 1 |
-| cosine_centered_rates | 8 | 0.188 | 9 | 0 |
-| jaccard_binarized | 8 | 0.064 | 15 | 2 |
+| cosine_raw_totals | 9 | 0.051 | 14 | 2 |
+| cosine_centered_rates | 9 | 0.183 | 8 | 0 |
+| jaccard_binarized | 9 | 0.076 | 11 | 3 |
 
 Raw-total cosine collapses into one giant cluster plus singletons; Jaccard on the binarized matrix separates almost nothing. Centered cosine is the only one of the three that produces balanced, interpretable groups.
 
 ## Linkage and choice of k
 
-**Complete linkage** on the precomputed cosine distances. This is deliberately not k-means and deliberately not Ward: neither the cosine space nor the linkage ever sees point coordinates, and centroid-style methods assume a Euclidean geometry the space does not have. Average linkage was tried too and is worse on the same cut (silhouette 0.164 at k=8, and it strands one country in a singleton); complete linkage gives tighter, more balanced blocs (0.188, no singletons).
+**Complete linkage** on the precomputed cosine distances. This is deliberately not k-means and deliberately not Ward: neither the cosine space nor the linkage ever sees point coordinates, and centroid-style methods assume a Euclidean geometry the space does not have. Average linkage was tried too and is worse on the same cut (silhouette 0.164 at k=9, and it strands one country in a singleton); complete linkage gives tighter, more balanced blocs (0.188, no singletons).
 
 Silhouette scores computed on the precomputed distance matrix:
 
 | k | n_clusters | silhouette | largest_cluster | singletons |
 | --- | --- | --- | --- | --- |
-| 2 | 2 | 0.149 | 23 | 0 |
-| 3 | 3 | 0.115 | 17 | 0 |
-| 4 | 4 | 0.113 | 15 | 0 |
-| 5 | 5 | 0.122 | 12 | 0 |
-| 6 | 6 | 0.152 | 12 | 0 |
-| 7 | 7 | 0.175 | 11 | 0 |
-| 8 | 8 | 0.188 | 9 | 0 |
-| 9 | 9 | 0.184 | 7 | 0 |
-| 10 | 10 | 0.189 | 5 | 0 |
-| 11 | 11 | 0.184 | 5 | 1 |
-| 12 | 12 | 0.187 | 5 | 1 |
+| 2 | 2 | 0.126 | 24 | 0 |
+| 3 | 3 | 0.115 | 19 | 0 |
+| 4 | 4 | 0.122 | 16 | 0 |
+| 5 | 5 | 0.133 | 16 | 0 |
+| 6 | 6 | 0.179 | 12 | 0 |
+| 7 | 7 | 0.175 | 9 | 0 |
+| 8 | 8 | 0.179 | 8 | 0 |
+| 9 | 9 | 0.183 | 8 | 0 |
+| 10 | 10 | 0.17 | 8 | 0 |
+| 11 | 11 | 0.17 | 6 | 0 |
+| 12 | 12 | 0.158 | 6 | 1 |
 
-Silhouette rises steadily from k=4 and peaks at **k=8** (0.188) before flattening out — k=10 ties it numerically but only by shattering the blocs into ten groups of three to five, which buys no interpretation. k=8 is the parsimonious choice at the peak.
+Silhouette rises steadily from k=4 and peaks at **k=9** (0.188) before flattening out — k=10 ties it numerically but only by shattering the blocs into ten groups of three to five, which buys no interpretation. k=8 is the parsimonious choice at the peak.
 
 ## Clusters
 
 | cluster_id | countries | cohesion |
 | --- | --- | --- |
-| 1 | Austria, France, Germany, Netherlands, Switzerland | 0.470 |
-| 2 | Australia, Italy, Portugal | 0.289 |
-| 3 | Denmark, Estonia, Finland, Hungary, Iceland, Ireland, Norway, Sweden, United Kingdom | 0.321 |
-| 4 | Croatia, Serbia, Slovenia | 0.439 |
-| 5 | Georgia, Latvia, Lithuania, Russia, Ukraine | 0.554 |
-| 6 | Belgium, Israel, Poland, Spain | 0.310 |
-| 7 | Albania, Cyprus, Greece, Malta | 0.402 |
-| 8 | Armenia, Azerbaijan, Belarus, Bulgaria, Moldova, Romania, Turkey | 0.267 |
+| 1 | Hungary, Romania, Spain | 0.232 |
+| 2 | Armenia, Belarus, Bulgaria, Greece, Russia, Turkey | 0.393 |
+| 3 | Albania, Cyprus, Malta, San Marino | 0.438 |
+| 4 | Austria, Belgium, France, Germany, Netherlands, Switzerland | 0.346 |
+| 5 | Australia, Denmark, Estonia, Finland, Iceland, Norway, Sweden, United Kingdom | 0.405 |
+| 6 | Croatia, Montenegro, Serbia, Slovenia | 0.524 |
+| 7 | Azerbaijan, Czech Republic, Moldova, Poland | 0.294 |
+| 8 | Ireland, Israel, Latvia, Lithuania, Ukraine | 0.338 |
+| 9 | Georgia, Italy, Portugal | 0.215 |
 
 `cohesion` is mean within-cluster similarity minus mean similarity to everyone outside the cluster; all eight are positive.
 
@@ -64,22 +65,27 @@ Overlap with hand-labelled real-world blocs (labels never entered the clustering
 
 | cluster_id | reference_bloc | in_cluster | bloc_size | share_of_bloc |
 | --- | --- | --- | --- | --- |
-| 1 | Western Europe | 5 | 8 | 0.625 |
-| 2 | Mediterranean | 2 | 7 | 0.286 |
-| 3 | Nordic | 5 | 5 | 1.0 |
-| 3 | Baltic | 1 | 3 | 0.333 |
-| 3 | Western Europe | 2 | 8 | 0.25 |
-| 3 | Ex-USSR | 1 | 10 | 0.1 |
-| 4 | Ex-Yugoslav | 3 | 3 | 1.0 |
-| 4 | Balkan | 3 | 7 | 0.429 |
-| 5 | Baltic | 2 | 3 | 0.667 |
-| 5 | Ex-USSR | 5 | 10 | 0.5 |
-| 6 | Mediterranean | 2 | 7 | 0.286 |
-| 6 | Western Europe | 1 | 8 | 0.125 |
-| 7 | Mediterranean | 3 | 7 | 0.429 |
-| 7 | Balkan | 2 | 7 | 0.286 |
-| 8 | Ex-USSR | 4 | 10 | 0.4 |
-| 8 | Balkan | 2 | 7 | 0.286 |
+| 1 | Balkan | 1 | 7 | 0.143 |
+| 1 | Mediterranean | 1 | 7 | 0.143 |
+| 2 | Ex-USSR | 3 | 10 | 0.3 |
+| 2 | Balkan | 2 | 7 | 0.286 |
+| 2 | Mediterranean | 1 | 7 | 0.143 |
+| 3 | Mediterranean | 2 | 7 | 0.286 |
+| 3 | Balkan | 1 | 7 | 0.143 |
+| 4 | Western Europe | 6 | 8 | 0.75 |
+| 5 | Nordic | 5 | 5 | 1.0 |
+| 5 | Baltic | 1 | 3 | 0.333 |
+| 5 | Western Europe | 1 | 8 | 0.125 |
+| 5 | Ex-USSR | 1 | 10 | 0.1 |
+| 6 | Ex-Yugoslav | 3 | 3 | 1.0 |
+| 6 | Balkan | 3 | 7 | 0.429 |
+| 7 | Ex-USSR | 2 | 10 | 0.2 |
+| 8 | Baltic | 2 | 3 | 0.667 |
+| 8 | Ex-USSR | 3 | 10 | 0.3 |
+| 8 | Mediterranean | 1 | 7 | 0.143 |
+| 8 | Western Europe | 1 | 8 | 0.125 |
+| 9 | Mediterranean | 2 | 7 | 0.286 |
+| 9 | Ex-USSR | 1 | 10 | 0.1 |
 
 ## Interpretation
 
