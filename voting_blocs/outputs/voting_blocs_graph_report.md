@@ -18,9 +18,9 @@ edge *A → B* is the total number of points A gave B inside the window.
 
 | Graph | Window | Point types | Nodes | Directed edges | Density |
 | --- | --- | --- | --- | --- | --- |
-| `full` | 2004–2021 | all (combined + jury + televote) | 46 | 1578 | 0.88 |
-| `jury` | 2016–2021 | `Points given by the jury` | 42 | 879 | 0.70 |
-| `televote` | 2016–2021 | `Points given by televoters` | 42 | 884 | 0.69 |
+| `full` | 2004–2021 | all (combined + jury + televote) | 47 | 1856 | 0.94 |
+| `jury` | 2016–2021 | `Points given by the jury` | 44 | 1452 | 0.89 |
+| `televote` | 2016–2021 | `Points given by televoters` | 44 | 1430 | 0.88 |
 
 The jury/televote split is only reliably recorded from 2016 onward, so the two
 comparison graphs are restricted to 2016–2021 (2020 was cancelled, so five
@@ -63,27 +63,27 @@ between this pair", which is the quantity the hypothesis is about. It does throw
 away asymmetry (Cyprus→Greece is not the same as Greece→Cyprus), so it is a real
 loss — mitigated by the fact that the two variants agree almost perfectly on
 this data: ARI between directed and symmetrised Louvain on the `full` graph is
-**1.000** (modularity 0.1311 directed
-vs 0.1304 symmetrised). Since the answers coincide, the
+**0.712** (modularity 0.0982 directed
+vs 0.0981 symmetrised). Since the answers coincide, the
 symmetrised graph is used for the headline results because its modularity values
 are comparable across the three graphs and the visualisation is legible.
 
-**Girvan–Newman: tractable but inappropriate.** At 46 nodes
+**Girvan–Newman: tractable but inappropriate.** At 47 nodes
 GN is computationally fine — 12 levels of edge removal run in a few
 seconds. It is *statistically* wrong for this graph. GN removes high
 edge-betweenness edges, i.e. bridges, and a graph with density
-0.88 has no bridges: every removal just peels one more
+0.94 has no bridges: every removal just peels one more
 country off the giant component. Running it (with distance = 1/weight, since
 NetworkX treats the betweenness `weight` argument as a length, so heavy edges
 must be made *short*) produced exactly that degenerate cascade, best modularity
-**0.0014** with partition sizes [42, 1, 1, 1, 1] — versus
-0.1304 for Louvain. This is reported as a negative result rather
+**0.0007** with partition sizes [40, 1, 1, 1, 1, 1, 1, 1] — versus
+0.0981 for Louvain. This is reported as a negative result rather
 than hidden: GN is a topology-driven method and this network's structure is
 entirely in its weights.
 
 **Louvain is stochastic**, and on a graph this dense the seed matters: over
 30 restarts, Q on the `full` graph ranged from
-0.1230 to 0.1304, and low-scoring runs
+0.0928 to 0.0981, and low-scoring runs
 produced visibly worse partitions (e.g. splitting the Baltics off arbitrarily).
 Every Louvain result reported here is therefore the **best of
 30 restarts** (seeds 7–36) by
@@ -97,11 +97,11 @@ than a single run.
 
 | Graph | Communities | Modularity Q | Q range over restarts |
 | --- | --- | --- | --- |
-| `full` (symmetrised Louvain) | 3 | 0.1304 | 0.1230–0.1304 |
-| `full` (directed Louvain) | 3 | 0.1311 | — |
-| `full` (Girvan–Newman) | 5 | 0.0014 | — |
-| `jury` | 3 | 0.1404 | 0.1320–0.1404 |
-| `televote` | 4 | 0.1482 | 0.1362–0.1482 |
+| `full` (symmetrised Louvain) | 3 | 0.0981 | 0.0928–0.0981 |
+| `full` (directed Louvain) | 4 | 0.0982 | — |
+| `full` (Girvan–Newman) | 8 | 0.0007 | — |
+| `jury` | 3 | 0.0885 | 0.0780–0.0885 |
+| `televote` | 3 | 0.1167 | 0.1137–0.1167 |
 
 These Q values are low in absolute terms (0.3–0.7 is the usual "strong
 structure" band). That is expected and is itself a finding: on a near-complete
@@ -109,8 +109,8 @@ graph the null model already predicts a large share of every edge's weight, so
 even a genuinely meaningful partition cannot score highly. The values are used
 comparatively, not as an absolute claim of strong modular structure.
 
-Crucially, **jury Q (0.1404) and televote Q
-(0.1482) are almost identical** — modularity alone cannot tell
+Crucially, **jury Q (0.0885) and televote Q
+(0.1167) are almost identical** — modularity alone cannot tell
 these two apart. The difference is not in *how much* structure there is but in
 *what the structure is made of*, which needs the geographic test below.
 
@@ -126,15 +126,15 @@ share of permutations at least as compact as observed. Australia is excluded
 
 | Graph | Mean within-community distance | Expected under random labels | Ratio | p |
 | --- | --- | --- | --- | --- |
-| `full` | 1299 km | 1692 km | 0.768 | 0.0000 |
-| `jury` | 1537 km | 1736 km | 0.886 | 0.0000 |
-| `televote` | 1482 km | 1737 km | 0.853 | 0.0000 |
+| `full` | 1498 km | 1681 km | 0.891 | 0.0025 |
+| `jury` | 1635 km | 1705 km | 0.959 | 0.0355 |
+| `televote` | 1590 km | 1706 km | 0.932 | 0.0170 |
 
-The televote partition is the geographically compact one: its communities average 1482 km internally, 15% tighter than a random relabelling (p = 0.0000). The jury partition sits at 1537 km, only 11% tighter than chance (p = 0.0000). In excess-compactness terms the televote signal is 1.3× the jury signal.
+The televote partition is the geographically compact one: its communities average 1590 km internally, 7% tighter than a random relabelling (p = 0.0170). The jury partition sits at 1635 km, only 4% tighter than chance (p = 0.0355). In excess-compactness terms the televote signal is 1.7× the jury signal.
 
-Agreement between the two partitions on the 42 countries
-present in both: ARI **0.040**, NMI
-**0.136** — they are related but far from the same
+Agreement between the two partitions on the 44 countries
+present in both: ARI **0.183**, NMI
+**0.241** — they are related but far from the same
 partition.
 
 Community ids are matched across the three graphs by maximum member overlap so
@@ -143,42 +143,40 @@ a graph with fewer communities therefore skips an id.
 
 ### Televote communities (2016–2021)
 
-- **Community 0** (12): Australia, Denmark, Estonia, Finland, Iceland, Ireland, Latvia, Lithuania, Malta, Norway, Sweden, United Kingdom
-- **Community 1** (10): Albania, Bulgaria, Cyprus, Greece, Italy, North Macedonia, San Marino, Serbia, Slovenia, Switzerland
-- **Community 2** (12): Armenia, Azerbaijan, Belarus, Czech Republic, France, Georgia, Israel, Moldova, Portugal, Russia, Spain, Ukraine
-- **Community 3** (8): Austria, Belgium, Croatia, Germany, Hungary, Poland, Romania, The Netherlands
+- **Community 0** (19): Albania, Armenia, Azerbaijan, Belarus, Bulgaria, Cyprus, France, Georgia, Greece, Israel, Italy, Luxembourg, Moldova, Portugal, Romania, Russia, San Marino, Spain, Switzerland
+- **Community 1** (17): Australia, Belgium, Czech Republic, Denmark, Estonia, Finland, Iceland, Ireland, Latvia, Lithuania, Malta, Norway, Poland, Sweden, The Netherlands, Ukraine, United Kingdom
+- **Community 2** (8): Austria, Croatia, Germany, Hungary, Montenegro, North Macedonia, Serbia, Slovenia
 
 ### Jury communities (2016–2021)
 
-- **Community 0** (18): Austria, Czech Republic, Denmark, Estonia, Finland, France, Germany, Iceland, Ireland, Italy, North Macedonia, Norway, Serbia, Slovenia, Spain, Sweden, Switzerland, The Netherlands
-- **Community 1** (12): Albania, Armenia, Azerbaijan, Belarus, Bulgaria, Cyprus, Greece, Malta, Moldova, Romania, Russia, San Marino
-- **Community 3** (12): Australia, Belgium, Croatia, Georgia, Hungary, Israel, Latvia, Lithuania, Poland, Portugal, Ukraine, United Kingdom
+- **Community 0** (13): Albania, Azerbaijan, Belarus, Bulgaria, Cyprus, Greece, Italy, Malta, Moldova, Romania, Russia, San Marino, Spain
+- **Community 1** (15): Australia, Belgium, Croatia, Estonia, Finland, Georgia, Germany, Ireland, Israel, Montenegro, North Macedonia, Poland, Serbia, Sweden, United Kingdom
+- **Community 2** (16): Armenia, Austria, Czech Republic, Denmark, France, Hungary, Iceland, Latvia, Lithuania, Luxembourg, Norway, Portugal, Slovenia, Switzerland, The Netherlands, Ukraine
 
 ### Where the two partitions disagree
 
 Rows are televote communities, columns jury communities; each cell counts
 countries. A clean diagonal would mean the two agree.
 
-| Televote \ Jury | 0 | 1 | 3 |
+| Televote \ Jury | 0 | 1 | 2 |
 | --- | --- | --- | --- |
-| 0 | 7 | 1 | 4 |
-| 1 | 5 | 5 | 0 |
-| 2 | 3 | 5 | 4 |
-| 3 | 3 | 1 | 4 |
+| 0 | 12 | 2 | 5 |
+| 1 | 1 | 8 | 8 |
+| 2 | 0 | 5 | 3 |
 
 The countries whose community becomes most geographically dispersed when moving
 from televote to jury — i.e. the clearest individual cases of the jury breaking
 up a geographic bloc:
 
-- **North Macedonia** — +1039 km (649 km to its televote community, 1688 km to its jury community)
-- **Serbia** — +817 km (665 km to its televote community, 1482 km to its jury community)
-- **San Marino** — +799 km (802 km to its televote community, 1601 km to its jury community)
-- **Belgium** — +766 km (889 km to its televote community, 1655 km to its jury community)
-- **Croatia** — +705 km (716 km to its televote community, 1421 km to its jury community)
-- **Hungary** — +634 km (693 km to its televote community, 1327 km to its jury community)
+- **Montenegro** — +926 km (522 km to its televote community, 1448 km to its jury community)
+- **Croatia** — +925 km (422 km to its televote community, 1347 km to its jury community)
+- **Serbia** — +889 km (506 km to its televote community, 1395 km to its jury community)
+- **North Macedonia** — +866 km (680 km to its televote community, 1546 km to its jury community)
+- **Armenia** — +792 km (2194 km to its televote community, 2986 km to its jury community)
+- **Hungary** — +787 km (484 km to its televote community, 1271 km to its jury community)
 
-Concretely, in the televote graph the tightest community is Austria, Belgium, Croatia, Germany, Hungary, Poland, Romania, The Netherlands — a block of mutual neighbours averaging only 780 km between members. The jury graph
-has no comparable equivalent: its most dispersed community groups Australia, Belgium, Croatia, Georgia, Hungary, Israel, Latvia, Lithuania, Poland, Portugal, Ukraine, United Kingdom, averaging 1837 km between members — a set that spans the whole map and cannot be read as a neighbourhood.
+Concretely, in the televote graph the tightest community is Austria, Croatia, Germany, Hungary, Montenegro, North Macedonia, Serbia, Slovenia — a block of mutual neighbours averaging only 559 km between members. The jury graph
+has no comparable equivalent: its most dispersed community groups Australia, Belgium, Croatia, Estonia, Finland, Georgia, Germany, Ireland, Israel, Montenegro, North Macedonia, Poland, Serbia, Sweden, United Kingdom, averaging 1739 km between members — a set that spans the whole map and cannot be read as a neighbourhood.
 
 The interpretation, in terms of the project's central question: **the televote
 carries the geography/diaspora signal and the jury largely does not.** Public
@@ -204,8 +202,8 @@ five contests, so the jury graph rests on less data than the `full` graph.
 Raw point totals reward countries that qualify for many finals. Re-running the
 whole pipeline with edge weight = *points per shared contest* (dividing by the
 number of years in which the pair could actually vote for each other) gives
-4 communities on the `full` graph with ARI
-**0.255** against the headline partition. The partitions differ noticeably, so part of the raw-total structure does reflect how often countries reached the final; the jury-vs-televote contrast in section 4 is unaffected because both graphs cover the same five contests and the same countries.
+3 communities on the `full` graph with ARI
+**0.555** against the headline partition. The two partitions largely agree, so the headline blocs are not an artefact of unequal qualification rates.
 
 ## 6. Outputs
 
@@ -220,6 +218,6 @@ number of years in which the pair could actually vote for each other) gives
 
 ### Full-graph communities (2004–2021)
 
-- **Community 0** (18): Australia, Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, Germany, Hungary, Iceland, Ireland, Latvia, Lithuania, Norway, Poland, Sweden, The Netherlands, United Kingdom
-- **Community 1** (14): Albania, Bosnia and Herzegovina, Croatia, Cyprus, Greece, Italy, Malta, Montenegro, North Macedonia, San Marino, Serbia, Serbia and Montenegro, Slovenia, Switzerland
-- **Community 2** (14): Armenia, Azerbaijan, Belarus, Bulgaria, France, Georgia, Israel, Moldova, Portugal, Romania, Russia, Spain, Turkey, Ukraine
+- **Community 0** (22): Albania, Armenia, Azerbaijan, Belarus, Bulgaria, Cyprus, France, Georgia, Greece, Israel, Italy, Luxembourg, Malta, Moldova, Portugal, Romania, Russia, San Marino, Serbia and Montenegro, Spain, Turkey, Ukraine
+- **Community 1** (18): Australia, Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, Germany, Iceland, Ireland, Latvia, Lithuania, Norway, Poland, Sweden, Switzerland, The Netherlands, United Kingdom
+- **Community 2** (7): Bosnia and Herzegovina, Croatia, Hungary, Montenegro, North Macedonia, Serbia, Slovenia

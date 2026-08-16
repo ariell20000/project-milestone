@@ -19,13 +19,14 @@ from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
+DATA_PATH_EXTENSION = BASE_DIR.parent / "eurovision_2022-2026.csv"  # 2022+ extension, same schema
 OUTPUT_DIR = BASE_DIR / "outputs"
 FIGURE_PATH = OUTPUT_DIR / "voting_blocs_network_comparison.png"
 COMMUNITIES_PATH = OUTPUT_DIR / "voting_blocs_communities.csv"
 REPORT_PATH = OUTPUT_DIR / "voting_blocs_graph_report.md"
 
-FULL_WINDOW = (2004, 2021)
-SPLIT_WINDOW = (2016, 2021)
+FULL_WINDOW = (2004, 2026)
+SPLIT_WINDOW = (2016, 2026)
 COMBINED_TYPE = "Points given"
 SEED = 7
 LOUVAIN_RESTARTS = 30
@@ -73,6 +74,7 @@ COUNTRY_COORDS = {
     "Italy": (12.6, 42.5),
     "Latvia": (24.6, 56.9),
     "Lithuania": (23.9, 55.2),
+    "Luxembourg": (6.1, 49.6),  # returned to the contest in 2025, in the 2022-2026 extension
     "Malta": (14.4, 35.9),
     "Moldova": (28.5, 47.2),
     "Montenegro": (19.3, 42.7),
@@ -120,7 +122,12 @@ COMMUNITY_COLORS = [
 
 
 def load_votes() -> pd.DataFrame:
-    df = clean_data(load_data(DATA_PATH))
+    # Merges the 1957-2021 file with the 2022+ extension before cleaning -
+    # mirrors voting_blocs_similarity.load_votes(), so both the graph and
+    # similarity/clustering sides of this project see the same 2004-2026
+    # history rather than one stopping at the original file's 2021 cutoff.
+    raw = pd.concat([load_data(DATA_PATH), load_data(DATA_PATH_EXTENSION)], ignore_index=True)
+    df = clean_data(raw)
     for column in ("From", "To"):
         df[column] = df[column].replace(NODE_ALIASES)
     return df
@@ -406,9 +413,9 @@ def plot_networks(
     subtitles: dict[str, str],
 ) -> None:
     titles = {
-        "full": "All points, 2004–2021",
-        "jury": "Jury points only, 2016–2021",
-        "televote": "Televote points only, 2016–2021",
+        "full": f"All points, {FULL_WINDOW[0]}–{FULL_WINDOW[1]}",
+        "jury": f"Jury points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
+        "televote": f"Televote points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
     }
     fig, axes = plt.subplots(1, 3, figsize=(21, 7.0))
     for ax, key in zip(axes, ("full", "jury", "televote")):

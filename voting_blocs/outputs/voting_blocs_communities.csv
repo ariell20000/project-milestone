@@ -1,131 +1,136 @@
 country,graph,community_id
-Albania,full,1
-Armenia,full,2
-Australia,full,0
-Austria,full,0
-Azerbaijan,full,2
-Belarus,full,2
-Belgium,full,0
-Bosnia and Herzegovina,full,1
-Bulgaria,full,2
-Croatia,full,1
-Cyprus,full,1
-Czech Republic,full,0
-Denmark,full,0
-Estonia,full,0
-Finland,full,0
-France,full,2
-Georgia,full,2
-Germany,full,0
-Greece,full,1
-Hungary,full,0
-Iceland,full,0
-Ireland,full,0
-Israel,full,2
-Italy,full,1
-Latvia,full,0
-Lithuania,full,0
-Malta,full,1
-Moldova,full,2
-Montenegro,full,1
-North Macedonia,full,1
-Norway,full,0
-Poland,full,0
-Portugal,full,2
-Romania,full,2
-Russia,full,2
-San Marino,full,1
-Serbia,full,1
-Serbia and Montenegro,full,1
-Slovenia,full,1
-Spain,full,2
-Sweden,full,0
+Albania,full,0
+Armenia,full,0
+Australia,full,1
+Austria,full,1
+Azerbaijan,full,0
+Belarus,full,0
+Belgium,full,1
+Bosnia and Herzegovina,full,2
+Bulgaria,full,0
+Croatia,full,2
+Cyprus,full,0
+Czech Republic,full,1
+Denmark,full,1
+Estonia,full,1
+Finland,full,1
+France,full,0
+Georgia,full,0
+Germany,full,1
+Greece,full,0
+Hungary,full,2
+Iceland,full,1
+Ireland,full,1
+Israel,full,0
+Italy,full,0
+Latvia,full,1
+Lithuania,full,1
+Luxembourg,full,0
+Malta,full,0
+Moldova,full,0
+Montenegro,full,2
+North Macedonia,full,2
+Norway,full,1
+Poland,full,1
+Portugal,full,0
+Romania,full,0
+Russia,full,0
+San Marino,full,0
+Serbia,full,2
+Serbia and Montenegro,full,0
+Slovenia,full,2
+Spain,full,0
+Sweden,full,1
 Switzerland,full,1
-The Netherlands,full,0
-Turkey,full,2
-Ukraine,full,2
-United Kingdom,full,0
-Albania,jury,1
-Armenia,jury,1
-Australia,jury,3
-Austria,jury,0
-Azerbaijan,jury,1
-Belarus,jury,1
-Belgium,jury,3
-Bulgaria,jury,1
-Croatia,jury,3
-Cyprus,jury,1
-Czech Republic,jury,0
-Denmark,jury,0
-Estonia,jury,0
-Finland,jury,0
-France,jury,0
-Georgia,jury,3
-Germany,jury,0
-Greece,jury,1
-Hungary,jury,3
-Iceland,jury,0
-Ireland,jury,0
-Israel,jury,3
+The Netherlands,full,1
+Turkey,full,0
+Ukraine,full,0
+United Kingdom,full,1
+Albania,jury,0
+Armenia,jury,2
+Australia,jury,1
+Austria,jury,2
+Azerbaijan,jury,0
+Belarus,jury,0
+Belgium,jury,1
+Bulgaria,jury,0
+Croatia,jury,1
+Cyprus,jury,0
+Czech Republic,jury,2
+Denmark,jury,2
+Estonia,jury,1
+Finland,jury,1
+France,jury,2
+Georgia,jury,1
+Germany,jury,1
+Greece,jury,0
+Hungary,jury,2
+Iceland,jury,2
+Ireland,jury,1
+Israel,jury,1
 Italy,jury,0
-Latvia,jury,3
-Lithuania,jury,3
-Malta,jury,1
-Moldova,jury,1
-North Macedonia,jury,0
-Norway,jury,0
-Poland,jury,3
-Portugal,jury,3
-Romania,jury,1
-Russia,jury,1
-San Marino,jury,1
-Serbia,jury,0
-Slovenia,jury,0
+Latvia,jury,2
+Lithuania,jury,2
+Luxembourg,jury,2
+Malta,jury,0
+Moldova,jury,0
+Montenegro,jury,1
+North Macedonia,jury,1
+Norway,jury,2
+Poland,jury,1
+Portugal,jury,2
+Romania,jury,0
+Russia,jury,0
+San Marino,jury,0
+Serbia,jury,1
+Slovenia,jury,2
 Spain,jury,0
-Sweden,jury,0
-Switzerland,jury,0
-The Netherlands,jury,0
-Ukraine,jury,3
-United Kingdom,jury,3
-Albania,televote,1
-Armenia,televote,2
-Australia,televote,0
-Austria,televote,3
-Azerbaijan,televote,2
-Belarus,televote,2
-Belgium,televote,3
-Bulgaria,televote,1
-Croatia,televote,3
-Cyprus,televote,1
-Czech Republic,televote,2
-Denmark,televote,0
-Estonia,televote,0
-Finland,televote,0
-France,televote,2
-Georgia,televote,2
-Germany,televote,3
-Greece,televote,1
-Hungary,televote,3
-Iceland,televote,0
-Ireland,televote,0
-Israel,televote,2
-Italy,televote,1
-Latvia,televote,0
-Lithuania,televote,0
-Malta,televote,0
-Moldova,televote,2
-North Macedonia,televote,1
-Norway,televote,0
-Poland,televote,3
-Portugal,televote,2
-Romania,televote,3
-Russia,televote,2
-San Marino,televote,1
-Serbia,televote,1
-Slovenia,televote,1
-Spain,televote,2
-Sweden,televote,0
-Switzerland,televote,1
-The Netherlands,televote,3
-Ukraine,televote,2
-United Kingdom,televote,0
+Sweden,jury,1
+Switzerland,jury,2
+The Netherlands,jury,2
+Ukraine,jury,2
+United Kingdom,jury,1
+Albania,televote,0
+Armenia,televote,0
+Australia,televote,1
+Austria,televote,2
+Azerbaijan,televote,0
+Belarus,televote,0
+Belgium,televote,1
+Bulgaria,televote,0
+Croatia,televote,2
+Cyprus,televote,0
+Czech Republic,televote,1
+Denmark,televote,1
+Estonia,televote,1
+Finland,televote,1
+France,televote,0
+Georgia,televote,0
+Germany,televote,2
+Greece,televote,0
+Hungary,televote,2
+Iceland,televote,1
+Ireland,televote,1
+Israel,televote,0
+Italy,televote,0
+Latvia,televote,1
+Lithuania,televote,1
+Luxembourg,televote,0
+Malta,televote,1
+Moldova,televote,0
+Montenegro,televote,2
+North Macedonia,televote,2
+Norway,televote,1
+Poland,televote,1
+Portugal,televote,0
+Romania,televote,0
+Russia,televote,0
+San Marino,televote,0
+Serbia,televote,2
+Slovenia,televote,2
+Spain,televote,0
+Sweden,televote,1
+Switzerland,televote,0
+The Netherlands,televote,1
+Ukraine,televote,1
+United Kingdom,televote,1
