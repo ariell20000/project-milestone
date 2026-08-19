@@ -1,0 +1,101 @@
+feature,n_folds_survived,fold_survival_rate,kept
+grief / mourning,5,1.0,True
+mental health struggle,5,1.0,True
+jealousy,4,0.8,True
+war or conflict,4,0.8,True
+vulnerability,4,0.8,True
+summer,4,0.8,True
+fate / destiny,4,0.8,True
+death / mortality,4,0.8,True
+human rights,4,0.8,True
+longing / yearning,3,0.6,True
+anger / rage,3,0.6,True
+the ocean / sea,3,0.6,True
+war refugee experience,3,0.6,True
+heartbreak recovery,3,0.6,True
+spirituality,3,0.6,True
+love,3,0.6,True
+defiance,2,0.4,False
+breakup,2,0.4,False
+numbness / emptiness,2,0.4,False
+joy / happiness,2,0.4,False
+healing,2,0.4,False
+magic / mysticism,2,0.4,False
+new beginnings in love,2,0.4,False
+protest / rebellion,1,0.2,False
+coming of age,1,0.2,False
+codependency,1,0.2,False
+patriotism / national pride,1,0.2,False
+fear / anxiety,1,0.2,False
+melancholy,1,0.2,False
+loneliness,1,0.2,False
+fire,1,0.2,False
+time passing,1,0.2,False
+alcohol / drinking,1,0.2,False
+fame / stardom,1,0.2,False
+chaos versus order,1,0.2,False
+courage,1,0.2,False
+afterlife,1,0.2,False
+unrequited love,0,0.0,False
+reunion,0,0.0,False
+betrayal,0,0.0,False
+friendship,0,0.0,False
+bitterness,0,0.0,False
+family,0,0.0,False
+euphoria,0,0.0,False
+excitement / thrill,0,0.0,False
+relief,0,0.0,False
+desperation,0,0.0,False
+confusion,0,0.0,False
+regret,0,0.0,False
+gratitude,0,0.0,False
+pride,0,0.0,False
+shame / guilt,0,0.0,False
+empowerment,0,0.0,False
+nostalgia,0,0.0,False
+nature,0,0.0,False
+party / celebration,0,0.0,False
+heartbreak,0,0.0,False
+hope,0,0.0,False
+tenderness,0,0.0,False
+immigration / displacement,0,0.0,False
+social justice,0,0.0,False
+freedom,0,0.0,False
+forgiveness,0,0.0,False
+flirtation / seduction,0,0.0,False
+long-distance relationship,0,0.0,False
+infidelity,0,0.0,False
+jealous ex-lover,0,0.0,False
+commitment / devotion,0,0.0,False
+personal transformation,0,0.0,False
+escapism,0,0.0,False
+ambition / dreams,0,0.0,False
+resilience / perseverance,0,0.0,False
+self-discovery,0,0.0,False
+self-acceptance,0,0.0,False
+discrimination / prejudice,0,0.0,False
+revolution,0,0.0,False
+equality,0,0.0,False
+peace,0,0.0,False
+unity / solidarity,0,0.0,False
+identity,0,0.0,False
+LGBTQ+ pride,0,0.0,False
+feminism / women's empowerment,0,0.0,False
+self-doubt,0,0.0,False
+individuality,0,0.0,False
+glamour,0,0.0,False
+youth,0,0.0,False
+hedonism,0,0.0,False
+wealth / materialism,0,0.0,False
+nightlife,0,0.0,False
+inner strength,0,0.0,False
+authenticity,0,0.0,False
+dance,0,0.0,False
+water,0,0.0,False
+seasons changing,0,0.0,False
+freedom through music,0,0.0,False
+stars / sky,0,0.0,False
+light versus darkness,0,0.0,False
+dreams (sleep / visions),0,0.0,False
+storytelling / fairy tale,0,0.0,False
+music as escape / power of song,0,0.0,False

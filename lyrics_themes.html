@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eurovision Lyrics: What Are We Really Singing About?</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#e8e8f0;min-height:100vh}
+  header{background:linear-gradient(135deg,#1a0533 0%,#0d1a3d 50%,#1a0533 100%);border-bottom:1px solid rgba(200,120,255,.2);padding:40px 60px 32px;position:relative;overflow:hidden}
+  header::before{content:'🎤';position:absolute;right:60px;top:50%;transform:translateY(-50%);font-size:80px;opacity:.15}
+  header h1{font-size:2rem;font-weight:900;background:linear-gradient(90deg,#e040fb,#7c4dff,#40c4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+  header p{color:rgba(200,200,230,.65);font-size:.95rem;max-width:700px;line-height:1.6}
+  .badge-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px 14px;font-size:.75rem;color:rgba(200,200,230,.8)}
+  .badge strong{color:#e040fb}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:32px 40px;max-width:1400px;margin:0 auto}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;transition:border-color .3s}
+  .card:hover{border-color:rgba(200,120,255,.3)}
+  .card.wide{grid-column:1/-1}
+  .card-title{font-size:1.05rem;font-weight:700;color:#f0f0ff;margin-bottom:4px}
+  .card-sub{font-size:.78rem;color:rgba(180,180,210,.55);margin-bottom:22px;line-height:1.5}
+  .card-sub em{color:#e040fb;font-style:normal;font-weight:600}
+  canvas{width:100%!important}
+  .insight{margin-top:18px;padding:12px 16px;border-radius:10px;font-size:.8rem;line-height:1.5;border-left:3px solid}
+  .insight.pink{background:rgba(224,64,251,.08);border-color:#e040fb;color:#e8c0ff}
+  .insight.blue{background:rgba(64,196,255,.08);border-color:#40c4ff;color:#b0e8ff}
+  .insight.gold{background:rgba(255,214,0,.08);border-color:#ffd600;color:#fff4b0}
+  .insight.red{background:rgba(255,82,82,.08);border-color:#ff5252;color:#ffb0b0}
+  .insight strong{font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <h1>Eurovision Lyrics: What Are We Really Singing About?</h1>
+  <p>A lyrical theme analysis of every Eurovision entry from 1956 to 2025 — 1,795 songs, 10 themes, and some surprising patterns about what actually wins.</p>
+  <div class="badge-row">
+    <span class="badge"><strong>1,795</strong> songs analysed</span>
+    <span class="badge"><strong>70</strong> years of Eurovision</span>
+    <span class="badge"><strong>10</strong> lyrical themes</span>
+    <span class="badge"><strong>71</strong> winners</span>
+  </div>
+</header>
+<div class="grid">
+  <div class="card">
+    <div class="card-title">The 10 Themes of Eurovision</div>
+    <div class="card-sub">What is Eurovision actually singing about? <em>Party &amp; celebration</em> dominates — nearly half of all entries — but that was not always the case.</div>
+    <canvas id="donutChart" height="260"></canvas>
+    <div class="insight pink"><strong>46% of all Eurovision songs</strong> are about partying or celebrating. Yet love (21%) still produces more winners per entry.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Which Theme Actually Wins?</div>
+    <div class="card-sub">Win rate = % of songs in each theme that took home the trophy. The most common theme is <em>not</em> the best at winning.</div>
+    <canvas id="winRateChart" height="280"></canvas>
+    <div class="insight red"><strong>War songs: 40 entries, 0 wins — ever.</strong> And love songs outperform party songs in win rate (5.8% vs 4.3%).</div>
+  </div>
+  <div class="card wide">
+    <div class="card-title">How Eurovision Themes Changed Across 7 Decades</div>
+    <div class="card-sub">Theme proportion per decade reveals a dramatic cultural shift. The <em>2000s broke everything</em>: party music went from 25% to nearly 80% by the 2010s.</div>
+    <canvas id="decadeChart" height="180"></canvas>
+    <div class="insight gold"><strong>The great party takeover:</strong> In the 1960s, 41% of songs were love songs. By the 2010s, party/celebration was 77% of all entries. Love fell from 41% to 10%.</div>
+  </div>
+  <div class="card wide">
+    <div class="card-title">12 Points: Jury vs Public Taste by Theme</div>
+    <div class="card-sub">The coveted douze points per theme, split by <em>jury</em> vs <em>televote</em>. Some themes are loved by the crowd but ignored by experts.</div>
+    <canvas id="juryChart" height="160"></canvas>
+    <div class="insight blue"><strong>The public gives 12s to hope and nostalgia — the jury never does.</strong> War songs collect 4 jury 12-points despite never winning the contest.</div>
+  </div>
+</div>
+<script>
+Chart.defaults.color='rgba(200,200,230,0.7)';
+Chart.defaults.font.family="'Inter',sans-serif";
+Chart.defaults.font.size=12;
+const THEMES=['Party / Celebration','Love','Loneliness','Hope','Heartbreak','Nature','Nostalgia','Empowerment','War or Conflict','Spirituality'];
+const PALETTE=['#e040fb','#ff6b9d','#7c4dff','#40c4ff','#ff8a65','#69f0ae','#ffd740','#b2ff59','#ff5252','#84ffff'];
+const totalSongs=[833,381,135,122,81,73,64,47,40,19];
+new Chart(document.getElementById('donutChart'),{type:'doughnut',data:{labels:THEMES,datasets:[{data:totalSongs,backgroundColor:PALETTE,borderColor:'#0d0d1a',borderWidth:3,hoverOffset:10}]},options:{responsive:true,cutout:'62%',plugins:{legend:{position:'right',labels:{boxWidth:12,padding:10,font:{size:11}}},tooltip:{callbacks:{label:ctx=>{const pct=((ctx.parsed/1795)*100).toFixed(1);return ' '+ctx.parsed+' songs ('+pct+'%)';}}}}}});
+const winners=[36,22,2,4,2,2,1,2,0,0];
+const winRates=totalSongs.map((t,i)=>+((winners[i]/t)*100).toFixed(2));
+new Chart(document.getElementById('winRateChart'),{type:'bar',data:{labels:THEMES,datasets:[{label:'Win rate (%)',data:winRates,backgroundColor:winRates.map(r=>r===0?'rgba(255,82,82,0.55)':'rgba(224,64,251,0.65)'),borderColor:winRates.map(r=>r===0?'#ff5252':'#e040fb'),borderWidth:1.5,borderRadius:6}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const i=ctx.dataIndex;return ' '+winRates[i]+'%  ('+winners[i]+' wins / '+totalSongs[i]+' songs)';},}}},scales:{x:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{callback:v=>v+'%'},title:{display:true,text:'Win rate (% of theme entries that won)',color:'rgba(200,200,230,0.5)'}},y:{grid:{display:false}}}}});
+const DECADES=['1950s','1960s','1970s','1980s','1990s','2000s','2010s','2020s'];
+const decadeTotals=[45,163,176,200,236,336,408,231];
+const rawByDecade=[[3,21,47,33,45,223,314,147],[18,67,52,65,66,51,39,23],[6,18,17,25,28,12,13,16],[4,22,15,27,27,9,12,6],[4,11,9,11,11,15,9,11],[6,9,10,8,19,11,5,5],[3,12,12,11,13,3,7,3],[0,2,5,10,15,5,0,8],[0,0,6,7,4,5,8,10],[0,0,3,3,8,2,0,2]];
+const decadeDatasets=THEMES.map((name,ti)=>({label:name,data:DECADES.map((_,di)=>+((rawByDecade[ti][di]/decadeTotals[di])*100).toFixed(1)),backgroundColor:PALETTE[ti]+'cc',borderColor:PALETTE[ti],borderWidth:0}));
+new Chart(document.getElementById('decadeChart'),{type:'bar',data:{labels:DECADES,datasets:decadeDatasets},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:8,font:{size:10.5}}},tooltip:{callbacks:{label:ctx=>' '+ctx.dataset.label+': '+ctx.parsed.y+'%'}}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,max:100,grid:{color:'rgba(255,255,255,0.05)'},ticks:{callback:v=>v+'%'},title:{display:true,text:"% of that decade's entries",color:'rgba(200,200,230,0.5)'}}}}});
+const jury12=[42,6,2,0,0,0,0,0,4,0];
+const public12=[39,5,2,2,0,2,2,0,4,0];
+new Chart(document.getElementById('juryChart'),{type:'bar',data:{labels:THEMES,datasets:[{label:'Jury 12 points',data:jury12,backgroundColor:'rgba(124,77,255,0.65)',borderColor:'#7c4dff',borderWidth:1.5,borderRadius:5},{label:'Public 12 points',data:public12,backgroundColor:'rgba(255,107,157,0.65)',borderColor:'#ff6b9d',borderWidth:1.5,borderRadius:5}]},options:{responsive:true,plugins:{legend:{position:'top',labels:{boxWidth:14,padding:14}},tooltip:{callbacks:{label:ctx=>' '+ctx.dataset.label+': '+ctx.parsed.y+' x 12-point awards'}}},scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(255,255,255,0.05)'},title:{display:true,text:'Number of 12-point awards received',color:'rgba(200,200,230,0.5)'},ticks:{stepSize:5}}}}});
+</script>
+</body>
+</html>
