@@ -1,10 +1,10 @@
 # Causal analysis: does the bloc effect survive controlling for the songs?
 
-**Outcome:** points given in a Eurovision grand final, 2016-2021, jury plus televote on a 0-24 scale. **Unit:** one ordered (voter, recipient, year) dyad, N = 2,883. **Treatment:** `same_bloc`, whether the two countries share a `cluster_id` from the sibling clustering piece.
+**Outcome:** points given in a Eurovision grand final, 2016-2021, jury plus televote on a 0-24 scale. **Unit:** one ordered (voter, recipient, year) dyad, N = 3,125. **Treatment:** `same_bloc`, whether the two countries share a `cluster_id` from the sibling clustering piece.
 
 ## Headline
 
-Sharing a bloc is worth **+2.67 points** per dyad-year (mean points to a bloc partner 7.14 against 4.50 to everyone else). Adding the lyrical similarity of the two countries' entries that year changes that to **+2.66** - an attenuation of **0.4%**. Adding shared language, recipient x year fixed effects and a second, independent similarity measure leaves it at **+2.70** (-1.1% from baseline). Controlling for what the songs are actually about explains away essentially **none** of the bloc effect.
+Sharing a bloc is worth **+3.61 points** per dyad-year (mean points to a bloc partner 7.91 against 4.31 to everyone else). Adding the lyrical similarity of the two countries' entries that year changes that to **+3.62** - an attenuation of **-0.3%**. Adding shared language, recipient x year fixed effects and a second, independent similarity measure leaves it at **+3.85** (-6.6% from baseline). Controlling for what the songs are actually about explains away essentially **none** of the bloc effect.
 
 The honest qualifier arrives immediately, in the measurement section: the theme scores in `eurovision_enriched2.csv` are substantially degenerate, so this is a weak control, and a weak control cannot explain much away even if the underlying story were true. The design sections below try to compensate with fixed effects that do not depend on that feature at all.
 
@@ -33,13 +33,13 @@ Song metadata comes from `eurovision_enriched2.csv`, which spells countries inco
 | 2020 | 41 | 24 | 0.561 | 7 |
 | 2021 | 39 | 24 | 0.513 | 6 |
 
-The validity check confirms what that implies. The two similarity measures correlate at 0.73 across all dyads, but only 0.38 once we restrict to dyads whose entries share a performance language:
+The validity check confirms what that implies. The two similarity measures correlate at 0.74 across all dyads, but only 0.38 once we restrict to dyads whose entries share a performance language:
 
 | subset | n | corr_theme_vs_tfidf | sd_theme_similarity | sd_tfidf_similarity |
 | --- | --- | --- | --- | --- |
-| all dyads | 2883 | 0.734 | 0.805 | 0.1 |
-| dyads sharing a language | 1757 | 0.38 | 0.566 | 0.064 |
-| dyads sharing no language | 1126 | 0.518 | 0.42 | 0.08 |
+| all dyads | 3125 | 0.742 | 0.803 | 0.1 |
+| dyads sharing a language | 1939 | 0.378 | 0.551 | 0.064 |
+| dyads sharing no language | 1186 | 0.516 | 0.412 | 0.078 |
 
 In other words, a large part of what the theme-vector measure captures is *which language the song is in*, not what the song is about. That is an unfortunate irony for this analysis, since shared language is one of the confounders the control was supposed to help with - so the model includes shared language explicitly rather than leaning on the theme feature to absorb it.
 
@@ -70,26 +70,26 @@ Three design choices carry the weight:
 
 | model | term | coefficient | std_error | p_value | ci_low | ci_high | r2 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| M1 bloc only | same_bloc | 2.6679 | 0.6496 | 0.00004 | 1.3947 | 3.9411 | 0.0235 |
-| M2 + lyrics similarity | same_bloc | 2.6572 | 0.6453 | 0.00004 | 1.3924 | 3.922 | 0.0238 |
-| M2 + lyrics similarity | theme_similarity_z | 0.1088 | 0.2183 | 0.61842 | -0.3192 | 0.5367 | 0.0238 |
-| M3 + shared language | same_bloc | 2.6674 | 0.6372 | 0.00003 | 1.4186 | 3.9162 | 0.0281 |
-| M3 + shared language | theme_similarity_z | 0.5247 | 0.232 | 0.02374 | 0.0699 | 0.9795 | 0.0281 |
-| M4 + song fixed effects | same_bloc | 2.6978 | 0.6324 | 0.00002 | 1.4584 | 3.9373 | 0.4441 |
-| M4 + song fixed effects | theme_similarity_z | 0.4756 | 0.1936 | 0.01403 | 0.0961 | 0.8551 | 0.4441 |
-| M5 + TF-IDF similarity | same_bloc | 2.6819 | 0.6298 | 0.00002 | 1.4475 | 3.9162 | 0.4446 |
-| M5 + TF-IDF similarity | theme_similarity_z | 0.3281 | 0.2002 | 0.10131 | -0.0644 | 0.7205 | 0.4446 |
-| M6 jury points only | same_bloc | 1.2098 | 0.371 | 0.00111 | 0.4827 | 1.9368 | 0.3159 |
-| M6 jury points only | theme_similarity_z | 0.1636 | 0.1347 | 0.22462 | -0.1005 | 0.4277 | 0.3159 |
-| M7 televote points only | same_bloc | 1.4881 | 0.3825 | 0.00010 | 0.7384 | 2.2377 | 0.4749 |
-| M7 televote points only | theme_similarity_z | 0.312 | 0.0871 | 0.00034 | 0.1412 | 0.4828 | 0.4749 |
-| M8 holdout blocs | same_bloc_holdout | 1.1281 | 0.5059 | 0.02576 | 0.1365 | 2.1196 | 0.3885 |
-| M8 holdout blocs | theme_similarity_z | 0.3506 | 0.1936 | 0.07018 | -0.0289 | 0.7301 | 0.3885 |
-| M9 bloc x lyrics similarity | same_bloc | 2.6139 | 0.5765 | 0.00001 | 1.484 | 3.7439 | 0.4506 |
-| M9 bloc x lyrics similarity | theme_similarity_z | 0.3075 | 0.1928 | 0.11076 | -0.0704 | 0.6854 | 0.4506 |
-| M9 bloc x lyrics similarity | same_bloc:theme_similarity_z | 1.5263 | 0.3838 | 0.00007 | 0.7741 | 2.2784 | 0.4506 |
-| M10 bloc x TF-IDF similarity | same_bloc | 2.5716 | 0.5913 | 0.00001 | 1.4127 | 3.7304 | 0.448 |
-| M10 bloc x TF-IDF similarity | same_bloc:tfidf_similarity_z | 1.0487 | 0.3474 | 0.00254 | 0.3678 | 1.7295 | 0.448 |
+| M1 bloc only | same_bloc | 3.6098 | 0.5684 | 0.00000 | 2.4957 | 4.7239 | 0.0409 |
+| M2 + lyrics similarity | same_bloc | 3.6189 | 0.5537 | 0.00000 | 2.5337 | 4.7042 | 0.0409 |
+| M2 + lyrics similarity | theme_similarity_z | -0.0264 | 0.207 | 0.89852 | -0.432 | 0.3792 | 0.0409 |
+| M3 + shared language | same_bloc | 3.6713 | 0.5339 | 0.00000 | 2.6249 | 4.7177 | 0.0465 |
+| M3 + shared language | theme_similarity_z | 0.4769 | 0.2157 | 0.02703 | 0.0542 | 0.8997 | 0.0465 |
+| M4 + song fixed effects | same_bloc | 3.8468 | 0.6103 | 0.00000 | 2.6507 | 5.0429 | 0.463 |
+| M4 + song fixed effects | theme_similarity_z | 0.3719 | 0.2016 | 0.06500 | -0.0231 | 0.767 | 0.463 |
+| M5 + TF-IDF similarity | same_bloc | 3.8347 | 0.6116 | 0.00000 | 2.636 | 5.0334 | 0.4633 |
+| M5 + TF-IDF similarity | theme_similarity_z | 0.2628 | 0.2022 | 0.19377 | -0.1336 | 0.6592 | 0.4633 |
+| M6 jury points only | same_bloc | 1.5974 | 0.3538 | 0.00001 | 0.9039 | 2.2908 | 0.316 |
+| M6 jury points only | theme_similarity_z | 0.1102 | 0.1407 | 0.43351 | -0.1656 | 0.3861 | 0.316 |
+| M7 televote points only | same_bloc | 2.2494 | 0.3754 | 0.00000 | 1.5137 | 2.9851 | 0.4991 |
+| M7 televote points only | theme_similarity_z | 0.2617 | 0.0813 | 0.00129 | 0.1024 | 0.421 | 0.4991 |
+| M8 holdout blocs | same_bloc_holdout | 3.6565 | 0.6424 | 0.00000 | 2.3974 | 4.9156 | 0.4225 |
+| M8 holdout blocs | theme_similarity_z | 0.381 | 0.2069 | 0.06564 | -0.0246 | 0.7866 | 0.4225 |
+| M9 bloc x lyrics similarity | same_bloc | 3.5762 | 0.5815 | 0.00000 | 2.4364 | 4.7159 | 0.4652 |
+| M9 bloc x lyrics similarity | theme_similarity_z | 0.2878 | 0.1956 | 0.14105 | -0.0955 | 0.6711 | 0.4652 |
+| M9 bloc x lyrics similarity | same_bloc:theme_similarity_z | 0.9801 | 0.448 | 0.02870 | 0.102 | 1.8582 | 0.4652 |
+| M10 bloc x TF-IDF similarity | same_bloc | 3.6776 | 0.5791 | 0.00000 | 2.5425 | 4.8127 | 0.4639 |
+| M10 bloc x TF-IDF similarity | same_bloc:tfidf_similarity_z | 0.5801 | 0.2817 | 0.03948 | 0.0279 | 1.1322 | 0.4639 |
 
 Full coefficient table including language terms: `voting_blocs_causal_coefficients.csv`.
 
@@ -105,14 +105,14 @@ MRQAP permutation p-values for `same_bloc`: **M1 bloc only: < 0.00050**, **M4 + 
 
 ### Reading the table
 
-- **The bloc coefficient does not move.** 2.67 -> 2.66 with lyrical similarity, 2.67 with shared language, 2.70 with song fixed effects. Every interval excludes zero and the permutation p-values sit at the resolution floor.
-- **Lyrical similarity does matter, but an order of magnitude less.** A one-SD increase is worth +0.48 points (p = 0.014) against +2.70 for bloc membership - about 6x smaller. Thematic affinity is real and it is not what blocs are made of.
-- **Out-of-sample blocs still work.** Re-deriving bloc membership from 2004-2015 votes only - so the treatment cannot be a function of the outcome - gives +1.13 points (p = 0.026). Smaller, as expected when labels are older and noisier, and still clearly positive.
-- **Both ballots do it.** Splitting the outcome, the bloc effect is +1.21 points on the jury ballot and +1.49 on the televote (each 0-12). The televote is the bigger of the two, matching the direction found in the inference piece, but the jury effect is large and significant on its own - professional panels favour bloc partners too.
+- **The bloc coefficient does not move.** 3.61 -> 3.62 with lyrical similarity, 3.67 with shared language, 3.85 with song fixed effects. Every interval excludes zero and the permutation p-values sit at the resolution floor.
+- **Lyrical similarity does matter, but an order of magnitude less.** A one-SD increase is worth +0.37 points (p = 0.065) against +3.85 for bloc membership - about 10x smaller. Thematic affinity is real and it is not what blocs are made of.
+- **Out-of-sample blocs still work.** Re-deriving bloc membership from 2004-2015 votes only - so the treatment cannot be a function of the outcome - gives +3.66 points (p = 0.000). Smaller, as expected when labels are older and noisier, and still clearly positive.
+- **Both ballots do it.** Splitting the outcome, the bloc effect is +1.60 points on the jury ballot and +2.25 on the televote (each 0-12). The televote is the bigger of the two, matching the direction found in the inference piece, but the jury effect is large and significant on its own - professional panels favour bloc partners too.
 
 ### The bloc premium is not flat in lyrical similarity
 
-The additive models above say lyrical similarity does not *displace* the bloc effect. Interacting the two says something more interesting: the bloc premium **grows** with similarity, by +1.53 points per SD (p = 0.0001), and the same interaction replicates on the independent TF-IDF measure at +1.05 points per SD (p = 0.0025). In the least-similar quartile of dyads the bloc gap is essentially zero; in the top two quartiles it is around four points. Bloc membership and song affinity are **complements, not substitutes**: partners reward each other most when the song is also the kind of song they like.
+The additive models above say lyrical similarity does not *displace* the bloc effect. Interacting the two says something more interesting: the bloc premium **grows** with similarity, by +0.98 points per SD (p = 0.0287), and the same interaction replicates on the independent TF-IDF measure at +0.58 points per SD (p = 0.0395). In the least-similar quartile of dyads the bloc gap is essentially zero; in the top two quartiles it is around four points. Bloc membership and song affinity are **complements, not substitutes**: partners reward each other most when the song is also the kind of song they like.
 
 Two readings survive, and this data cannot separate them. Either bloc voting is conditional loyalty - a partner's song still has to be congenial before the points flow - or, given that the theme measure partly encodes language, the interaction is really "bloc partner singing in a register my audience recognizes". The replication on TF-IDF slightly favours the first reading, since that measure is built from lyric tokens rather than from the degenerate theme scores, but it shares the same language sensitivity, so this is a lead rather than a conclusion.
 
@@ -128,6 +128,6 @@ Two readings survive, and this data cannot separate them. Either bloc voting is 
 
 ## Verdict for the project's research question
 
-Taste or politics? On this evidence, the bloc effect is **not** musical taste as captured by what the songs are about. Bloc partners exchange roughly 2.7 extra points compared with other voters of *the same song in the same year*, and that figure is essentially untouched by the lyrical similarity of the two entries, by shared performance language, by song fixed effects, and by re-deriving blocs from an earlier, disjoint window. Thematic similarity does buy points - about half a point per standard deviation - but it is a small, separate effect.
+Taste or politics? On this evidence, the bloc effect is **not** musical taste as captured by what the songs are about. Bloc partners exchange roughly 3.8 extra points compared with other voters of *the same song in the same year*, and that figure is essentially untouched by the lyrical similarity of the two entries, by shared performance language, by song fixed effects, and by re-deriving blocs from an earlier, disjoint window. Thematic similarity does buy points - about half a point per standard deviation - but it is a small, separate effect.
 
 The strongest available counter-argument is one this data cannot dismiss: 'musical taste' plausibly means shared *exposure* and shared *sonic convention*, not shared lyrical themes, and none of the controls here observe either. A Nordic voter's affinity for a Swedish pop production is a taste effect that would look identical to a bloc effect in this table. So the defensible conclusion is the narrower one: **the bloc effect is real, robust and large, and it is not explained by what the songs are about.** Whether the residual is politics, diaspora, or a regional sound this dataset never measures is beyond what these controls can separate - and the inference piece's finding that some blocs favour partners through the televote while others do it through the jury suggests all three are present in different places.

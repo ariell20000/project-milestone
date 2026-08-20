@@ -1,9 +1,10 @@
 cluster_id,members,n_dyad_years,mean_jury,mean_televote,mean_gap
-4,"Croatia, Serbia, Slovenia",6,0.33,9.33,-9.0
-5,"Georgia, Latvia, Lithuania, Russia, Ukraine",28,4.32,6.18,-1.857
-3,"Denmark, Estonia, Finland, Hungary, Iceland, Ireland, Norway, Sweden, United Kingdom",128,2.28,4.01,-1.727
-2,"Australia, Italy, Portugal",18,2.33,2.56,-0.222
-6,"Belgium, Israel, Poland, Spain",34,1.94,1.91,0.029
-8,"Armenia, Azerbaijan, Belarus, Bulgaria, Moldova, Romania, Turkey",46,4.24,3.85,0.391
-1,"Austria, France, Germany, Netherlands, Switzerland",54,4.72,2.7,2.019
-7,"Albania, Cyprus, Greece, Malta",30,6.47,3.73,2.733
+6,"Croatia, Montenegro, Serbia, Slovenia",6,0.33,9.33,-9.0
+4,"Belarus, Georgia, Russia, Turkey",4,3.25,7.0,-3.75
+2,"Azerbaijan, Czech Republic, Israel, Moldova",30,2.53,4.17,-1.633
+1,"Italy, Portugal",6,3.0,4.33,-1.333
+8,"Australia, Denmark, Estonia, Finland, Iceland, Norway, Sweden, United Kingdom",126,3.24,4.45,-1.214
+9,"Ireland, Latvia, Lithuania, Poland, Ukraine",22,4.36,5.55,-1.182
+5,"Hungary, Romania, Spain",10,1.5,2.3,-0.8
+7,"Austria, Belgium, France, Germany, Netherlands, Switzerland",76,4.18,3.26,0.921
+3,"Albania, Armenia, Bulgaria, Cyprus, Greece, Malta, San Marino",80,5.09,3.81,1.275
