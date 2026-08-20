@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -9,13 +8,12 @@ import pandas as pd
 import seaborn as sns
 from sklearn.metrics.pairwise import cosine_similarity
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for jury_televote/main
 from jury_televote import JURY_COL, TELEVOTE_COL
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
 VOTES_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
-VOTES_PATH_EXTENSION = BASE_DIR.parent / "eurovision_2022-2026.csv"  # 2022+ extension, same schema
+VOTES_PATH_EXTENSION = BASE_DIR / "eurovision_2022-2026.csv"
 OUTPUT_DIR = BASE_DIR / "outputs"
 
 SIMILARITY_PATH = OUTPUT_DIR / "voting_blocs_similarity_matrix.csv"

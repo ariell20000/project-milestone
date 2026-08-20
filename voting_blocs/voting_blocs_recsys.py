@@ -9,7 +9,6 @@ matrix.
 
 from __future__ import annotations
 
-import sys
 from dataclasses import dataclass, field
 from itertools import product
 from pathlib import Path
@@ -22,7 +21,6 @@ import seaborn as sns
 from scipy import stats
 from sklearn.linear_model import LinearRegression
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for main
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent

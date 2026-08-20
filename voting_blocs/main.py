@@ -103,7 +103,7 @@ def get_target_countries() -> list[str]:
 
 def main() -> None:
     base_dir = Path(__file__).resolve().parent
-    data_path = base_dir / "eurovision_1957-2021.csv"
+    data_path = base_dir.parent / "eurovision_1957-2021.csv"
     if not data_path.exists():
         raise FileNotFoundError(f"Dataset not found: {data_path}")
 

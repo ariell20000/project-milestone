@@ -12,7 +12,6 @@ Design notes that matter more than the coefficients:
 
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -24,7 +23,6 @@ from patsy import dmatrices
 from scipy.cluster.hierarchy import fcluster
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for escxtra_country_mapping/jury_televote
 from escxtra_country_mapping import normalize_country as normalize_enriched_country
 from jury_televote import JURY_COL, TELEVOTE_COL
 from voting_blocs_clustering import CHOSEN_K, build_linkage, to_distance
@@ -47,7 +45,7 @@ from voting_blocs_similarity import (
 
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "outputs"
-ENRICHED_PATH = BASE_DIR.parent / "eurovision_enriched2.csv"  # shared repo-root dataset
+ENRICHED_PATH = BASE_DIR / "eurovision_enriched2.csv"
 
 PANEL_PATH = OUTPUT_DIR / "voting_blocs_causal_panel.csv"
 COEFFICIENTS_PATH = OUTPUT_DIR / "voting_blocs_causal_coefficients.csv"

@@ -8,7 +8,6 @@ shuffling rows would fabricate independent replicates the data does not have.
 
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -17,7 +16,6 @@ import pandas as pd
 import seaborn as sns
 from scipy.stats import mannwhitneyu
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for jury_televote
 from jury_televote import JURY_COL, TELEVOTE_COL
 from voting_blocs_similarity import load_votes
 

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import sys
 from itertools import islice
 from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
@@ -13,13 +12,12 @@ import seaborn as sns
 from networkx.algorithms.community import girvan_newman, louvain_communities, modularity
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for jury_televote/main
 from jury_televote import JURY_COL, TELEVOTE_COL
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
-DATA_PATH_EXTENSION = BASE_DIR.parent / "eurovision_2022-2026.csv"  # 2022+ extension, same schema
+DATA_PATH_EXTENSION = BASE_DIR / "eurovision_2022-2026.csv"
 OUTPUT_DIR = BASE_DIR / "outputs"
 FIGURE_PATH = OUTPUT_DIR / "voting_blocs_network_comparison.png"
 COMMUNITIES_PATH = OUTPUT_DIR / "voting_blocs_communities.csv"
