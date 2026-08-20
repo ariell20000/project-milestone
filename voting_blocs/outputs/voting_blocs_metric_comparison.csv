@@ -1,0 +1,4 @@
+metric,k,silhouette,largest_cluster,singletons
+cosine_raw_totals,9,0.04484782367012504,31,5
+cosine_centered_rates,9,0.1954586420404695,8,0
+jaccard_binarized,9,0.0679196364078945,30,4
