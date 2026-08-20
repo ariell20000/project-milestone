@@ -1,0 +1,21 @@
+# Core - needed for `python3 run_pipeline.py`
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+scikit-learn
+networkx
+statsmodels
+patsy
+wordcloud
+
+# Optional - only for the BERT lyric-theme step (model/generate_themes.py,
+# skipped by run_pipeline.py) and model/predict_score.py's standalone demo
+transformers
+torch
+tqdm
+
+# Optional - only for exploring test_lang/lyrics_nmf_topics_standalone/ directly
+nltk
+joblib
