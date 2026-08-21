@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent
 PYTHON = sys.executable
 
 VOTING_BLOCS_DIR = ROOT / "voting_blocs"
-GRAPHS_DIR = ROOT / "graphs"
-MODEL_DIR = ROOT / "model"
+GRAPHS_DIR = ROOT / "theme_clustering"
+MODEL_DIR = ROOT / "theme_clustering" / "bert model"
 
 # Order matters here: each later script reads an earlier one's output
 # (clustering needs similarity's matrix, causal needs inference's helpers, etc).
@@ -35,16 +35,7 @@ VOTING_BLOCS_SCRIPTS = [
 
 # These are independent of each other - order doesn't matter.
 GRAPH_SCRIPTS = [
-    "composer.py",  # needs internet: pulls a CSV from raw.githubusercontent.com
-    "friendship_clusters.py",
-    "jury_vs_public_bias.py",
-    "kingmaker_scatter.py",
-    "tastmaker.py",
-    "theme_clusters.py",
     "theme_pie_comparison.py",
-    "winner_bias_timeline.py",
-    "winners_by_language.py",
-    "wordcloud_winners_vs_losers.py",
 ]
 
 
@@ -61,8 +52,8 @@ def run(script: Path, *, optional: bool = False) -> None:
 
 def main() -> None:
     print(
-        "Skipping model/generate_themes.py (BERT lyric-theme classifier - slow).\n"
-        "Using the committed model/theme_predictions.csv instead.\n"
+        "Skipping theme_clustering/bert model/generate_themes.py (BERT lyric-theme classifier - slow).\n"
+        "Using the committed theme_clustering/bert model/theme_predictions.csv instead.\n"
         "See README.md if you need to regenerate it from scratch."
     )
 
@@ -75,7 +66,7 @@ def main() -> None:
         run(GRAPHS_DIR / name, optional=(name == "composer.py"))
 
     print(
-        "\nDone. Refreshed voting_blocs/outputs/ and output/. "
+        "\nDone. Refreshed voting_blocs/outputs/ and graph_outputs/. "
         "paper/figures2/ is not touched automatically - copy any changed "
         "figure over manually if the paper needs updating."
     )

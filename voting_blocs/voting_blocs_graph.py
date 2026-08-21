@@ -417,7 +417,8 @@ def plot_networks(
         "televote": f"Televote points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
     }
     
-    out_dir = FIGURE_PATH.with_suffix('')
+    global_output_dir = Path(__file__).resolve().parent.parent / "graph_outputs"
+    out_dir = global_output_dir / FIGURE_PATH.stem
     out_dir.mkdir(parents=True, exist_ok=True)
     
     # 1. Combined triplet graph

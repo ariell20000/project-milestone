@@ -453,7 +453,8 @@ def plot_cluster_maps(
         "televote": f"Eurovision voting blocs: televote points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
     }
     
-    out_dir = output_path.with_suffix('')
+    global_output_dir = Path(__file__).resolve().parent.parent / "graph_outputs"
+    out_dir = global_output_dir / output_path.stem
     out_dir.mkdir(parents=True, exist_ok=True)
     
     # 1. Combined vertical map
