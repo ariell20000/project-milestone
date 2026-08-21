@@ -83,15 +83,6 @@ Naive row-permutation p on the primary outcome: **0.0695** (against 0.1539 from 
 | observed weighted SD of bloc mean gaps | **1.663** | **1.201** |
 | mean under the QAP null | 0.830 | 0.652 |
 | **QAP p-value (one-sided)** | **0.0005** | **0.0247** |
-
-![QAP permutation nulls](voting_blocs_inference_permutation.png)
-
-*Left: the primary statistic sits well inside its null. Right: the heterogeneity statistic sits far outside its own.*
-
-![Mean gap by bloc](voting_blocs_inference_by_bloc.png)
-
-![Jury vs televote by pairing](voting_blocs_inference_gap_distribution.png)
-
 ### Descriptive breakdowns
 
 The per-year table below is descriptive only — five uncorrected comparisons on small samples.

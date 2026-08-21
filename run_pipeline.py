@@ -3,9 +3,9 @@
 
 Run with: python3 run_pipeline.py
 
-Skips model/generate_themes.py, the BERT lyric-theme classifier, since it is
+Skips theme_clustering/bert model/generate_themes.py, the BERT lyric-theme classifier, since it is
 slow (one zero-shot pass per song). This pipeline uses the already-committed
-model/theme_predictions.csv instead - see README.md for how to regenerate it.
+theme_clustering/bert model/theme_predictions.csv instead - see README.md for how to regenerate it.
 """
 
 from __future__ import annotations
@@ -19,7 +19,6 @@ PYTHON = sys.executable
 
 VOTING_BLOCS_DIR = ROOT / "voting_blocs"
 GRAPHS_DIR = ROOT / "theme_clustering"
-MODEL_DIR = ROOT / "theme_clustering" / "bert model"
 
 # Order matters here: each later script reads an earlier one's output
 # (clustering needs similarity's matrix, causal needs inference's helpers, etc).
@@ -51,16 +50,11 @@ def run(script: Path, *, optional: bool = False) -> None:
 
 
 def main() -> None:
-    print(
-        "Skipping theme_clustering/bert model/generate_themes.py (BERT lyric-theme classifier - slow).\n"
-        "Using the committed theme_clustering/bert model/theme_predictions.csv instead.\n"
-        "See README.md if you need to regenerate it from scratch."
-    )
+    print("Starting pipeline...")
 
     for name in VOTING_BLOCS_SCRIPTS:
         run(VOTING_BLOCS_DIR / name)
 
-    run(MODEL_DIR / "update_theme_predictions.py")
 
     for name in GRAPH_SCRIPTS:
         run(GRAPHS_DIR / name, optional=(name == "composer.py"))

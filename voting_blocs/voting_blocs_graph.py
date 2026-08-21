@@ -4,11 +4,9 @@ from itertools import islice
 from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from networkx.algorithms.community import girvan_newman, louvain_communities, modularity
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
@@ -16,10 +14,10 @@ from jury_televote import JURY_COL, TELEVOTE_COL
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
-DATA_PATH_EXTENSION = BASE_DIR / "eurovision_2022-2026.csv"
+DATA_PATH = BASE_DIR.parent / "dataset" / "eurovision_1957-2021.csv"
+DATA_PATH_EXTENSION = BASE_DIR.parent / "dataset" / "eurovision_2022-2026.csv"
 OUTPUT_DIR = BASE_DIR / "outputs"
-FIGURE_PATH = OUTPUT_DIR / "voting_blocs_network_comparison.png"
+
 COMMUNITIES_PATH = OUTPUT_DIR / "voting_blocs_communities.csv"
 REPORT_PATH = OUTPUT_DIR / "voting_blocs_graph_report.md"
 
@@ -30,7 +28,6 @@ SEED = 7
 LOUVAIN_RESTARTS = 30
 N_PERMUTATIONS = 2000
 GN_MAX_LEVELS = 12
-TOP_EDGES_DRAWN = 110
 
 # main.normalize_country only collapses whitespace, so hyphenated spellings survive
 # as separate strings and would otherwise split one country across two nodes.
@@ -317,131 +314,6 @@ def mean_distance_to_own_community(labels: dict[str, int]) -> dict[str, float]:
     return distances
 
 
-def layout_positions(graph: nx.Graph) -> dict[str, tuple[float, float]]:
-    return {
-        node: LAYOUT_OVERRIDES.get(node, COUNTRY_COORDS[node])
-        for node in graph.nodes
-        if node in COUNTRY_COORDS or node in LAYOUT_OVERRIDES
-    }
-
-
-def draw_panel(
-    ax: plt.Axes,
-    graph: nx.Graph,
-    labels: dict[str, int],
-    title: str,
-    subtitle: str,
-    font_scale: float = 1.0,
-) -> None:
-    positions = layout_positions(graph)
-    nodes = [node for node in graph.nodes if node in positions]
-
-    strength = {
-        node: sum(data["weight"] for _, _, data in graph.edges(node, data=True))
-        for node in nodes
-    }
-    max_strength = max(strength.values()) or 1.0
-    sizes = [(60 + 420 * strength[node] / max_strength) * (font_scale ** 1.5) for node in nodes]
-    colors = [COMMUNITY_COLORS[labels[node] % len(COMMUNITY_COLORS)] for node in nodes]
-
-    edges = sorted(
-        (
-            (u, v, data["weight"])
-            for u, v, data in graph.edges(data=True)
-            if u in positions and v in positions
-        ),
-        key=lambda item: item[2],
-        reverse=True,
-    )[:TOP_EDGES_DRAWN]
-    max_weight = max((weight for _, _, weight in edges), default=1.0)
-
-    for source, target, weight in edges:
-        share = weight / max_weight
-        within = labels[source] == labels[target]
-        ax.plot(
-            [positions[source][0], positions[target][0]],
-            [positions[source][1], positions[target][1]],
-            color=COMMUNITY_COLORS[labels[source] % len(COMMUNITY_COLORS)]
-            if within
-            else "#9e9e9e",
-            linewidth=(0.3 + 2.6 * share) * font_scale,
-            alpha=0.20 + 0.55 * share if within else 0.10 + 0.20 * share,
-            zorder=1,
-        )
-
-    ax.scatter(
-        [positions[node][0] for node in nodes],
-        [positions[node][1] for node in nodes],
-        s=sizes,
-        c=colors,
-        edgecolors="white",
-        linewidths=0.7 * font_scale,
-        zorder=2,
-    )
-    for node in nodes:
-        ax.annotate(
-            SHORT_NAMES.get(node, node),
-            positions[node],
-            xytext=(0, 7 * font_scale),
-            textcoords="offset points",
-            ha="center",
-            fontsize=5.5 * font_scale,
-            zorder=3,
-        )
-
-    ax.set_title(title, fontsize=13 * font_scale, pad=10 * font_scale)
-    ax.text(
-        0.5,
-        -0.04,
-        subtitle,
-        transform=ax.transAxes,
-        ha="center",
-        va="top",
-        fontsize=9 * font_scale,
-        color="#444444",
-    )
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.grid(False)
-    ax.set_aspect(1.4)
-
-
-def plot_networks(
-    graphs: dict[str, nx.Graph],
-    labels: dict[str, dict[str, int]],
-    subtitles: dict[str, str],
-) -> None:
-    titles = {
-        "full": f"All points, {FULL_WINDOW[0]}–{FULL_WINDOW[1]}",
-        "jury": f"Jury points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
-        "televote": f"Televote points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
-    }
-    
-    global_output_dir = Path(__file__).resolve().parent.parent / "graph_outputs"
-    out_dir = global_output_dir / FIGURE_PATH.stem
-    out_dir.mkdir(parents=True, exist_ok=True)
-    
-    # 1. Combined triplet graph
-    fig, axes = plt.subplots(1, 3, figsize=(21, 7.0))
-    for ax, key in zip(axes, ("full", "jury", "televote")):
-        draw_panel(ax, graphs[key], labels[key], titles[key], subtitles[key])
-    fig.suptitle(
-        "Eurovision voting blocs: Louvain communities on the country-to-country points network",
-        fontsize=16,
-        y=0.97,
-    )
-    plt.tight_layout(rect=(0, 0.04, 1, 0.94))
-    plt.savefig(out_dir / FIGURE_PATH.name, dpi=300)
-    plt.close(fig)
-
-    # 2. Three separate graphs
-    for key in ("full", "jury", "televote"):
-        fig, ax = plt.subplots(figsize=(14, 10))
-        draw_panel(ax, graphs[key], labels[key], titles[key], subtitles[key], font_scale=1.8)
-        plt.tight_layout(rect=(0, 0.04, 1, 0.94))
-        plt.savefig(out_dir / f"{FIGURE_PATH.stem}_{key}{FIGURE_PATH.suffix}", dpi=300)
-        plt.close(fig)
-
 
 def write_communities_csv(labels: dict[str, dict[str, int]]) -> None:
     rows = [
@@ -678,12 +550,7 @@ number of years in which the pair could actually vote for each other) gives
 
 ## 6. Outputs
 
-- `outputs/voting_blocs_network_comparison.png` — three panels (full / jury /
-  televote) on a shared rough-geographic layout, nodes coloured by community and
-  sized by total points exchanged, showing the top {TOP_EDGES_DRAWN} edges by
-  weight. Community colours are matched across panels by maximum overlap, so the
-  same colour means roughly the same bloc. Australia is drawn in the empty
-  Atlantic corner rather than at its true position.
+
 - `outputs/voting_blocs_communities.csv` — `country,graph,community_id`.
 - `outputs/voting_blocs_graph_report.md` — this file.
 
@@ -697,7 +564,7 @@ def main() -> None:
     if not DATA_PATH.exists():
         raise FileNotFoundError(f"Dataset not found: {DATA_PATH}")
 
-    sns.set_theme(style="whitegrid")
+
     OUTPUT_DIR.mkdir(exist_ok=True)
     rng = np.random.default_rng(SEED)
 
@@ -767,7 +634,6 @@ def main() -> None:
         for key in graphs
     }
 
-    plot_networks(graphs, labels, subtitles)
     write_communities_csv(labels)
 
     tele_ratio, jury_ratio = geo["televote"]["ratio"], geo["jury"]["ratio"]
@@ -882,7 +748,7 @@ def main() -> None:
     REPORT_PATH.write_text(build_report(context), encoding="utf-8")
 
     print("Saved:")
-    for path in (FIGURE_PATH, COMMUNITIES_PATH, REPORT_PATH):
+    for path in (COMMUNITIES_PATH, REPORT_PATH):
         print(f"  - {path}")
     print(
         f"Modularity — full {modularities['full']:.4f}, "

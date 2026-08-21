@@ -209,12 +209,7 @@ number of years in which the pair could actually vote for each other) gives
 
 ## 6. Outputs
 
-- `outputs/voting_blocs_network_comparison.png` — three panels (full / jury /
-  televote) on a shared rough-geographic layout, nodes coloured by community and
-  sized by total points exchanged, showing the top 110 edges by
-  weight. Community colours are matched across panels by maximum overlap, so the
-  same colour means roughly the same bloc. Australia is drawn in the empty
-  Atlantic corner rather than at its true position.
+
 - `outputs/voting_blocs_communities.csv` — `country,graph,community_id`.
 - `outputs/voting_blocs_graph_report.md` — this file.
 

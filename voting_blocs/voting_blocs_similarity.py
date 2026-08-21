@@ -2,25 +2,22 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from sklearn.metrics.pairwise import cosine_similarity
 
 from jury_televote import JURY_COL, TELEVOTE_COL
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
-VOTES_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
-VOTES_PATH_EXTENSION = BASE_DIR / "eurovision_2022-2026.csv"
+VOTES_PATH = BASE_DIR.parent / "dataset" / "eurovision_1957-2021.csv"
+VOTES_PATH_EXTENSION = BASE_DIR.parent / "dataset" / "eurovision_2022-2026.csv"
 OUTPUT_DIR = BASE_DIR / "outputs"
 
 SIMILARITY_PATH = OUTPUT_DIR / "voting_blocs_similarity_matrix.csv"
 POINTS_MATRIX_PATH = OUTPUT_DIR / "voting_blocs_points_matrix.csv"
 JURY_MATRIX_PATH = OUTPUT_DIR / "voting_blocs_jury_matrix.csv"
 TELEVOTE_MATRIX_PATH = OUTPUT_DIR / "voting_blocs_televote_matrix.csv"
-HEATMAP_PATH = OUTPUT_DIR / "voting_blocs_similarity_heatmap.png"
 
 MIN_YEAR = 2004
 MAX_YEAR = 2026
@@ -216,38 +213,8 @@ def build_split_matrices(min_year: int = SPLIT_MIN_YEAR) -> tuple[pd.DataFrame, 
     )
 
 
-def plot_similarity_heatmap(
-    similarity: pd.DataFrame,
-    output_path: Path,
-    order: list[str] | None = None,
-    title: str | None = None,
-) -> None:
-    ordered = similarity if order is None else similarity.loc[order, order]
-    limit = float(np.abs(ordered.to_numpy()[~np.eye(len(ordered), dtype=bool)]).max())
-    plt.figure(figsize=(16, 14))
-    ax = sns.heatmap(
-        ordered,
-        cmap="vlag",
-        center=0.0,
-        vmin=-limit,
-        vmax=limit,
-        square=True,
-        cbar_kws={"label": "Cosine similarity of centered outgoing vote profiles"},
-    )
-    ax.set_xlabel("Country")
-    ax.set_ylabel("Country")
-    ax.set_title(
-        title or f"Similarity of country voting profiles ({MIN_YEAR}–{MAX_YEAR})"
-    )
-    plt.xticks(rotation=90)
-    plt.yticks(rotation=0)
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
 
 def main() -> None:
-    sns.set_theme(style="whitegrid")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     votes = load_votes()
@@ -264,7 +231,6 @@ def main() -> None:
     jury.to_csv(JURY_MATRIX_PATH)
     televote.to_csv(TELEVOTE_MATRIX_PATH)
     similarity.to_csv(SIMILARITY_PATH)
-    plot_similarity_heatmap(similarity, HEATMAP_PATH)
 
     print(f"Votes {MIN_YEAR}-{MAX_YEAR}: {len(votes)} rows, {len(countries)} countries")
     print(f"Clustered voters (>= {MIN_VOTING_EDITIONS} editions): {len(voters)}")
@@ -276,7 +242,6 @@ def main() -> None:
         JURY_MATRIX_PATH,
         TELEVOTE_MATRIX_PATH,
         SIMILARITY_PATH,
-        HEATMAP_PATH,
     ):
         print(f"  - {path}")
 

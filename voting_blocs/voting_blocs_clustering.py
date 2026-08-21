@@ -3,11 +3,8 @@ from __future__ import annotations
 import textwrap
 from pathlib import Path
 
-import matplotlib.colors as mcolors
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from scipy.cluster.hierarchy import (
     dendrogram,
     fcluster,
@@ -20,7 +17,6 @@ from sklearn.metrics import silhouette_score
 
 from voting_blocs_graph import COUNTRY_COORDS, LAYOUT_OVERRIDES, SHORT_NAMES
 from voting_blocs_similarity import (
-    HEATMAP_PATH,
     JURY_COL,
     MAX_YEAR,
     MIN_VOTING_EDITIONS,
@@ -36,18 +32,15 @@ from voting_blocs_similarity import (
     eligible_voters,
     jaccard_similarity_matrix,
     load_votes,
-    plot_similarity_heatmap,
 )
 
 CLUSTERS_PATH = OUTPUT_DIR / "voting_blocs_clusters.csv"
 CLUSTERS_JURY_PATH = OUTPUT_DIR / "voting_blocs_clusters_jury.csv"
 CLUSTERS_TELEVOTE_PATH = OUTPUT_DIR / "voting_blocs_clusters_televote.csv"
-DENDROGRAM_PATH = OUTPUT_DIR / "voting_blocs_dendrogram.png"
 SILHOUETTE_PATH = OUTPUT_DIR / "voting_blocs_silhouette_by_k.csv"
 SILHOUETTE_JURY_PATH = OUTPUT_DIR / "voting_blocs_silhouette_by_k_jury.csv"
 SILHOUETTE_TELEVOTE_PATH = OUTPUT_DIR / "voting_blocs_silhouette_by_k_televote.csv"
 METRIC_COMPARISON_PATH = OUTPUT_DIR / "voting_blocs_metric_comparison.csv"
-CLUSTER_MAP_PATH = OUTPUT_DIR / "voting_blocs_clusters_map.png"
 REPORT_PATH = OUTPUT_DIR / "voting_blocs_similarity_clustering_report.md"
 
 # voting_blocs_similarity.py's harmonize_country normalizes "The Netherlands" /
@@ -239,48 +232,6 @@ def compare_linkage_methods(
     return pd.DataFrame(rows)
 
 
-def plot_dendrogram(
-    distance: pd.DataFrame,
-    linkage_matrix: np.ndarray,
-    output_path: Path,
-    k: int = CHOSEN_K,
-) -> None:
-    # Halfway between the last within-cluster merge and the first cross-cluster
-    # merge, so the k coloured subtrees match fcluster's k groups exactly.
-    threshold = float(linkage_matrix[-k, 2] + linkage_matrix[-(k - 1), 2]) / 2.0
-    # scipy's default link palette contains a grey that is indistinguishable
-    # from above_threshold_color, which made one bloc look like it was cut off.
-    set_link_color_palette(LINK_COLORS)
-    # Figures get scaled down to \textwidth in the paper (from 18in to ~6.5in,
-    # a ~0.36x factor), so every font/line size here is picked to still read
-    # comfortably after that shrink, not at this file's native resolution.
-    plt.figure(figsize=(18, 9.5))
-    dendrogram(
-        linkage_matrix,
-        labels=list(distance.index),
-        color_threshold=threshold,
-        above_threshold_color="#9c9c9c",
-        leaf_rotation=90,
-        leaf_font_size=21,
-    )
-    ax = plt.gca()
-    for line in ax.get_lines():
-        line.set_linewidth(2.0)
-    ax.axhline(threshold, color="#b30000", linestyle="--", linewidth=2.2)
-    ax.set_ylabel("Cosine distance (1 − similarity), complete linkage", fontsize=24)
-    ax.set_xlabel("Country", fontsize=24, labelpad=12)
-    ax.set_title(
-        f"Eurovision voting blocs: hierarchical clustering of outgoing vote "
-        f"profiles ({MIN_YEAR}–{MAX_YEAR}, cut at k={k})",
-        fontsize=28,
-        pad=16,
-    )
-    ax.tick_params(axis="y", labelsize=22)
-    ax.tick_params(axis="x", pad=6)
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
 
 def best_k_by_silhouette(silhouettes: pd.DataFrame) -> int:
     """Unlike CHOSEN_K (picked once, by inspecting the full-window curve),
@@ -350,148 +301,7 @@ def assign_country_colors(
     return {country: id_colors[fine[country]] for country in distance.index}
 
 
-def plot_clusters_on_map(
-    ax: plt.Axes,
-    clusters: pd.DataFrame,
-    colors_by_country: dict[str, str],
-    title: str,
-    subtitle: str,
-    font_scale: float = 1.0,
-) -> list[str]:
-    """Each country plotted at its real-world coordinates, coloured by
-    dendrogram-family shade (see assign_country_colors) - a geographic view
-    of a partition that clustering.py itself builds from voting *profiles*,
-    not geography, so the map is a check on the clustering rather than an
-    input to it."""
-    positions = {country: coord for country in clusters["country"] if (coord := country_coord(country)) is not None}
-    plotted = clusters[clusters["country"].isin(positions)]
-    skipped = sorted(set(clusters["country"]) - set(positions))
 
-    colors = [colors_by_country[country] for country in plotted["country"]]
-    ax.scatter(
-        [positions[c][0] for c in plotted["country"]],
-        [positions[c][1] for c in plotted["country"]],
-        s=140 * (font_scale ** 1.5),
-        c=colors,
-        edgecolors="white",
-        linewidths=0.7 * font_scale,
-        zorder=2,
-    )
-    for country in plotted["country"]:
-        ax.annotate(
-            SHORT_NAMES.get(country, country),
-            positions[country],
-            xytext=(0, 7 * font_scale),
-            textcoords="offset points",
-            ha="center",
-            fontsize=5.5 * font_scale,
-            zorder=3,
-        )
-    ax.set_title(title, fontsize=13 * font_scale, pad=10 * font_scale)
-    ax.text(
-        0.5, -0.04, subtitle, transform=ax.transAxes,
-        ha="center", va="top", fontsize=9 * font_scale, color="#444444",
-    )
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.grid(False)
-    ax.set_aspect(1.4)
-    return skipped
-
-
-def draw_cluster_legend(
-    ax: plt.Axes,
-    clusters: pd.DataFrame,
-    families: list[list[int]],
-    id_colors: dict[int, str],
-    wrap_width: int = 44,
-    font_scale: float = 1.0,
-) -> None:
-    """Lists every cluster's members below its map, in the same colour as
-    its dots, with a blank line between colour families - so which
-    countries share a cluster, and which clusters are close relatives
-    (same family = shares a nearby common ancestor in the dendrogram), are
-    both readable directly off the figure instead of only off the dots."""
-    members = clusters.groupby("cluster_id")["country"].apply(list).to_dict()
-
-    lines: list[tuple[str, str | None]] = []
-    for family_ids in families:
-        for cluster_id in family_ids:
-            wrapped = textwrap.wrap(", ".join(members[cluster_id]), wrap_width) or [""]
-            for i, part in enumerate(wrapped):
-                lines.append((("● " if i == 0 else "   ") + part, id_colors[cluster_id]))
-        lines.append(("", None))
-    while lines and lines[-1][0] == "":
-        lines.pop()
-
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.axis("off")
-    n_lines = max(len(lines), 1)
-    fontsize = max(8.0, min(14.0, 200 / n_lines)) * font_scale
-    step = 1.0 / n_lines
-    for i, (text, color) in enumerate(lines):
-        ax.text(
-            0.0, 1.0 - (i + 0.5) * step, text,
-            transform=ax.transAxes, ha="left", va="center",
-            fontsize=fontsize, color=color or "black", fontfamily="monospace",
-        )
-
-def plot_cluster_maps(
-    cluster_sets: dict[str, pd.DataFrame],
-    colors_by_country: dict[str, dict[str, str]],
-    families_by_set: dict[str, list[list[int]]],
-    id_colors_by_set: dict[str, dict[int, str]],
-    subtitles: dict[str, str],
-    output_path: Path = CLUSTER_MAP_PATH,
-) -> dict[str, list[str]]:
-    """One map+legend block per ballot (full/jury/televote), saved as
-    both a combined tall figure and separate figures inside a folder."""
-    titles = {
-        "full": f"Eurovision voting blocs: all points, {MIN_YEAR}–{MAX_YEAR}",
-        "jury": f"Eurovision voting blocs: jury points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
-        "televote": f"Eurovision voting blocs: televote points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
-    }
-    
-    global_output_dir = Path(__file__).resolve().parent.parent / "graph_outputs"
-    out_dir = global_output_dir / output_path.stem
-    out_dir.mkdir(parents=True, exist_ok=True)
-    
-    # 1. Combined vertical map
-    fig, axes = plt.subplots(
-        6, 1, figsize=(9, 21),
-        gridspec_kw={"height_ratios": (1.0, 1) * 3},
-        constrained_layout=True,
-    )
-    skipped: dict[str, list[str]] = {}
-    for row, key in enumerate(("full", "jury", "televote")):
-        map_ax, legend_ax = axes[2 * row], axes[2 * row + 1]
-        skipped[key] = plot_clusters_on_map(
-            map_ax, cluster_sets[key], colors_by_country[key], titles[key], subtitles[key]
-        )
-        draw_cluster_legend(
-            legend_ax, cluster_sets[key], families_by_set[key], id_colors_by_set[key]
-        )
-    plt.savefig(out_dir / output_path.name, dpi=300)
-    plt.close(fig)
-
-    # 2. Three separate graphs
-    for key in ("full", "jury", "televote"):
-        fig, (map_ax, legend_ax) = plt.subplots(
-            1, 2, figsize=(16, 9),
-            gridspec_kw={"width_ratios": [12.6, 3.4]},
-            constrained_layout=True,
-        )
-        # using dummy skipped assign since it is already computed
-        _ = plot_clusters_on_map(
-            map_ax, cluster_sets[key], colors_by_country[key], titles[key], subtitles[key], font_scale=1.6
-        )
-        draw_cluster_legend(
-            legend_ax, cluster_sets[key], families_by_set[key], id_colors_by_set[key], wrap_width=32, font_scale=1.3
-        )
-        plt.savefig(out_dir / f"{output_path.stem}_{key}{output_path.suffix}", dpi=300)
-        plt.close(fig)
-    return skipped
 
 
 def bloc_overlap(clusters: pd.DataFrame) -> pd.DataFrame:
@@ -748,7 +558,6 @@ def cluster_subset(
 
 
 def main() -> None:
-    sns.set_theme(style="whitegrid")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     votes = load_votes()
@@ -771,16 +580,6 @@ def main() -> None:
     clusters.to_csv(CLUSTERS_PATH, index=False)
     silhouettes.to_csv(SILHOUETTE_PATH, index=False)
     metric_comparison.to_csv(METRIC_COMPARISON_PATH, index=False)
-    plot_dendrogram(distance, linkage_matrix, DENDROGRAM_PATH)
-    plot_similarity_heatmap(
-        similarity,
-        HEATMAP_PATH,
-        order=order,
-        title=(
-            f"Eurovision voting-profile similarity, ordered by cluster "
-            f"({MIN_YEAR}–{MAX_YEAR})"
-        ),
-    )
     write_report(clusters, similarity, silhouettes, metric_comparison, linkage_comparison, excluded)
 
     # Jury-only / televote-only clusters, over the 2016+ window where that
@@ -799,19 +598,7 @@ def main() -> None:
     silhouettes_jury.to_csv(SILHOUETTE_JURY_PATH, index=False)
     silhouettes_televote.to_csv(SILHOUETTE_TELEVOTE_PATH, index=False)
 
-    skipped = plot_cluster_maps(
-        {"full": clusters, "jury": clusters_jury, "televote": clusters_televote},
-        colors_by_country={"full": colors_full, "jury": colors_jury, "televote": colors_televote},
-        families_by_set={"full": families_full, "jury": families_jury, "televote": families_televote},
-        id_colors_by_set={
-            "full": id_colors_full, "jury": id_colors_jury, "televote": id_colors_televote
-        },
-        subtitles={
-            "full": f"{len(clusters)} countries, k={CHOSEN_K} (chosen from silhouette curve)",
-            "jury": f"{len(clusters_jury)} countries, k={k_jury} (silhouette-best)",
-            "televote": f"{len(clusters_televote)} countries, k={k_televote} (silhouette-best)",
-        },
-    )
+
 
     print(f"Countries clustered: {len(clusters)} (excluded: {', '.join(excluded)})")
     print("\nSilhouette by k:")
@@ -831,9 +618,7 @@ def main() -> None:
     for cluster_id, group in clusters_televote.groupby("cluster_id"):
         print(f"  {cluster_id}: {', '.join(group['country'])}")
 
-    for label, missing in skipped.items():
-        if missing:
-            print(f"\nNo map coordinates for ({label}): {', '.join(missing)}")
+
 
     print("\nSaved:")
     for path in (
@@ -845,9 +630,6 @@ def main() -> None:
         SILHOUETTE_JURY_PATH,
         SILHOUETTE_TELEVOTE_PATH,
         METRIC_COMPARISON_PATH,
-        DENDROGRAM_PATH,
-        HEATMAP_PATH,
-        CLUSTER_MAP_PATH,
         REPORT_PATH,
     ):
         print(f"  - {path}")

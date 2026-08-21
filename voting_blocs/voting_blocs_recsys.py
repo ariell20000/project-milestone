@@ -14,23 +14,20 @@ from itertools import product
 from pathlib import Path
 from typing import Callable, Sequence
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from scipy import stats
 from sklearn.linear_model import LinearRegression
 
 from main import clean_data, load_data
 
 BASE_DIR = Path(__file__).resolve().parent
-VOTES_PATH = BASE_DIR.parent / "eurovision_1957-2021.csv"  # shared repo-root dataset
+VOTES_PATH = BASE_DIR.parent / "dataset" / "eurovision_1957-2021.csv"
 OUTPUT_DIR = BASE_DIR / "outputs"
 METRICS_PATH = OUTPUT_DIR / "voting_blocs_recsys_metrics.csv"
 EXAMPLES_PATH = OUTPUT_DIR / "voting_blocs_recsys_examples.csv"
 TUNING_PATH = OUTPUT_DIR / "voting_blocs_recsys_tuning.csv"
 SIGNIFICANCE_PATH = OUTPUT_DIR / "voting_blocs_recsys_significance.csv"
-PLOT_PATH = OUTPUT_DIR / "voting_blocs_recsys.png"
 
 MIN_YEAR = 2004
 MAX_YEAR = 2021
@@ -814,85 +811,6 @@ def build_examples(
     return pd.DataFrame(rows)
 
 
-def plot_results(
-    test: pd.DataFrame,
-    predictions: dict[str, np.ndarray],
-    metrics: pd.DataFrame,
-    output_path: Path = PLOT_PATH,
-    model_name: str = "matrix_factorization_als",
-    baseline_name: str = "baseline_voter_mean",
-) -> None:
-    sns.set_theme(style="whitegrid")
-    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-
-    scored = test.copy()
-    scored["model"] = predictions[model_name]
-    scored["baseline"] = predictions[baseline_name]
-
-    long = scored.melt(
-        id_vars=[POINTS_COL, "Year"],
-        value_vars=["model", "baseline"],
-        var_name="source",
-        value_name="predicted",
-    )
-    long["source"] = long["source"].map(
-        {"model": "Matrix factorization", "baseline": "Voter-mean baseline"}
-    )
-    sns.pointplot(
-        data=long,
-        x=POINTS_COL,
-        y="predicted",
-        hue="source",
-        errorbar=("ci", 95),
-        dodge=0.3,
-        linestyle="none",
-        ax=axes[0],
-    )
-    levels = sorted(scored[POINTS_COL].unique())
-    axes[0].plot(
-        range(len(levels)),
-        levels,
-        linestyle="--",
-        color="grey",
-        linewidth=1,
-        label="Perfect calibration",
-    )
-    axes[0].set_xlabel("Actual points awarded")
-    axes[0].set_ylabel("Mean predicted points")
-    axes[0].set_title("Predicted vs. actual points (held-out ballots)")
-    axes[0].legend(title="", loc="upper left")
-
-    per_year = (
-        scored.assign(
-            model_error=(scored["model"] - scored[POINTS_COL]) ** 2,
-            baseline_error=(scored["baseline"] - scored[POINTS_COL]) ** 2,
-        )
-        .groupby("Year")[["model_error", "baseline_error"]]
-        .mean()
-        .pow(0.5)
-        .reset_index()
-        .melt(id_vars="Year", var_name="source", value_name="rmse")
-    )
-    per_year["source"] = per_year["source"].map(
-        {"model_error": "Matrix factorization", "baseline_error": "Voter-mean baseline"}
-    )
-    sns.barplot(data=per_year, x="Year", y="rmse", hue="source", ax=axes[1])
-    axes[1].set_xlabel("Contest year")
-    axes[1].set_ylabel("RMSE (points)")
-    axes[1].set_title("Held-out RMSE by year")
-    axes[1].tick_params(axis="x", rotation=45)
-    axes[1].set_ylim(0, per_year["rmse"].max() * 1.35)
-    axes[1].legend(title="", loc="upper right", ncol=2)
-
-    model_row = metrics[metrics["model"] == model_name].iloc[0]
-    fig.suptitle(
-        "Eurovision voting recommender: "
-        f"RMSE {model_row['rmse']:.3f}, NDCG@{TOP_K} {model_row[f'ndcg_at_{TOP_K}']:.3f}"
-    )
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
 
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -925,7 +843,6 @@ def main() -> None:
     examples = build_examples(final_model, cells)
     examples.to_csv(EXAMPLES_PATH, index=False)
 
-    plot_results(test, predictions, metrics)
 
     print(f"Ballot grid: {len(cells)} cells, {cells[BALLOT_COL].nunique()} ballots, "
           f"{cells[VOTER_YEAR_COL].nunique()} voter-years, {encoder.n_entries} entries")
@@ -950,10 +867,6 @@ def main() -> None:
     print(significance.to_string(index=False))
     print("\nExamples (bloc-lift ranking):")
     print(examples[examples["basis"] == "bloc_lift"].head(20).to_string(index=False))
-    print(
-        f"\nSaved: {METRICS_PATH}\n       {EXAMPLES_PATH}\n       {SIGNIFICANCE_PATH}"
-        f"\n       {TUNING_PATH}\n       {PLOT_PATH}"
-    )
 
 
 if __name__ == "__main__":

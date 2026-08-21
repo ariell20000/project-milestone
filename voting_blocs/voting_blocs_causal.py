@@ -14,10 +14,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import statsmodels.formula.api as smf
 from patsy import dmatrices
 from scipy.cluster.hierarchy import fcluster
@@ -45,13 +43,12 @@ from voting_blocs_similarity import (
 
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "outputs"
-ENRICHED_PATH = BASE_DIR / "eurovision_enriched2.csv"
+ENRICHED_PATH = BASE_DIR.parent / "dataset" / "eurovision_enriched2.csv"
 
 PANEL_PATH = OUTPUT_DIR / "voting_blocs_causal_panel.csv"
 COEFFICIENTS_PATH = OUTPUT_DIR / "voting_blocs_causal_coefficients.csv"
 DIAGNOSTICS_PATH = OUTPUT_DIR / "voting_blocs_causal_similarity_diagnostics.csv"
-COEFFICIENT_PLOT_PATH = OUTPUT_DIR / "voting_blocs_causal_coefficients.png"
-SIMILARITY_PLOT_PATH = OUTPUT_DIR / "voting_blocs_causal_similarity.png"
+
 REPORT_PATH = OUTPUT_DIR / "voting_blocs_causal_report.md"
 
 # Blocs for the holdout specification are re-derived from votes that end before
@@ -353,87 +350,6 @@ def tidy_coefficients(models: list[dict[str, object]], terms: list[str]) -> pd.D
             )
     return pd.DataFrame(rows)
 
-
-def plot_coefficients(coefficients: pd.DataFrame, output_path: Path) -> None:
-    # Interaction models are excluded: their `same_bloc` term is a conditional
-    # effect at mean similarity and is not comparable to the others.
-    frame = coefficients[
-        coefficients["term"].isin({TREATMENT, "same_bloc_holdout"})
-        & ~coefficients["model"].str.contains(" x ")
-    ]
-    frame = frame.iloc[::-1].reset_index(drop=True)
-    positions = np.arange(len(frame))
-
-    plt.figure(figsize=(11, 6))
-    ax = plt.gca()
-    ax.errorbar(
-        frame["coefficient"],
-        positions,
-        xerr=[
-            frame["coefficient"] - frame["ci_low"],
-            frame["ci_high"] - frame["coefficient"],
-        ],
-        fmt="o",
-        color="#b30000",
-        ecolor="#4c78a8",
-        elinewidth=2.0,
-        capsize=4,
-        markersize=7,
-    )
-    ax.axvline(0.0, color="#333333", linewidth=1.0, linestyle="--")
-    ax.set_yticks(positions)
-    ax.set_yticklabels(frame["model"])
-    ax.set_xlabel("Effect of sharing a bloc on points given (0–24 scale), 95% CI")
-    ax.set_ylabel("")
-    ax.set_title(
-        "The bloc coefficient is unmoved by controlling for lyrical similarity\n"
-        f"Eurovision finals {MIN_YEAR}–{MAX_YEAR}, two-way cluster-robust intervals"
-    )
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
-
-def plot_similarity(panel: pd.DataFrame, output_path: Path) -> None:
-    frame = panel.copy()
-    frame["Similarity quartile"] = pd.qcut(
-        frame["theme_similarity"], 4, labels=["Q1 (least)", "Q2", "Q3", "Q4 (most)"]
-    )
-    frame["Pairing"] = np.where(frame[TREATMENT] > 0, "Within bloc", "Between blocs")
-
-    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-    sns.barplot(
-        data=frame,
-        x="Similarity quartile",
-        y=POINTS_COL,
-        hue="Pairing",
-        errorbar=("ci", 95),
-        palette=["#9c9c9c", "#b30000"],
-        ax=axes[0],
-    )
-    axes[0].set_ylabel("Mean points given (jury + televote, 0–24)")
-    axes[0].set_title(
-        "The bloc premium grows with lyrical similarity\n(and vanishes in the "
-        "least-similar quartile)"
-    )
-
-    frame["Shared language"] = np.where(frame["shared_language"] > 0, "Yes", "No")
-    sns.scatterplot(
-        data=frame.sample(min(len(frame), 3000), random_state=SEED),
-        x="theme_similarity",
-        y="tfidf_similarity",
-        hue="Shared language",
-        palette={"No": "#9c9c9c", "Yes": "#4c78a8"},
-        alpha=0.4,
-        s=12,
-        ax=axes[1],
-    )
-    axes[1].set_xlabel("Theme-vector similarity (standardized cosine)")
-    axes[1].set_ylabel("Lyrics TF-IDF similarity")
-    axes[1].set_title("The two similarity measures, coloured by shared language")
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
 
 
 def markdown_table(df: pd.DataFrame) -> str:
@@ -768,14 +684,6 @@ def write_report(
         )
         + ".",
         "",
-        "![Bloc coefficient across specifications](voting_blocs_causal_coefficients.png)",
-        "",
-        "![Similarity diagnostics](voting_blocs_causal_similarity.png)",
-        "",
-        "*Right panel: the vertical stripe at similarity exactly 1.00 is the "
-        "duplicated theme vectors - pairs of songs the scoring gave identical "
-        "values to, spread across the whole range of actual lyric similarity.*",
-        "",
         "### Reading the table",
         "",
         f"- **The bloc coefficient does not move.** {baseline['coefficient']:.2f} "
@@ -939,7 +847,6 @@ def write_report(
 
 
 def main() -> None:
-    sns.set_theme(style="whitegrid")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     blocs = load_blocs()
@@ -987,8 +894,7 @@ def main() -> None:
     pd.concat([duplication, validity], axis=0, ignore_index=True).to_csv(
         DIAGNOSTICS_PATH, index=False
     )
-    plot_coefficients(coefficients, COEFFICIENT_PLOT_PATH)
-    plot_similarity(panel, SIMILARITY_PLOT_PATH)
+
     write_report(panel, coefficients, duplication, validity, mrqap)
 
     print(f"Panel: {len(panel):,} dyad-years, {len(countries)} countries")
@@ -1004,8 +910,6 @@ def main() -> None:
         PANEL_PATH,
         COEFFICIENTS_PATH,
         DIAGNOSTICS_PATH,
-        COEFFICIENT_PLOT_PATH,
-        SIMILARITY_PLOT_PATH,
         REPORT_PATH,
     ):
         print(f"  - {path}")

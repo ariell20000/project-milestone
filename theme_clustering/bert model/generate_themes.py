@@ -19,7 +19,7 @@ FEATURES = [
 ]
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.join(script_dir, '..', '..', 'eurovision-lyrics-2025.json')
+json_path = os.path.join(script_dir, '..', '..', 'dataset', 'eurovision-lyrics-2025.json')
 output_csv = os.path.join(script_dir, 'theme_predictions.csv')
 
 def load_data():

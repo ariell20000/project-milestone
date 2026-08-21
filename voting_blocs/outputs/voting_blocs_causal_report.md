@@ -97,12 +97,6 @@ Two estimator caveats, neither of which touches the coefficient of interest. The
 
 MRQAP permutation p-values for `same_bloc`: **M1 bloc only: < 0.00050**, **M4 + song fixed effects: < 0.00050**.
 
-![Bloc coefficient across specifications](voting_blocs_causal_coefficients.png)
-
-![Similarity diagnostics](voting_blocs_causal_similarity.png)
-
-*Right panel: the vertical stripe at similarity exactly 1.00 is the duplicated theme vectors - pairs of songs the scoring gave identical values to, spread across the whole range of actual lyric similarity.*
-
 ### Reading the table
 
 - **The bloc coefficient does not move.** 3.61 -> 3.62 with lyrical similarity, 3.67 with shared language, 3.85 with song fixed effects. Every interval excludes zero and the permutation p-values sit at the resolution floor.

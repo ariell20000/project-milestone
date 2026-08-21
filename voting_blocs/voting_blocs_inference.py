@@ -10,10 +10,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from scipy.stats import mannwhitneyu
 
 from jury_televote import JURY_COL, TELEVOTE_COL
@@ -26,9 +24,7 @@ CLUSTERS_PATH = OUTPUT_DIR / "voting_blocs_clusters.csv"
 PANEL_PATH = OUTPUT_DIR / "voting_blocs_inference_panel.csv"
 SUMMARY_PATH = OUTPUT_DIR / "voting_blocs_inference_summary.csv"
 BLOC_BREAKDOWN_PATH = OUTPUT_DIR / "voting_blocs_inference_by_bloc.csv"
-BLOC_PLOT_PATH = OUTPUT_DIR / "voting_blocs_inference_by_bloc.png"
-PERMUTATION_PLOT_PATH = OUTPUT_DIR / "voting_blocs_inference_permutation.png"
-GAP_PLOT_PATH = OUTPUT_DIR / "voting_blocs_inference_gap_distribution.png"
+
 REPORT_PATH = OUTPUT_DIR / "voting_blocs_inference_report.md"
 
 MIN_YEAR = 2016
@@ -374,144 +370,6 @@ def group_summary(panel: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def plot_permutation_nulls(
-    mean_null: np.ndarray,
-    mean_observed: float,
-    mean_p: float,
-    dispersion_null: np.ndarray,
-    dispersion_observed: float,
-    dispersion_p: float,
-    output_path: Path,
-) -> None:
-    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-
-    sns.histplot(
-        mean_null, bins=60, color="#4c78a8", edgecolor="none", stat="density", ax=axes[0]
-    )
-    axes[0].axvline(mean_observed, color="#b30000", linestyle="--", linewidth=2.0)
-    axes[0].axvline(-mean_observed, color="#b30000", linestyle=":", linewidth=1.0)
-    axes[0].annotate(
-        f"observed = {mean_observed:.3f}\nQAP p = {mean_p:.3f}  (n.s.)",
-        xy=(mean_observed, axes[0].get_ylim()[1] * 0.88),
-        xytext=(-10, 0),
-        textcoords="offset points",
-        ha="right",
-        color="#b30000",
-        fontsize=11,
-    )
-    axes[0].set_xlabel("T = mean gap (within) − mean gap (between), points")
-    axes[0].set_ylabel("Density under the null")
-    axes[0].set_title("Test 1: do blocs lean one way on average?")
-
-    sns.histplot(
-        dispersion_null,
-        bins=60,
-        color="#4c78a8",
-        edgecolor="none",
-        stat="density",
-        ax=axes[1],
-    )
-    axes[1].axvline(dispersion_observed, color="#b30000", linestyle="--", linewidth=2.0)
-    axes[1].annotate(
-        f"observed = {dispersion_observed:.3f}\nQAP p = {format_p(dispersion_p)}",
-        xy=(dispersion_observed, axes[1].get_ylim()[1] * 0.88),
-        xytext=(-10, 0),
-        textcoords="offset points",
-        ha="right",
-        color="#b30000",
-        fontsize=11,
-    )
-    axes[1].set_xlabel("Weighted SD across blocs of their own mean gap, points")
-    axes[1].set_ylabel("Density under the null")
-    axes[1].set_title("Test 3: do blocs differ from each other at all?")
-
-    fig.suptitle(
-        f"QAP permutation nulls: {len(mean_null):,} random re-assignments of bloc "
-        f"labels across countries ({MIN_YEAR}–{MAX_YEAR} finals)"
-    )
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
-
-def short_members(members: str, keep: int = 3) -> str:
-    names = members.split(", ")
-    if len(names) <= keep:
-        return ", ".join(names)
-    return ", ".join(names[:keep]) + f" +{len(names) - keep}"
-
-
-def plot_bloc_gaps(by_bloc: pd.DataFrame, output_path: Path) -> None:
-    frame = by_bloc.sort_values("mean_gap").copy()
-    frame["label"] = frame.apply(
-        lambda r: f"{r['cluster_id']}: {short_members(r['members'])}\n"
-        f"(n={r['n_dyad_years']})",
-        axis=1,
-    )
-    colors = ["#b30000" if value < 0 else "#4c78a8" for value in frame["mean_gap"]]
-
-    plt.figure(figsize=(11, 7))
-    ax = sns.barplot(
-        data=frame, y="label", x="mean_gap", palette=colors, hue="label", legend=False
-    )
-    ax.axvline(0.0, color="#333333", linewidth=1.0)
-    ax.set_xlabel("Mean jury − televote points on the bloc's own internal dyads")
-    ax.set_ylabel("")
-    ax.set_title(
-        "Blocs do not lean the same way\ntelevote-favoured (red) vs jury-favoured "
-        f"(blue) internal voting, {MIN_YEAR}–{MAX_YEAR}"
-    )
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
-
-def plot_gap_distribution(panel: pd.DataFrame, output_path: Path) -> None:
-    tidy = panel.assign(
-        Pairing=np.where(panel["same_bloc"], "Within bloc", "Between blocs")
-    ).melt(
-        id_vars=["Pairing"],
-        value_vars=[JURY_COL, TELEVOTE_COL],
-        var_name="Source",
-        value_name="Points",
-    )
-    tidy["Source"] = tidy["Source"].str.replace("Points given by ", "", regex=False)
-
-    fig, axes = plt.subplots(1, 2, figsize=(13, 6))
-    sns.barplot(
-        data=tidy,
-        x="Pairing",
-        y="Points",
-        hue="Source",
-        errorbar=("ci", 95),
-        palette=["#4c78a8", "#f16913"],
-        ax=axes[0],
-    )
-    axes[0].set_ylabel("Mean points awarded per pair-year")
-    axes[0].set_title("Jury vs televote points by pairing")
-
-    sns.violinplot(
-        data=panel.assign(
-            Pairing=np.where(panel["same_bloc"], "Within bloc", "Between blocs")
-        ),
-        x="Pairing",
-        y="gap",
-        hue="Pairing",
-        legend=False,
-        palette=["#9c9c9c", "#b30000"],
-        cut=0,
-        ax=axes[1],
-    )
-    axes[1].axhline(0.0, color="#333333", linewidth=1.0)
-    axes[1].set_ylabel("Jury points − televote points")
-    axes[1].set_title("Distribution of the jury−televote gap")
-    fig.suptitle(
-        f"Jury and televote points on the same pair-years ({MIN_YEAR}–{MAX_YEAR} finals)"
-    )
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
-    plt.close()
-
 
 def markdown_table(df: pd.DataFrame) -> str:
     header = "| " + " | ".join(str(c) for c in df.columns) + " |"
@@ -732,16 +590,6 @@ def write_report(
         f"{dispersion['robust_null_mean']:.3f} |",
         f"| **QAP p-value (one-sided)** | **{format_p(dispersion['p_value'])}** | "
         f"**{format_p(dispersion['robust_p_value'])}** |",
-        "",
-        "![QAP permutation nulls](voting_blocs_inference_permutation.png)",
-        "",
-        "*Left: the primary statistic sits well inside its null. Right: the "
-        "heterogeneity statistic sits far outside its own.*",
-        "",
-        "![Mean gap by bloc](voting_blocs_inference_by_bloc.png)",
-        "",
-        "![Jury vs televote by pairing](voting_blocs_inference_gap_distribution.png)",
-        "",
         "### Descriptive breakdowns",
         "",
         "The per-year table below is descriptive only — five uncorrected "
@@ -852,7 +700,6 @@ def write_report(
 
 
 def main() -> None:
-    sns.set_theme(style="whitegrid")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     blocs = load_blocs()
@@ -934,17 +781,7 @@ def main() -> None:
         SUMMARY_PATH, index=False
     )
     by_bloc.to_csv(BLOC_BREAKDOWN_PATH, index=False)
-    plot_permutation_nulls(
-        np.asarray(primary["null"]),
-        float(primary["observed"]),
-        float(primary["p_value"]),
-        dispersion_null,
-        dispersion_observed,
-        dispersion_p,
-        PERMUTATION_PLOT_PATH,
-    )
-    plot_gap_distribution(panel, GAP_PLOT_PATH)
-    plot_bloc_gaps(by_bloc, BLOC_PLOT_PATH)
+
     write_report(
         panel,
         summary,
@@ -994,9 +831,6 @@ def main() -> None:
         PANEL_PATH,
         SUMMARY_PATH,
         BLOC_BREAKDOWN_PATH,
-        BLOC_PLOT_PATH,
-        PERMUTATION_PLOT_PATH,
-        GAP_PLOT_PATH,
         REPORT_PATH,
     ):
         print(f"  - {path}")

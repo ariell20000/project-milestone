@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(script_dir, '..', '..', 'eurovision_1957-2021.csv')
+csv_path = os.path.join(script_dir, '..', '..', 'dataset', 'eurovision_1957-2021.csv')
 theme_path = os.path.join(script_dir, 'theme_predictions.csv')
 
 print("Loading data...")

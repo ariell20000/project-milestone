@@ -4,7 +4,7 @@ import os
 import random
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-theme_preds_path = os.path.join(script_dir, 'bert model', 'theme_predictions.csv')
+data_path = os.path.join(script_dir, 'bert model', 'theme_predictions.csv')
 output_dir = os.path.join(script_dir, "..", "graph_outputs")
 
 os.makedirs(output_dir, exist_ok=True)
@@ -33,7 +33,9 @@ THEME_COLORS = {theme: get_random_color(theme) for theme in THEMES}
 
 def main():
     print("Loading data...")
-    merged_df = pd.read_csv(theme_preds_path)
+    merged_df = pd.read_csv(data_path)
+    
+    # Dominant_Theme and IsWinner are already provided in theme_predictions.csv
     
     df_winners = merged_df[merged_df['IsWinner'] == 1]
     df_losers = merged_df[merged_df['IsWinner'] == 0]
@@ -62,24 +64,24 @@ def main():
     fig = plt.figure(figsize=(18, 18), facecolor='#FAFAFA')
     fig.suptitle('Theme Distribution: All Songs vs. Losers vs. Winners', fontsize=32, fontweight='bold', color='#2C3E50', y=0.96)
     
-    text_props = {'fontsize': 16, 'weight': 'bold'}
+    text_props = {'fontsize': 13, 'weight': 'bold'}
     
     ax1 = plt.subplot(2, 1, 1)
-    ax1.pie(counts_all, labels=[t.title() for t in counts_all.index], autopct='%1.1f%%', startangle=140, 
+    ax1.pie(counts_all, labels=[t.title() for t in counts_all.index], autopct='%1.1f%%', startangle=140, pctdistance=0.85, labeldistance=1.1,
             colors=[THEME_COLORS[t] for t in counts_all.index], wedgeprops={'edgecolor': 'black', 'linewidth': 1.5}, textprops=text_props)
     ax1.set_title(f'All Songs ({len(merged_df)})', fontsize=26, fontweight='bold', color='#2C3E50', pad=20)
     
     ax2 = plt.subplot(2, 2, 3)
-    ax2.pie(counts_losers, labels=[t.title() for t in counts_losers.index], autopct='%1.1f%%', startangle=140, 
+    ax2.pie(counts_losers, labels=[t.title() for t in counts_losers.index], autopct='%1.1f%%', startangle=140, pctdistance=0.85, labeldistance=1.1,
             colors=[THEME_COLORS[t] for t in counts_losers.index], wedgeprops={'edgecolor': 'black', 'linewidth': 1.5}, textprops=text_props)
     ax2.set_title(f'Losers ({len(df_losers)})', fontsize=26, fontweight='bold', color='#2C3E50', pad=20)
     
     ax3 = plt.subplot(2, 2, 4)
-    ax3.pie(counts_winners, labels=[t.title() for t in counts_winners.index], autopct='%1.1f%%', startangle=140, 
+    ax3.pie(counts_winners, labels=[t.title() for t in counts_winners.index], autopct='%1.1f%%', startangle=140, pctdistance=0.85, labeldistance=1.1,
             colors=[THEME_COLORS[t] for t in counts_winners.index], wedgeprops={'edgecolor': 'black', 'linewidth': 1.5}, textprops=text_props)
     ax3.set_title(f'Winners ({len(df_winners)})', fontsize=26, fontweight='bold', color='#2C3E50', pad=20)
     
-    plt.figtext(0.5, 0.03, "Each song is represented by its single most dominant NMF theme.", ha="center", fontsize=20, color='#555555', style='italic')
+    plt.figtext(0.5, 0.03, "Each song is represented by its single most dominant BERT theme.", ha="center", fontsize=20, color='#555555', style='italic')
     
     plt.tight_layout(rect=[0, 0.05, 1, 0.93])
     
