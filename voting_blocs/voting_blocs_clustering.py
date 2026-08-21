@@ -251,22 +251,32 @@ def plot_dendrogram(
     # scipy's default link palette contains a grey that is indistinguishable
     # from above_threshold_color, which made one bloc look like it was cut off.
     set_link_color_palette(LINK_COLORS)
-    plt.figure(figsize=(16, 9))
+    # Figures get scaled down to \textwidth in the paper (from 18in to ~6.5in,
+    # a ~0.36x factor), so every font/line size here is picked to still read
+    # comfortably after that shrink, not at this file's native resolution.
+    plt.figure(figsize=(18, 9.5))
     dendrogram(
         linkage_matrix,
         labels=list(distance.index),
         color_threshold=threshold,
         above_threshold_color="#9c9c9c",
         leaf_rotation=90,
+        leaf_font_size=21,
     )
     ax = plt.gca()
-    ax.axhline(threshold, color="#b30000", linestyle="--", linewidth=1.0)
-    ax.set_ylabel("Cosine distance (1 − similarity), complete linkage")
-    ax.set_xlabel("Country")
+    for line in ax.get_lines():
+        line.set_linewidth(2.0)
+    ax.axhline(threshold, color="#b30000", linestyle="--", linewidth=2.2)
+    ax.set_ylabel("Cosine distance (1 − similarity), complete linkage", fontsize=24)
+    ax.set_xlabel("Country", fontsize=24, labelpad=12)
     ax.set_title(
         f"Eurovision voting blocs: hierarchical clustering of outgoing vote "
-        f"profiles ({MIN_YEAR}–{MAX_YEAR}, cut at k={k})"
+        f"profiles ({MIN_YEAR}–{MAX_YEAR}, cut at k={k})",
+        fontsize=28,
+        pad=16,
     )
+    ax.tick_params(axis="y", labelsize=22)
+    ax.tick_params(axis="x", pad=6)
     plt.tight_layout()
     plt.savefig(output_path, dpi=300)
     plt.close()
@@ -458,28 +468,35 @@ def plot_cluster_maps(
     subtitles: dict[str, str],
     output_path: Path = CLUSTER_MAP_PATH,
 ) -> dict[str, list[str]]:
+    """One map+legend block per ballot (full/jury/televote), stacked
+    vertically in a single tall figure rather than three side by side.
+    Three-across meant each map only ever printed at ~1/3 of the page's
+    width once placed in the paper (the whole combined image gets scaled to
+    \\textwidth), no matter how the labels inside it were sized - stacking
+    instead lets every map use the full page width."""
     titles = {
-        "full": f"All points, {MIN_YEAR}–{MAX_YEAR}",
-        "jury": f"Jury points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
-        "televote": f"Televote points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
+        "full": f"Eurovision voting blocs: all points, {MIN_YEAR}–{MAX_YEAR}",
+        "jury": f"Eurovision voting blocs: jury points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
+        "televote": f"Eurovision voting blocs: televote points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
     }
+    # constrained_layout (not tight_layout) is what actually respects each
+    # map axes' fixed aspect(1.4) when sizing rows - tight_layout leaves the
+    # aspect-locked map shrunk inside whatever box the height_ratio gives it,
+    # which is what produced the large dead margins around each map before.
     fig, axes = plt.subplots(
-        2, 3, figsize=(21, 11.5), gridspec_kw={"height_ratios": (1.4, 1), "hspace": 0.5}
+        6, 1, figsize=(9, 21),
+        gridspec_kw={"height_ratios": (1.0, 1) * 3},
+        constrained_layout=True,
     )
     skipped: dict[str, list[str]] = {}
-    for col, key in enumerate(("full", "jury", "televote")):
+    for row, key in enumerate(("full", "jury", "televote")):
+        map_ax, legend_ax = axes[2 * row], axes[2 * row + 1]
         skipped[key] = plot_clusters_on_map(
-            axes[0, col], cluster_sets[key], colors_by_country[key], titles[key], subtitles[key]
+            map_ax, cluster_sets[key], colors_by_country[key], titles[key], subtitles[key]
         )
         draw_cluster_legend(
-            axes[1, col], cluster_sets[key], families_by_set[key], id_colors_by_set[key]
+            legend_ax, cluster_sets[key], families_by_set[key], id_colors_by_set[key]
         )
-    fig.suptitle(
-        "Eurovision voting blocs: hierarchical clusters of outgoing vote profiles, on a geographic layout",
-        fontsize=16,
-        y=0.97,
-    )
-    plt.tight_layout(rect=(0, 0.04, 1, 0.94))
     plt.savefig(output_path, dpi=300)
     plt.close(fig)
     return skipped
