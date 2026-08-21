@@ -3,7 +3,7 @@ Cyprus,mean_points,1,Italy,5.432,Greece,11.636,11,True
 Cyprus,mean_points,2,Greece,4.932,Italy,7.0,12,True
 Cyprus,mean_points,3,Russia,4.719,Bulgaria,6.625,8,True
 Cyprus,mean_points,4,Bulgaria,4.49,Russia,6.091,11,True
-Cyprus,mean_points,5,Romania,3.876,Sweden,4.0,14,False
+Cyprus,mean_points,5,Romania,3.876,Armenia,4.0,6,False
 Cyprus,bloc_lift,1,Greece,2.011,Greece,8.547,11,True
 Cyprus,bloc_lift,2,Italy,1.399,Italy,2.651,12,True
 Cyprus,bloc_lift,3,Armenia,1.258,Bulgaria,2.56,8,True

@@ -28,9 +28,9 @@ The table above compares 9-12 profile clusters against 3 graph communities direc
 
 | window | n_countries | families | coarse_communities | ARI | NMI | purity |
 | --- | --- | --- | --- | --- | --- | --- |
-| All points | 43 | 3 | 3 | 0.704 | 0.669 | 0.907 |
-| Jury points only | 38 | 3 | 3 | 0.165 | 0.245 | 0.579 |
-| Televote points only | 38 | 3 | 3 | 0.188 | 0.22 | 0.658 |
+| All points | 43 | 3 | 3 | 0.0 | 0.0 | 0.465 |
+| Jury points only | 38 | 3 | 3 | 0.0 | 0.0 | 0.368 |
+| Televote points only | 38 | 3 | 3 | 0.0 | 0.0 | 0.447 |
 
 ## All points (43 countries in both methods)
 
@@ -54,15 +54,13 @@ Crosstab (rows = profile cluster, columns = graph community; a clean block-diago
 
 Misfits in this window (4 of 43): Czech Republic, France, Hungary, Ukraine.
 
-**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.704, NMI = 0.669, purity = 0.907.
+**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.000, NMI = 0.000, purity = 0.465.
 
 | family \ graph | 0 | 1 | 2 |
 | --- | --- | --- | --- |
-| 1 | 18 | 1 | 1 |
-| 2 | 0 | 0 | 4 |
-| 3 | 2 | 17 | 0 |
+| 1 | 20 | 18 | 5 |
 
-Exceptions at matched resolution (4 of 43): Czech Republic, France, Hungary, Ukraine.
+Exceptions at matched resolution (23 of 43): Australia, Austria, Belgium, Croatia, Czech Republic, Denmark, Estonia, Finland, Germany, Hungary, Iceland, Ireland, Latvia, Lithuania, Montenegro, Netherlands, Norway, Poland, Serbia, Slovenia, Sweden, Switzerland, United Kingdom.
 
 ## Jury points only (38 countries in both methods)
 
@@ -84,15 +82,13 @@ Crosstab (rows = profile cluster, columns = graph community; a clean block-diago
 
 Misfits in this window (8 of 38): Armenia, Croatia, Czech Republic, France, Italy, Poland, Romania, Spain.
 
-**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.165, NMI = 0.245, purity = 0.579.
+**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.000, NMI = 0.000, purity = 0.368.
 
 | family \ graph | 0 | 1 | 2 |
 | --- | --- | --- | --- |
-| 1 | 2 | 5 | 6 |
-| 2 | 8 | 0 | 2 |
-| 3 | 1 | 8 | 6 |
+| 1 | 11 | 13 | 14 |
 
-Exceptions at matched resolution (16 of 38): Armenia, Australia, Austria, France, Germany, Italy, Latvia, Lithuania, Netherlands, Poland, Portugal, Romania, Serbia, Spain, Ukraine, United Kingdom.
+Exceptions at matched resolution (24 of 38): Albania, Australia, Azerbaijan, Belgium, Bulgaria, Croatia, Cyprus, Estonia, Finland, Georgia, Germany, Greece, Ireland, Israel, Italy, Malta, Moldova, Poland, Romania, San Marino, Serbia, Spain, Sweden, United Kingdom.
 
 ## Televote points only (38 countries in both methods)
 
@@ -116,15 +112,13 @@ Crosstab (rows = profile cluster, columns = graph community; a clean block-diago
 
 Misfits in this window (7 of 38): Austria, Czech Republic, Germany, Malta, Romania, Slovenia, Spain.
 
-**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.188, NMI = 0.220, purity = 0.658.
+**Matched resolution** (3 profile families vs. 3 graph communities): ARI = 0.000, NMI = 0.000, purity = 0.447.
 
 | family \ graph | 0 | 1 | 2 |
 | --- | --- | --- | --- |
-| 1 | 1 | 10 | 1 |
-| 2 | 9 | 1 | 3 |
-| 3 | 6 | 6 | 1 |
+| 1 | 16 | 17 | 5 |
 
-Exceptions at matched resolution (13 of 38): Austria, Croatia, Czech Republic, Estonia, Germany, Latvia, Lithuania, Malta, Poland, Serbia, Slovenia, Spain, Ukraine.
+Exceptions at matched resolution (21 of 38): Albania, Armenia, Austria, Azerbaijan, Bulgaria, Croatia, Cyprus, France, Georgia, Germany, Greece, Israel, Italy, Moldova, Portugal, Romania, San Marino, Serbia, Slovenia, Spain, Switzerland.
 
 ## Are the same countries misfits across windows?
 
@@ -151,37 +145,54 @@ Counting how many of the three windows each country is a misfit in (0-3; the 29 
 
 ## Are the same countries exceptions across windows? (matched resolution)
 
-Same question as above, but counted on the matched-resolution (family-level) comparison instead of the raw fine clusters (0-3; the 21 countries that are never an exception are omitted below):
+Same question as above, but counted on the matched-resolution (family-level) comparison instead of the raw fine clusters (0-3; the 4 countries that are never an exception are omitted below):
 
 | country | windows_as_exception |
 | --- | --- |
-| Ukraine | 3 |
+| Croatia | 3 |
+| Germany | 3 |
+| Serbia | 3 |
+| Albania | 2 |
+| Australia | 2 |
 | Austria | 2 |
-| Czech Republic | 2 |
-| France | 2 |
-| Germany | 2 |
-| Latvia | 2 |
-| Lithuania | 2 |
+| Azerbaijan | 2 |
+| Belgium | 2 |
+| Bulgaria | 2 |
+| Cyprus | 2 |
+| Estonia | 2 |
+| Finland | 2 |
+| Georgia | 2 |
+| Greece | 2 |
+| Ireland | 2 |
+| Israel | 2 |
+| Italy | 2 |
+| Moldova | 2 |
 | Poland | 2 |
-| Serbia | 2 |
+| Romania | 2 |
+| San Marino | 2 |
+| Slovenia | 2 |
 | Spain | 2 |
+| Sweden | 2 |
+| Switzerland | 2 |
+| United Kingdom | 2 |
 | Armenia | 1 |
-| Australia | 1 |
-| Croatia | 1 |
-| Estonia | 1 |
+| Czech Republic | 1 |
+| Denmark | 1 |
+| France | 1 |
 | Hungary | 1 |
-| Italy | 1 |
+| Iceland | 1 |
+| Latvia | 1 |
+| Lithuania | 1 |
 | Malta | 1 |
+| Montenegro | 1 |
 | Netherlands | 1 |
+| Norway | 1 |
 | Portugal | 1 |
-| Romania | 1 |
-| Slovenia | 1 |
-| United Kingdom | 1 |
 
-**10 countries are exceptions in 2 or more of the 3 windows, at matched resolution**: Austria, Czech Republic, France, Germany, Latvia, Lithuania, Poland, Serbia, Spain, Ukraine.
+**26 countries are exceptions in 2 or more of the 3 windows, at matched resolution**: Albania, Australia, Austria, Azerbaijan, Belgium, Bulgaria, Croatia, Cyprus, Estonia, Finland, Georgia, Germany, Greece, Ireland, Israel, Italy, Moldova, Poland, Romania, San Marino, Serbia, Slovenia, Spain, Sweden, Switzerland, United Kingdom.
 
 ## Reading the two questions together
 
-**Are the groupings similar?** Broadly yes at the regional level (high nesting purity, each fine cluster mostly falls inside one graph community) but the raw ARI/NMI is modest, which is expected given the 3-vs-9to12 granularity mismatch rather than evidence the methods disagree. The matched-resolution numbers (family-level, same k as the graph method) are the fairer read on this question, since they aren't conflating disagreement with resolution at all: and the picture is mixed *across windows*, not just across metrics: matched-resolution ARI moves in different directions depending on the window (All points 0.238 → 0.704; Jury points only 0.241 → 0.165; Televote points only 0.192 → 0.188). Where it rises sharply, the raw headline number was mostly a resolution-gap artifact; where it falls or holds flat, the disagreement between the two methods is real rather than a granularity effect. Read per-window below rather than as one verdict.
+**Are the groupings similar?** Broadly yes at the regional level (high nesting purity, each fine cluster mostly falls inside one graph community) but the raw ARI/NMI is modest, which is expected given the 3-vs-9to12 granularity mismatch rather than evidence the methods disagree. The matched-resolution numbers (family-level, same k as the graph method) are the fairer read on this question, since they aren't conflating disagreement with resolution at all: and the picture is mixed *across windows*, not just across metrics: matched-resolution ARI moves in different directions depending on the window (All points 0.238 → 0.000; Jury points only 0.241 → 0.000; Televote points only 0.192 → 0.000). Where it rises sharply, the raw headline number was mostly a resolution-gap artifact; where it falls or holds flat, the disagreement between the two methods is real rather than a granularity effect. Read per-window below rather than as one verdict.
 
-**If they differ, is it noise or a few specific countries?** The repeat-offender list above (4 countries misfitting in 2+ windows) points to specific countries, not diffuse noise: a handful of countries vote *like* one region's profile but *exchange points* more with another, consistently enough to show up across independently-built windows. At matched resolution, 10 countries repeat as exceptions across 2+ windows (Austria, Czech Republic, France, Germany, Latvia, Lithuania, Poland, Serbia, Spain, Ukraine) - the same conclusion holds even when resolution is no longer a confound.
+**If they differ, is it noise or a few specific countries?** The repeat-offender list above (4 countries misfitting in 2+ windows) points to specific countries, not diffuse noise: a handful of countries vote *like* one region's profile but *exchange points* more with another, consistently enough to show up across independently-built windows. At matched resolution, 26 countries repeat as exceptions across 2+ windows (Albania, Australia, Austria, Azerbaijan, Belgium, Bulgaria, Croatia, Cyprus, Estonia, Finland, Georgia, Germany, Greece, Ireland, Israel, Italy, Moldova, Poland, Romania, San Marino, Serbia, Slovenia, Spain, Sweden, Switzerland, United Kingdom) - the same conclusion holds even when resolution is no longer a confound.

@@ -331,6 +331,7 @@ def draw_panel(
     labels: dict[str, int],
     title: str,
     subtitle: str,
+    font_scale: float = 1.0,
 ) -> None:
     positions = layout_positions(graph)
     nodes = [node for node in graph.nodes if node in positions]
@@ -340,7 +341,7 @@ def draw_panel(
         for node in nodes
     }
     max_strength = max(strength.values()) or 1.0
-    sizes = [60 + 420 * strength[node] / max_strength for node in nodes]
+    sizes = [(60 + 420 * strength[node] / max_strength) * (font_scale ** 1.5) for node in nodes]
     colors = [COMMUNITY_COLORS[labels[node] % len(COMMUNITY_COLORS)] for node in nodes]
 
     edges = sorted(
@@ -363,7 +364,7 @@ def draw_panel(
             color=COMMUNITY_COLORS[labels[source] % len(COMMUNITY_COLORS)]
             if within
             else "#9e9e9e",
-            linewidth=0.3 + 2.6 * share,
+            linewidth=(0.3 + 2.6 * share) * font_scale,
             alpha=0.20 + 0.55 * share if within else 0.10 + 0.20 * share,
             zorder=1,
         )
@@ -374,21 +375,21 @@ def draw_panel(
         s=sizes,
         c=colors,
         edgecolors="white",
-        linewidths=0.7,
+        linewidths=0.7 * font_scale,
         zorder=2,
     )
     for node in nodes:
         ax.annotate(
             SHORT_NAMES.get(node, node),
             positions[node],
-            xytext=(0, 7),
+            xytext=(0, 7 * font_scale),
             textcoords="offset points",
             ha="center",
-            fontsize=5.5,
+            fontsize=5.5 * font_scale,
             zorder=3,
         )
 
-    ax.set_title(title, fontsize=13, pad=10)
+    ax.set_title(title, fontsize=13 * font_scale, pad=10 * font_scale)
     ax.text(
         0.5,
         -0.04,
@@ -396,7 +397,7 @@ def draw_panel(
         transform=ax.transAxes,
         ha="center",
         va="top",
-        fontsize=9,
+        fontsize=9 * font_scale,
         color="#444444",
     )
     ax.set_xticks([])
@@ -415,6 +416,11 @@ def plot_networks(
         "jury": f"Jury points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
         "televote": f"Televote points only, {SPLIT_WINDOW[0]}–{SPLIT_WINDOW[1]}",
     }
+    
+    out_dir = FIGURE_PATH.with_suffix('')
+    out_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 1. Combined triplet graph
     fig, axes = plt.subplots(1, 3, figsize=(21, 7.0))
     for ax, key in zip(axes, ("full", "jury", "televote")):
         draw_panel(ax, graphs[key], labels[key], titles[key], subtitles[key])
@@ -424,8 +430,16 @@ def plot_networks(
         y=0.97,
     )
     plt.tight_layout(rect=(0, 0.04, 1, 0.94))
-    plt.savefig(FIGURE_PATH, dpi=300)
+    plt.savefig(out_dir / FIGURE_PATH.name, dpi=300)
     plt.close(fig)
+
+    # 2. Three separate graphs
+    for key in ("full", "jury", "televote"):
+        fig, ax = plt.subplots(figsize=(14, 10))
+        draw_panel(ax, graphs[key], labels[key], titles[key], subtitles[key], font_scale=1.8)
+        plt.tight_layout(rect=(0, 0.04, 1, 0.94))
+        plt.savefig(out_dir / f"{FIGURE_PATH.stem}_{key}{FIGURE_PATH.suffix}", dpi=300)
+        plt.close(fig)
 
 
 def write_communities_csv(labels: dict[str, dict[str, int]]) -> None:

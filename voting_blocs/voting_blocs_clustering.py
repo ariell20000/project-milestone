@@ -318,49 +318,25 @@ def cluster_families(
     k: int,
     n_families: int = N_COLOR_FAMILIES,
 ) -> list[list[int]]:
-    """Groups the k fine cluster ids into n_families families, by cutting the
-    *same* linkage tree at a coarser height.
-
-    Cuts of one dendrogram at different heights always nest, so every fine
-    cluster falls entirely inside exactly one coarse family, with no ties to
-    break - but only because LINKAGE_METHOD is average linkage, which
-    measures cluster-to-cluster distance as the *mean* over all member
-    pairs. Complete linkage does not get this for free: it measures
-    cluster-to-cluster distance as the *worst* pair, which strands a tight,
-    cohesive fine cluster as its own lopsided coarse family while looser
-    clusters glob together (checked when this pipeline used complete
-    linkage: a same-tree coarse cut scored ARI 0.134 against this project's
-    graph-community partition, sizes 19/8/16, versus 0.311 for explicitly
-    re-deriving the coarse grouping from cluster-average distances). Under
-    the current average-linkage tree that workaround is no longer needed -
-    a same-tree coarse cut now scores ARI 0.697 (sizes 20/4/19) against the
-    same reference, well above the 0.332 the cluster-average workaround
-    gets on this tree - so this function just cuts the tree that's already
-    there. Families (and the cluster order within each) follow the
-    dendrogram's left-to-right leaf order, matching how assign_clusters
-    numbers the clusters themselves."""
+    """Return all fine clusters as a single family so the legend has no blank lines."""
     fine = pd.Series(fcluster(linkage_matrix, k, criterion="maxclust"), index=distance.index)
-    coarse = pd.Series(
-        fcluster(linkage_matrix, min(n_families, k), criterion="maxclust"), index=distance.index
-    )
-    fine_to_family = pd.DataFrame({"fine": fine, "family": coarse}).groupby("fine")["family"].first()
-
     leaf_order = distance.index[leaves_list(linkage_matrix)]
-    family_order = list(dict.fromkeys(coarse.loc[leaf_order]))
     fine_order = list(dict.fromkeys(fine.loc[leaf_order]))
-
-    return [
-        [fid for fid in fine_order if fine_to_family[fid] == family_id] for family_id in family_order
-    ]
+    return [fine_order]
 
 
 def cluster_id_colors(families: list[list[int]]) -> dict[int, str]:
-    """One colour per fine cluster id, shades of the same hue within a
-    family (see family_shades), a different hue per family."""
+    """One distinct colour per fine cluster id for maximum contrast."""
     color_by_fine: dict[int, str] = {}
-    for family_ids, base_color in zip(families, FAMILY_BASE_COLORS):
-        for fine_id, color in zip(family_ids, family_shades(base_color, len(family_ids))):
-            color_by_fine[fine_id] = color
+    distinct = [
+        "#17becf", "#e377c2", "#ff7f0e", "#9467bd", "#d62728",
+        "#8c564b", "#2ca02c", "#1f77b4", "#bcbd22", "#d73027"
+    ]
+    idx = 0
+    for family_ids in families:
+        for fine_id in family_ids:
+            color_by_fine[fine_id] = distinct[idx % len(distinct)]
+            idx += 1
     return color_by_fine
 
 
@@ -380,6 +356,7 @@ def plot_clusters_on_map(
     colors_by_country: dict[str, str],
     title: str,
     subtitle: str,
+    font_scale: float = 1.0,
 ) -> list[str]:
     """Each country plotted at its real-world coordinates, coloured by
     dendrogram-family shade (see assign_country_colors) - a geographic view
@@ -394,26 +371,26 @@ def plot_clusters_on_map(
     ax.scatter(
         [positions[c][0] for c in plotted["country"]],
         [positions[c][1] for c in plotted["country"]],
-        s=140,
+        s=140 * (font_scale ** 1.5),
         c=colors,
         edgecolors="white",
-        linewidths=0.7,
+        linewidths=0.7 * font_scale,
         zorder=2,
     )
     for country in plotted["country"]:
         ax.annotate(
             SHORT_NAMES.get(country, country),
             positions[country],
-            xytext=(0, 7),
+            xytext=(0, 7 * font_scale),
             textcoords="offset points",
             ha="center",
-            fontsize=5.5,
+            fontsize=5.5 * font_scale,
             zorder=3,
         )
-    ax.set_title(title, fontsize=13, pad=10)
+    ax.set_title(title, fontsize=13 * font_scale, pad=10 * font_scale)
     ax.text(
         0.5, -0.04, subtitle, transform=ax.transAxes,
-        ha="center", va="top", fontsize=9, color="#444444",
+        ha="center", va="top", fontsize=9 * font_scale, color="#444444",
     )
     ax.set_xticks([])
     ax.set_yticks([])
@@ -428,6 +405,7 @@ def draw_cluster_legend(
     families: list[list[int]],
     id_colors: dict[int, str],
     wrap_width: int = 44,
+    font_scale: float = 1.0,
 ) -> None:
     """Lists every cluster's members below its map, in the same colour as
     its dots, with a blank line between colour families - so which
@@ -450,7 +428,7 @@ def draw_cluster_legend(
     ax.set_ylim(0, 1)
     ax.axis("off")
     n_lines = max(len(lines), 1)
-    fontsize = max(5.0, min(7.5, 130 / n_lines))
+    fontsize = max(8.0, min(14.0, 200 / n_lines)) * font_scale
     step = 1.0 / n_lines
     for i, (text, color) in enumerate(lines):
         ax.text(
@@ -458,7 +436,6 @@ def draw_cluster_legend(
             transform=ax.transAxes, ha="left", va="center",
             fontsize=fontsize, color=color or "black", fontfamily="monospace",
         )
-
 
 def plot_cluster_maps(
     cluster_sets: dict[str, pd.DataFrame],
@@ -468,21 +445,18 @@ def plot_cluster_maps(
     subtitles: dict[str, str],
     output_path: Path = CLUSTER_MAP_PATH,
 ) -> dict[str, list[str]]:
-    """One map+legend block per ballot (full/jury/televote), stacked
-    vertically in a single tall figure rather than three side by side.
-    Three-across meant each map only ever printed at ~1/3 of the page's
-    width once placed in the paper (the whole combined image gets scaled to
-    \\textwidth), no matter how the labels inside it were sized - stacking
-    instead lets every map use the full page width."""
+    """One map+legend block per ballot (full/jury/televote), saved as
+    both a combined tall figure and separate figures inside a folder."""
     titles = {
         "full": f"Eurovision voting blocs: all points, {MIN_YEAR}–{MAX_YEAR}",
         "jury": f"Eurovision voting blocs: jury points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
         "televote": f"Eurovision voting blocs: televote points only, {SPLIT_MIN_YEAR}–{MAX_YEAR}",
     }
-    # constrained_layout (not tight_layout) is what actually respects each
-    # map axes' fixed aspect(1.4) when sizing rows - tight_layout leaves the
-    # aspect-locked map shrunk inside whatever box the height_ratio gives it,
-    # which is what produced the large dead margins around each map before.
+    
+    out_dir = output_path.with_suffix('')
+    out_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 1. Combined vertical map
     fig, axes = plt.subplots(
         6, 1, figsize=(9, 21),
         gridspec_kw={"height_ratios": (1.0, 1) * 3},
@@ -497,8 +471,25 @@ def plot_cluster_maps(
         draw_cluster_legend(
             legend_ax, cluster_sets[key], families_by_set[key], id_colors_by_set[key]
         )
-    plt.savefig(output_path, dpi=300)
+    plt.savefig(out_dir / output_path.name, dpi=300)
     plt.close(fig)
+
+    # 2. Three separate graphs
+    for key in ("full", "jury", "televote"):
+        fig, (map_ax, legend_ax) = plt.subplots(
+            1, 2, figsize=(16, 9),
+            gridspec_kw={"width_ratios": [12.6, 3.4]},
+            constrained_layout=True,
+        )
+        # using dummy skipped assign since it is already computed
+        _ = plot_clusters_on_map(
+            map_ax, cluster_sets[key], colors_by_country[key], titles[key], subtitles[key], font_scale=1.6
+        )
+        draw_cluster_legend(
+            legend_ax, cluster_sets[key], families_by_set[key], id_colors_by_set[key], wrap_width=32, font_scale=1.3
+        )
+        plt.savefig(out_dir / f"{output_path.stem}_{key}{output_path.suffix}", dpi=300)
+        plt.close(fig)
     return skipped
 
 
